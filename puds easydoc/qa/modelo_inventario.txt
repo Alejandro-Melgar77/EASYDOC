@@ -1,0 +1,860 @@
+PARAGRAPH_COUNT: 738
+TABLE_COUNT: 42
+
+=== PARRAFOS ===
+0001 [style='normal'; style_id=''; align=CENTER (1)] UNIVERSIDAD AUTONOMA GABRIEL RENE MORENO
+0002 [style='normal'; style_id=''; align=CENTER (1)] FACULTAD DE INGENIERÍA EN CIENCIAS DE LA COMPUTACIÓN Y TELECOMUNICACIONES
+0006 [style='normal'; style_id=''; align=None] Backend			Frontend		     Pagina		    APK Flutter
+0009 [style='normal'; style_id=''; align=None] Movil		    Microservicio AI
+0011 [style='normal'; style_id=''; align=CENTER (1)] 2do Parcial Workflow Manager: Sistema de Gestión de Trámites y Políticas de negocio
+0012 [style='normal'; style_id=''; align=JUSTIFY (3)] Materia: Software I			Docente: Rolando Antonio Martinez Canedo
+0013 [style='normal'; style_id=''; align=JUSTIFY (3)] Integrante:
+0014 [style='normal'; style_id=''; align=None] Martínez Martínez Nataly Vanessa 		223059676
+0016 [style='normal'; style_id=''; align=CENTER (1)] 12 de Mayo del 2026
+0017 [style='normal'; style_id=''; align=CENTER (1)] ÍNDICE
+0031 [style='Heading 1'; style_id='Heading1'; align=None] PERFIL
+0032 [style='Heading 2'; style_id='Heading2'; align=None] INTRODUCCIÓN
+0033 [style='normal'; style_id=''; align=None] En el entorno empresarial actual, la gestión de trámites internos y la ejecución de políticas de negocio constituyen procesos críticos que determinan la eficiencia operativa y la capacidad de respuesta de las organizaciones. Sin embargo, muchas empresas aún dependen de métodos tradicionales y descentralizados para administrar sus flujos de trabajo, como el uso de hojas de cálculo, correos electrónicos encadenados, formularios en papel o aplicaciones de mensajería no especializadas. Esta fragmentación genera una serie de problemas que afectan tanto a la productividad interna como a la satisfacción de los clientes o ciudadanos que interactúan con la entidad.
+0034 [style='normal'; style_id=''; align=None] La carencia de una plataforma unificada que automatice el flujo de trámites entre departamentos provoca retrasos innecesarios, pérdida de información, duplicación de esfuerzos y una visible falta de trazabilidad. En particular, cuando un trámite debe pasar por múltiples áreas (por ejemplo, atención al cliente, evaluación técnica, facturación, legal), la coordinación manual suele derivar en cuellos de botella, olvidos de tareas y ausencia de una visión global del estado de cada solicitud. Los funcionarios responsables no siempre tienen claro cuál es su siguiente acción, y los administradores carecen de herramientas que les permitan diseñar, modificar y monitorear las políticas de negocio de manera ágil y visual.
+0035 [style='normal'; style_id=''; align=None] Ante esta realidad, se plantea el desarrollo de Workflow Manager, una plataforma integral basada en web y dispositivos móviles que permite a las empresas diseñar sus políticas de negocio mediante diagramas de actividades, ejecutar trámites de forma automática según la ruta definida, y monitorear en tiempo real el desempeño de cada proceso. La solución se apoya en un motor de workflow que, a partir de un modelo visual de nodos y transiciones (lineales, alternativas y paralelas), dirige automáticamente cada trámite al departamento correspondiente sin que el funcionario deba decidir el siguiente paso, esa decisión ya está encapsulada en la política configurada por el administrador.
+0037 [style='normal'; style_id=''; align=None] El sistema introduce, además, capacidades de inteligencia artificial para generar diagramas de actividades a partir de descripciones en lenguaje natural, sugerir formularios dinámicos para cada nodo del proceso, y analizar la operación histórica para detectar cuellos de botella o proponer optimizaciones. Complementariamente, se implementa un sistema de notificaciones en tiempo real mediante WebSockets y notificaciones push, así como un monitor visual codificado por colores (verde, amarillo, rojo) que refleja el estado de cada trámite sin necesidad de recargar la página.
+0038 [style='normal'; style_id=''; align=None] En su evolución, Workflow Manager incorpora un completo sistema de gestión documental colaborativa, que permite a los clientes y funcionarios subir, versionar y auditar documentos asociados a cada trámite, así como editarlos simultáneamente en tiempo real. Además, se integra un agente inteligente (asistente conversacional) capaz de interpretar la solicitud del cliente mediante voz o texto y seleccionar automáticamente la política de negocio más adecuada, eliminando la intervención humana en la atención inicial. Los administradores también pueden generar reportes dinámicos en lenguaje natural, simplemente escribiendo o dictando la consulta deseada. Todo ello, sumado a la capacidad de operar sin conexión a internet (tanto en la web como en la aplicación móvil), hace de Workflow Manager una solución completa y moderna para la gestión de procesos de negocio.
+0039 [style='normal'; style_id=''; align=None] Con Workflow Manager no solo se busca automatizar la ejecución de trámites, sino también empoderar a los administradores para que puedan rediseñar las políticas de negocio de forma iterativa y colaborativa, mantener un control de versiones mediante hash único por política, gestionar digitalmente toda la documentación asociada, optimizar la atención al cliente mediante inteligencia artificial, y garantizar la continuidad operativa incluso en escenarios de conectividad limitada. El proyecto se alinea con las tendencias de transformación digital y automatización inteligente de procesos (BPM), proporcionando una herramienta de nivel profesional para organizaciones públicas y privadas que requieren agilidad, transparencia y trazabilidad en su gestión documental y operativa.
+0043 [style='Heading 2'; style_id='Heading2'; align=None] OBJETIVO GENERAL
+0044 [style='normal'; style_id=''; align=None] Desarrollar una plataforma integral de gestión de trámites y políticas de negocio, basada en una arquitectura web y móvil, que permita a las empresas diseñar de manera visual y colaborativa diagramas de actividades, ejecutar automáticamente los trámites conforme a las reglas definidas en dichos diagramas, monitorear en tiempo real el estado de cada proceso, gestionar documentos de forma colaborativa, asistir al cliente mediante un agente inteligente, generar reportes dinámicos en lenguaje natural, y operar en modo offline, todo ello incorporando capacidades de inteligencia artificial para la generación asistida de diagramas y formularios, el análisis de cuellos de botella y la optimización continua de las políticas.
+0045 [style='Heading 2'; style_id='Heading2'; align=None] OBJETIVOS ESPECÍFICOS
+0046 [style='normal'; style_id=''; align=None] Analizar los procesos de gestión de trámites y políticas de negocio en organizaciones típicas, identificando actividades, roles, flujos de información y cuellos de botella existentes, para modelar adecuadamente los casos de uso, los actores y las reglas de negocio del sistema.
+0047 [style='normal'; style_id=''; align=None] Diseñar la arquitectura del sistema, la base de datos y las interfaces de usuario, aplicando principios de ingeniería de software y usabilidad que faciliten el modelado visual de diagramas, la ejecución de trámites, la gestión documental y la interacción con los asistentes de inteligencia artificial.
+0048 [style='normal'; style_id=''; align=None] Implementar la plataforma web y móvil utilizando las tecnologías seleccionadas, desarrollando los módulos de administración de usuarios y departamentos, diseño de políticas, gestión de formularios, motor de workflow, monitoreo en tiempo real, notificaciones, repositorio documental con control de versiones, agente inteligente de enrutamiento, generador de reportes en lenguaje natural, y capacidades offline.
+0049 [style='normal'; style_id=''; align=None] Probar el sistema mediante la elaboración y ejecución de casos de prueba funcionales, de usabilidad, de rendimiento y de seguridad, verificando el cumplimiento de los requisitos establecidos y el correcto funcionamiento de todos los módulos, incluyendo la edición colaborativa, la integración con OnlyOffice, la sincronización offline y los servicios de inteligencia artificial.
+0050 [style='normal'; style_id=''; align=None] Desplegar la solución en un entorno de nube, configurando los servicios de almacenamiento documental, base de datos y aplicación, y elaborando la documentación técnica y de usuario necesaria para la operación y el mantenimiento del sistema.
+0052 [style='Heading 2'; style_id='Heading2'; align=None] DESCRIPCIÓN DEL PROBLEMA
+0053 [style='normal'; style_id=''; align=None] La gestión de trámites y políticas de negocio en las organizaciones actuales enfrentan serias limitaciones derivadas del uso de métodos tradicionales y desconectados para administrar sus flujos de trabajo operativos. La dependencia de procesos manuales, como el traslado físico de expedientes, el envío de correos electrónicos sin seguimiento estructurado, la utilización de hojas de cálculo compartidas que rápidamente quedan desactualizadas, o la simple comunicación verbal entre departamentos, ha generado una estructura operativa ineficiente, opaca y altamente propensa a errores. Esta situación se agrava por la falta de integración entre los distintos niveles jerárquicos y áreas funcionales de la empresa, lo que deriva en duplicidad de esfuerzos, pérdida de información crítica, demoras injustificadas en la resolución de solicitudes y una visible ausencia de trazabilidad sobre el historial completo de cada trámite.
+0054 [style='normal'; style_id=''; align=None] En el ámbito de la definición y ejecución de políticas, la problemática se manifiesta con particular intensidad. Las empresas carecen de herramientas visuales que les permitan modelar sus procesos de negocio de manera gráfica e intuitiva. Como consecuencia, las políticas suelen documentarse en textos extensos y de difícil interpretación. Cuando un trámite debe pasar por múltiples departamentos (por ejemplo, recepción de una solicitud, verificación técnica, evaluación financiera, aprobación legal y notificación al interesado), la coordinación manual entre áreas casi inevitablemente produce cuellos de botella, olvidos de tareas, re-trabajos por información incompleta y una falta de visibilidad global sobre el estado real de cada solicitud. Los funcionarios responsables no siempre tienen claro cuál es su siguiente acción ni cuándo deben ejecutarla, mientras que los administradores no cuentan con mecanismos ágiles para modificar una política cuando las condiciones del negocio cambian.
+0055 [style='normal'; style_id=''; align=None] La comunicación entre los distintos actores del sistema resulta igualmente fragmentada y poco efectiva. La asignación de tareas a los funcionarios se realiza a través de medios informales como llamadas telefónicas, mensajes de texto o correos electrónicos personales, lo que no garantiza que la notificación sea recibida de manera oportuna ni que exista un registro confiable de la asignación. Los funcionarios, por su parte, no disponen de una bandeja unificada donde consultar todas sus responsabilidades pendientes, y mucho menos de una aplicación móvil que les permita ejecutar tareas desde campo sin necesidad de estar frente a un computador de escritorio. Esta falta de movilidad restringe la productividad de aquellos roles que requieren desplazamiento físico, como inspectores, técnicos de campo o personal de mantenimiento.
+0056 [style='normal'; style_id=''; align=None] La ausencia de un motor de workflow automatizado constituye quizás la carencia más crítica. En los modelos tradicionales, es el propio funcionario quien debe conocer cuál es el siguiente paso del trámite una vez que ha completado su tarea. Esta dependencia del criterio humano introduce riesgos de desviación del procedimiento establecido, especialmente cuando existen múltiples rutas alternativas basadas en condiciones. La falta de automatización también impide gestionar correctamente las ramas paralelas, donde varias tareas deben ejecutarse simultáneamente en distintos departamentos antes de continuar con el flujo principal.
+0057 [style='normal'; style_id=''; align=None] En el plano de la supervisión y control, los administradores carecen de herramientas que les permitan monitorear el desempeño de las políticas en tiempo real. Las desviaciones, demoras o acumulaciones de tareas solo se detectan cuando ya se ha producido un incumplimiento, y no existe una alerta temprana que permita tomar acciones correctivas de forma anticipada. Esta limitación se extiende también a la capacidad analítica: las organizaciones no pueden identificar fácilmente cuáles son los nodos críticos que generan mayores demoras, ni evaluar el impacto de modificaciones en las políticas a partir de datos históricos.
+0058 [style='normal'; style_id=''; align=None] Además, persisten dos grandes vacíos que los sistemas tradicionales no abordan adecuadamente: la gestión documental y la asignación inteligente de políticas. Los documentos que se generan durante los trámites (contratos, comprobantes, imágenes de inspección, actas) se almacenan de forma dispersa —en archivos adjuntos de correos, en carpetas compartidas sin control, o incluso en papel— sin un repositorio centralizado que permita control de versiones, auditoría de accesos y edición colaborativa en tiempo real. Por otro lado, la identificación de la política de negocio aplicable a cada solicitud recae en un funcionario de atención al cliente, quien debe escuchar al cliente, interpretar su necesidad y seleccionar manualmente la política correspondiente, introduciendo demoras y posibles errores de interpretación que podrían ser automatizados mediante inteligencia artificial.
+0059 [style='normal'; style_id=''; align=None] Finalmente, los sistemas existentes no están preparados para operar en escenarios de baja conectividad. Los funcionarios en campo pierden productividad si no tienen acceso a internet, y las aplicaciones web no ofrecen una experiencia offline. Tampoco existe la posibilidad de que los administradores consulten datos mediante lenguaje natural, obligándolos a depender de personal técnico o a realizar consultas complejas directamente en la base de datos.
+0060 [style='normal'; style_id=''; align=None] Workflow Manager se propone resolver todas estas deficiencias mediante una plataforma unificada que integra diseño visual de políticas, ejecución automática de trámites, monitoreo en tiempo real, gestión documental avanzada, agente inteligente de enrutamiento, reportes dinámicos en lenguaje natural y modo offline, ofreciendo una solución completa y moderna para la gestión de procesos de negocio.
+0066 [style='Heading 2'; style_id='Heading2'; align=None] ALCANCE
+0067 [style='normal'; style_id=''; align=None] El sistema Workflow Manager contempla el desarrollo de los siguientes módulos principales:
+0068 [style='Heading 3'; style_id='Heading3'; align=None] Módulo de Acceso y Organización
+0069 [style='normal'; style_id=''; align=None] Gestión de autenticación: Registro de ingreso seguro a la plataforma mediante credenciales y tokens JWT, diferenciando los roles de Administrador General, Administrador de Departamento y Funcionario.
+0070 [style='normal'; style_id=''; align=None] Gestión de Usuarios: Creación, modificación y desactivación de cuentas de usuario, asignación de roles y vinculación de funcionarios y administradores a sus respectivos departamentos.
+0071 [style='normal'; style_id=''; align=None] Gestión de Departamentos: Definición de la estructura organizacional de la empresa, permitiendo crear, editar y deshabilitar áreas, así como asignar un responsable por cada una.
+0072 [style='Heading 3'; style_id='Heading3'; align=None] Módulo de Diseño de Políticas
+0073 [style='normal'; style_id=''; align=None] Editor Visual de Diagramas: Herramienta gráfica web con funcionalidad de arrastrar y soltar para diseñar flujos de trabajo mediante nodos  organizados en carriles por departamento.
+0074 [style='normal'; style_id=''; align=None] Configuración de Transiciones: Definición de rutas lineales , alternativas y paralelas entre nodos.
+0075 [style='normal'; style_id=''; align=None] Exportación de Diagramas: Generación del diagrama en formatos png y pdf para su distribución o archivado.
+0076 [style='normal'; style_id=''; align=None] Generación de Diagramas por IA: Creación automática de un diagrama de actividades a partir de una descripción en lenguaje natural proporcionada por el administrador
+0077 [style='normal'; style_id=''; align=None] Edición colaborativa en tiempo real: Sincronización de cambios mediante WebSockets cuando múltiples administradores editan el mismo diagrama, con generación de un hash único por cada versión de la política para su trazabilidad.
+0078 [style='Heading 3'; style_id='Heading3'; align=None] Módulo de Formularios y Ejecución de Tareas
+0079 [style='normal'; style_id=''; align=None] Gestión de Formularios Dinámicos: Creación de formularios asociados a nodos de tipo Tarea, con campos de texto, número, fecha, archivo, imagen, selección y tabla grid. Se incluye la definición de un campo que determina la prioridad del trámite  y la distinción entre campos que debe llenar el cliente y campos que debe llenar el funcionario.
+0080 [style='normal'; style_id=''; align=None] Bandeja de Tareas (Web y Móvil): Visualización de tareas pendientes asignadas al departamento del funcionario, con acceso a los detalles del trámite y al formulario correspondiente. Esta bandeja funciona también en modo offline, cacheando las tareas localmente.
+0081 [style='normal'; style_id=''; align=None] Ejecución de Tareas: Completado de formularios, adjunto de archivos y envío de la respuesta, tras lo cual el motor de workflow continúa automáticamente con la siguiente tarea.
+0082 [style='normal'; style_id=''; align=None] Generación de Formularios por IA: Propuesta automática de campos de formulario desde una descripción textual del Administrador de Departamento.
+0083 [style='Heading 3'; style_id='Heading3'; align=None] Módulo de Motor de Workflow y Monitoreo
+0084 [style='normal'; style_id=''; align=None] Motor Automático de Trámites: Ejecución automática de los trámites conforme al diagrama activo, moviendo la solicitud entre nodos, evaluando condiciones en decisiones y gestionando ramas paralelas sin intervención manual del funcionario.
+0085 [style='normal'; style_id=''; align=None] Monitor en Tiempo Real: Tablero visual que muestra el estado de cada trámite codificado por colores (verde: ejecutado, amarillo: en proceso, rojo: sin iniciar), con actualización mediante WebSockets y filtros por departamento, fechas y prioridad.
+0086 [style='normal'; style_id=''; align=None] Análisis de Cuellos de Botella: Detección de nodos con alta demora promedio dentro de una política activa, utilizando redes neuronales para clasificar la severidad del riesgo (bajo, medio, alto, crítico), con sugerencias de optimización y resaltado de los nodos críticos en el diagrama.
+0087 [style='Heading 3'; style_id='Heading3'; align=None] Módulo de Gestión Documental
+0088 [style='normal'; style_id=''; align=None] Repositorio de Documentos: Almacenamiento centralizado de todos los archivos subidos por clientes y funcionarios, organizados por empresa, cliente, trámite y departamento.
+0089 [style='normal'; style_id=''; align=None] Control de Versiones: Cada documento mantiene un historial de versiones, permitiendo recuperar estados anteriores y registrar quién subió cada versión.
+0090 [style='normal'; style_id=''; align=None] Permisos Granulares: Los documentos pueden tener permisos específicos de lectura, edición y eliminación asignados a roles o a usuarios individuales.
+0091 [style='normal'; style_id=''; align=None] Auditoría Completa: Registro de todas las acciones sobre documentos (subida, visualización, descarga, edición, eliminación, cambio de permisos) con fecha, hora y usuario.
+0092 [style='normal'; style_id=''; align=None] Edición Colaborativa con OnlyOffice: Integración de un editor embebido que permite que múltiples usuarios editen simultáneamente un documento y vean los cambios en tiempo real, con guardado automático como nueva versión.
+0093 [style='Heading 3'; style_id='Heading3'; align=None] Módulo de Agente Inteligente (Chatbot)
+0094 [style='normal'; style_id=''; align=None] Asistente de voz/texto: Interfaz conversacional (web y móvil) donde el cliente describe su solicitud mediante escritura o dictado por voz. El sistema utiliza inteligencia artificial para interpretar la intención y extraer entidades relevantes.
+0095 [style='normal'; style_id=''; align=None] Asignación Automática de Política: El agente selecciona la política de negocio más adecuada de entre las activas, basándose en la similitud semántica y en reglas de negocio predefinidas.
+0096 [style='normal'; style_id=''; align=None] Inicio de Trámite sin Intervención Humana: Una vez confirmada la política, el sistema inicia automáticamente el trámite, asigna al cliente y notifica al primer departamento correspondiente.
+0097 [style='Heading 3'; style_id='Heading3'; align=None] Módulo de Reportes Dinámicos en Lenguaje Natural
+0098 [style='normal'; style_id=''; align=None] Generación de Especificación: El microservicio de IA convierte la consulta en una estructura JSON con filtros, agrupación, ordenamiento y formato de salida.
+0099 [style='normal'; style_id=''; align=None] Ejecución de la Consulta: El backend construye dinámicamente la agregación en la base de datos y obtiene los datos solicitados.
+0100 [style='normal'; style_id=''; align=None] Exportación Multi‑formato: El resultado se presenta en pantalla y puede exportarse a Excel, PDF o Word, según lo solicitado por el usuario.
+0101 [style='normal'; style_id=''; align=None] Iteración con Preguntas Faltantes: Si la consulta es ambigua o le falta información (por ejemplo, no se especifica el período), el sistema pregunta de vuelta al usuario hasta tener todos los parámetros.
+0102 [style='Heading 1'; style_id='Heading1'; align=None] MARCO TEÓRICO
+0103 [style='Heading 2'; style_id='Heading2'; align=None] 2.1. Herramientas CASE para el Desarrollo de Algoritmos
+0104 [style='normal'; style_id=''; align=None] Las herramientas CASE (Computer‑Aided Software Engineering) son aplicaciones informáticas que asisten en una o varias fases del ciclo de vida del software, desde el análisis de requisitos hasta la generación de código y las pruebas. En el contexto del desarrollo de algoritmos complejos (como el motor de workflow o los mecanismos de sincronización con WebSockets), las herramientas CASE ofrecen:
+0105 [style='normal'; style_id=''; align=None] Modelado gráfico: Permite construir diagramas de clases, de actividades, de secuencia y de despliegue de forma visual, facilitando la comprensión y comunicación de la arquitectura.
+0106 [style='normal'; style_id=''; align=None] Generación de código: Algunas herramientas (como los generadores de CRUD o los frameworks de modelo‑vista‑controlador) producen esqueletos de código a partir de los modelos, acelerando la implementación.
+0107 [style='normal'; style_id=''; align=None] Validación de consistencia: Detectan errores lógicos, como relaciones incorrectas en el diagrama de clases o transiciones sin nodo destino en el diagrama de actividades.
+0108 [style='normal'; style_id=''; align=None] Para este proyecto, se emplean herramientas CASE ligeras como Draw.io para los diagramas de análisis y diseño, y el propio entorno de desarrollo (IntelliJ IDEA, Visual Studio Code) con extensiones de modelado. No se utiliza una herramienta CASE de pago pesada, ya que la metodología ágil favorece la documentación justa y la comunicación directa entre el equipo.
+0109 [style='Heading 2'; style_id='Heading2'; align=None] 2.2 Proyecto Colaborativo en Tiempo Real
+0110 [style='normal'; style_id=''; align=None] El desarrollo de sistemas colaborativos requiere mecanismos de comunicación que permitan a múltiples usuarios interactuar simultáneamente sobre un mismo recurso, como si trabajaran en un pizarrón compartido desde distintas ubicaciones geográficas. Para ello, los WebSockets constituyen una tecnología fundamental. A diferencia del modelo tradicional HTTP (petición‑respuesta), un WebSocket establece un canal de comunicación bidireccional y persistente entre el cliente y el servidor. Esto posibilita que el servidor envíe datos al cliente sin que este los solicite explícitamente, actualizando las vistas de todos los participantes en tiempo real.
+0111 [style='normal'; style_id=''; align=None] En el contexto de la gestión de trámites y políticas de negocio, los WebSockets se utilizan para sincronizar los cambios que varios administradores realizan sobre el mismo diagrama de actividades (edición colaborativa), así como para reflejar instantáneamente el cambio de estado de un trámite en el monitor codificado por colores. La implementación típica combina un manejador WebSocket en el backend y una API nativa en el frontend web (Angular) y en la aplicación móvil (Flutter). Cada usuario se suscribe a uno o varios canales (por ejemplo, una política específica) y recibe actualizaciones cuando se produce un evento relevante. Esta arquitectura elimina la necesidad de recargar la página o de realizar polling continuo, mejorando la experiencia de usuario y reduciendo la carga del servidor.
+0112 [style='Heading 2'; style_id='Heading2'; align=None] 2.3 PUDS
+0113 [style='normal'; style_id=''; align=None] El Proceso Unificado es un marco de trabajo iterativo e incremental para el desarrollo de software, ampliamente utilizado en proyectos de mediana y gran escala. Se caracteriza por estar dirigido por casos de uso, centrado en la arquitectura y gestionado por riesgos. Sus cuatro fases permiten entregar versiones funcionales del sistema de manera progresiva, facilitando la retroalimentación temprana de los interesados.
+0114 [style='Heading 3'; style_id='Heading3'; align=None] 2.3.1 Fases del Proceso Unificado:
+0115 [style='normal'; style_id=''; align=None] Inicio: Se define el alcance del proyecto y se identifican los requerimientos principales. Se establece el caso de negocio, los objetivos y la viabilidad del proyecto. Esta fase también implica la creación de un plan de proyecto inicial y la identificación de riesgos.
+0116 [style='normal'; style_id=''; align=None] Elaboración: Se desarrolla un entendimiento más profundo de los requerimientos y se refina la arquitectura del sistema. Se crea un modelo detallado del sistema y se identifican los riesgos técnicos. La planificación de iteraciones y la definición de un prototipo de arquitectura son actividades clave.
+0118 [style='normal'; style_id=''; align=None] Construcción: Se implementa el sistema basado en la arquitectura y los requerimientos definidos. Esta fase se lleva a cabo en iteraciones, donde cada iteración añade nuevas funcionalidades y refina el sistema. Se realizan pruebas continuas y se ajusta el desarrollo según los resultados de las pruebas.
+0119 [style='normal'; style_id=''; align=None] Transición: El sistema se pone en producción y se prepara para su uso por parte de los usuarios finales. Se realizan pruebas finales, se entrena a los usuarios y se realizan ajustes basados en los comentarios y problemas encontrados durante el uso inicial.
+0120 [style='Heading 3'; style_id='Heading3'; align=None] 2.3.2 Características del Proceso Unificado:
+0121 [style='normal'; style_id=''; align=None] Iterativo e Incremental: El PUDS se basa en ciclos repetitivos de desarrollo y entrega incremental de funcionalidades. Esto permite recibir retroalimentación temprana y ajustar el desarrollo según sea necesario.
+0122 [style='normal'; style_id=''; align=None] Orientado a Riesgos: Se enfoca en identificar y mitigar riesgos a lo largo del proceso de desarrollo, lo que ayuda a evitar problemas importantes en etapas posteriores.
+0123 [style='normal'; style_id=''; align=None] Basado en Componentes: Promueve el desarrollo de software en componentes modulares, lo que facilita la integración y reutilización de componentes.
+0124 [style='normal'; style_id=''; align=None] Documentación y Modelado: Utiliza modelos y documentación para definir y comunicar los requisitos, la arquitectura y el diseño del sistema.
+0125 [style='Heading 2'; style_id='Heading2'; align=None] 2.4 Inteligencia Artificial (AI) en el Desarrollo de Software
+0126 [style='normal'; style_id=''; align=None] La incorporación de capacidades de inteligencia artificial en los sistemas de gestión de procesos de negocio ofrece ventajas significativas, pero también plantea desafíos que deben ser considerados.
+0127 [style='normal'; style_id=''; align=None] 2.4.1 Ventajas
+0128 [style='normal'; style_id=''; align=None] Automatización de tareas complejas: La IA puede generar diagramas de actividades a partir de descripciones en lenguaje natural, reduciendo el tiempo de diseño de políticas.
+0129 [style='normal'; style_id=''; align=None] Mejora continua: Al analizar datos históricos de ejecución (tiempos por nodo, número de rechazos), la IA identifica cuellos de botella y sugiere optimizaciones concretas.
+0130 [style='normal'; style_id=''; align=None] Personalización y adaptabilidad: Los formularios generados automáticamente a partir de una descripción textual se ajustan mejor a las necesidades específicas de cada departamento.
+0131 [style='normal'; style_id=''; align=None] 2.4.2 Beneficios para el proyecto
+0132 [style='normal'; style_id=''; align=None] Menor curva de aprendizaje para los administradores, que pueden describir el flujo deseado en lugar de construirlo manualmente desde cero.
+0133 [style='normal'; style_id=''; align=None] Detección proactiva de problemas de rendimiento, permitiendo rediseñar la política antes de que afecte la operación.
+0134 [style='normal'; style_id=''; align=None] Asignación automática de políticas al cliente mediante un agente conversacional, eliminando la intervención humana inicial.
+0135 [style='normal'; style_id=''; align=None] Generación de reportes dinámicos a partir de consultas en lenguaje natural.
+0136 [style='normal'; style_id=''; align=None] 2.4.3 Desventajas y riesgos
+0137 [style='normal'; style_id=''; align=None] Dependencia de la calidad de los datos: Si los datos históricos son escasos o están mal estructurados, los análisis pueden ser erróneos.
+0138 [style='normal'; style_id=''; align=None] Complejidad en la integración: El microservicio de IA debe operar como un componente externo, lo que añade puntos de fallo y requiere gestionar la latencia.
+0139 [style='normal'; style_id=''; align=None] Aceptación por parte de los usuarios: Los administradores deben confiar y validar las sugerencias generadas, por lo que se implementa un flujo donde toda propuesta de IA es editable antes de ser publicada.
+0140 [style='normal'; style_id=''; align=None] En Workflow Manager, la IA se utiliza exclusivamente como asistente, no como sustituto de la decisión humana, asegurando que el control final recaiga en el administrador.
+0141 [style='Heading 2'; style_id='Heading2'; align=None] 2.5 Workflow: Sistemas de Control de Flujos de Trabajo
+0142 [style='normal'; style_id=''; align=None] Un workflow (flujo de trabajo) es la secuencia de tareas, procesos o actividades que se ejecutan para alcanzar un objetivo de negocio, involucrando a diferentes roles y sistemas. Desde el punto de vista de una aplicación de control, un sistema de workflow debe ser capaz de:
+0143 [style='normal'; style_id=''; align=None] Modelar el flujo mediante diagramas de actividades, donde los nodos representan pasos (inicio, tarea, decisión, fin, paralelo) y las transiciones definen el orden y las condiciones.
+0144 [style='normal'; style_id=''; align=None] Ejecutar automáticamente los trámites, moviendo el estado de un nodo al siguiente según las reglas configuradas, sin que el usuario tenga que decidir el camino.
+0145 [style='normal'; style_id=''; align=None] Monitorear el desempeño, mostrando indicadores en tiempo real y permitiendo intervenir cuando se detectan anomalías.
+0146 [style='normal'; style_id=''; align=None] En este proyecto, el motor de workflow es el componente central. Recibe el diagrama diseñado por el administrador y lo interpreta para dirigir cada trámite a través de los departamentos. La automatización de la evaluación de condiciones (por ejemplo, si el monto supera un umbral, derivar a gerencia) y la gestión de ramas paralelas eliminan la necesidad de que los funcionarios conozcan la totalidad del proceso, reduciendo errores y demoras.
+0147 [style='Heading 2'; style_id='Heading2'; align=None] 2.6 Sistema de Gestión Documental
+0148 [style='normal'; style_id=''; align=None] Un sistema de gestión documental (DMS) es una solución tecnológica que permite capturar, almacenar, organizar, versionar, recuperar y distribuir documentos de manera electrónica, reemplazando los archivos físicos y las carpetas compartidas no estructuradas. Las características esenciales de un DMS incluyen:
+0149 [style='normal'; style_id=''; align=None] Repositorio centralizado: Todos los documentos se almacenan en un único lugar accesible desde cualquier punto de la red, con estructura jerárquica (carpetas o metadatos).
+0150 [style='normal'; style_id=''; align=None] Control de versiones: Cada vez que un documento se modifica, se crea una nueva versión, manteniendo el historial completo y permitiendo revertir a estados anteriores.
+0151 [style='normal'; style_id=''; align=None] Auditoría y trazabilidad: Se registra quién accedió, visualizó, modificó o eliminó cada documento, con fecha y hora, cumpliendo requisitos regulatorios y de seguridad.
+0152 [style='normal'; style_id=''; align=None] Permisos granulares: Se definen roles y privilegios (lectura, escritura, eliminación) sobre cada documento o carpeta, evitando accesos no autorizados.
+0153 [style='normal'; style_id=''; align=None] Búsqueda avanzada: Permite localizar documentos por metadatos, contenido textual, fechas, etiquetas, etc
+0154 [style='normal'; style_id=''; align=None] Flujos de trabajo documentales: Integración con procesos de negocio (aprobaciones, firmas digitales, etc.).
+0155 [style='normal'; style_id=''; align=None] En Workflow Manager, la gestión documental se integra estrechamente con los trámites: cada cliente tiene un repositorio personal, y cada trámite genera una carpeta donde se acumulan los documentos subidos por el cliente y los generados por los funcionarios. La edición colaborativa se logra mediante la integración de un editor de documentos en línea (OnlyOffice) que permite a múltiples usuarios trabajar simultáneamente sobre el mismo archivo.
+0156 [style='Heading 2'; style_id='Heading2'; align=None] 2.7 Infraestructura en la Nube
+0157 [style='normal'; style_id=''; align=None] La infraestructura en la nube ofrece recursos informáticos (servidores, almacenamiento, bases de datos, redes, software) a través de Internet, con pago por uso y escalabilidad elástica. Para aplicaciones empresariales como Workflow Manager, la nube proporciona múltiples ventajas:
+0158 [style='normal'; style_id=''; align=None] Escalabilidad: Permite aumentar o disminuir la capacidad de cómputo y almacenamiento según la demanda, sin inversiones en hardware.
+0159 [style='normal'; style_id=''; align=None] Alta disponibilidad: Los proveedores de nube ofrecen acuerdos de nivel de servicio (SLA) con redundancia geográfica y replicación de datos.
+0160 [style='normal'; style_id=''; align=None] Seguridad: Servicios de cifrado, redes privadas virtuales, firewalls gestionados y cumplimiento de estándares (ISO, GDPR).
+0161 [style='normal'; style_id=''; align=None] Reducción de costos: Se paga solo por los recursos consumidos, eliminando la necesidad de mantener centros de datos propios.
+0162 [style='normal'; style_id=''; align=None] En el proyecto, se utiliza un modelo de AWS EC2 para el despliegue de backend, frontend y microservicio de AI
+0163 [style='Heading 2'; style_id='Heading2'; align=None] 2.8 Deep Learning aplicado a la predicción de Riesgos
+0164 [style='normal'; style_id=''; align=None] El Deep Learning (aprendizaje profundo) es una subárea del machine learning que utiliza redes neuronales con múltiples capas ocultas para aprender representaciones jerárquicas de los datos. A diferencia de los modelos tradicionales (regresión logística, árboles de decisión), las redes profundas son capaces de capturar patrones complejos y no lineales, lo que las hace ideales para problemas de predicción de riesgos, detección de anomalías y clasificación de series temporales.
+0165 [style='normal'; style_id=''; align=None] En el contexto de Workflow Manager, se emplea una red neuronal densa para analizar métricas históricas de los nodos de una política: tiempo promedio de ejecución, cantidad de ejecuciones activas, tasa de rechazo, tiempo de espera, varianza de tiempos, porcentaje de carga del departamento, etc. La red clasifica el nodo en cuatro categorías de severidad y estima la probabilidad de que se convierta en un cuello de botella.
+0166 [style='normal'; style_id=''; align=None] El entrenamiento de la red se realiza con datos sintéticos y reales, utilizando técnicas de regularización (Dropout, BatchNormalization) para evitar sobreajuste. El modelo resultante se integra en el microservicio de IA, permitiendo que el administrador solicite un análisis de cualquier política activa y reciba sugerencias de optimización basadas en evidencia.
+0167 [style='Heading 2'; style_id='Heading2'; align=None] 2.9 OnlyOffice y Edición Colaborativa de Documentos
+0168 [style='normal'; style_id=''; align=None] OnlyOffice es una suite de oficina open source que incluye procesador de textos, hoja de cálculo y presentaciones, con capacidad de edición colaborativa en tiempo real. A diferencia de otras alternativas, OnlyOffice puede ser autoalojada, lo que garantiza la privacidad y el control de los datos. Su integración en aplicaciones web se realiza mediante el Document Server, que expone una API para incrustar el editor en un iframe y manejar los eventos de guardado a través de callbacks.
+0169 [style='normal'; style_id=''; align=None] La edición colaborativa funciona mediante el protocolo WebSocket: cada usuario que abre el mismo documento establece una conexión con el servidor de OnlyOffice, que difunde los cambios a todos los participantes en tiempo real. Además, el servidor notifica al sistema anfitrión cuando el documento ha sido modificado, permitiendo que el backend genere una nueva versión y la almacene en el repositorio documental.
+0170 [style='normal'; style_id=''; align=None] En Workflow Manager, la integración de OnlyOffice permite que varios funcionarios o el cliente y un funcionario puedan editar simultáneamente un contrato, un informe o una hoja de cálculo sin conflictos, mejorando la colaboración y reduciendo los ciclos de revisión.
+0171 [style='Heading 2'; style_id='Heading2'; align=None] 2.10 Offline‑First y Progressive Web Apps (PWA)
+0172 [style='normal'; style_id=''; align=None] El enfoque offline‑first (primero sin conexión) consiste en diseñar las aplicaciones de manera que puedan funcionar sin acceso a Internet, almacenando localmente los datos necesarios y sincronizando los cambios cuando la conectividad se restablece. Este paradigma es esencial para aplicaciones móviles y web que se utilizan en entornos con cobertura limitada (técnicos de campo, zonas rurales, etc.).
+0173 [style='normal'; style_id=''; align=None] Para aplicaciones web, la tecnología Progressive Web App (PWA) permite que un sitio web se comporte como una aplicación nativa: puede ser instalado en el dispositivo, funciona offline gracias a un service worker (un script que intercepta las peticiones de red y sirve respuestas desde una caché), y recibe notificaciones push. Las PWAs son multiplataforma y no requieren pasar por tiendas de aplicaciones.
+0174 [style='normal'; style_id=''; align=None] En el proyecto, la interfaz web (Angular) se convierte en PWA, cacheando recursos estáticos y datos de API (tareas pendientes, formularios) para permitir que el funcionario complete formularios sin conexión. La aplicación móvil (Flutter) utiliza una base de datos local (Hive) para almacenar las tareas y las acciones pendientes, y un servicio de sincronización que se ejecuta al recuperar la red. Ambas plataformas muestran un banner indicador de modo offline y ofrecen la misma experiencia de usuario independientemente de la conectividad.
+0175 [style='Heading 2'; style_id='Heading2'; align=None] 2.11 UML
+0176 [style='normal'; style_id=''; align=None] UML (Unified Modeling Language) es un lenguaje de modelado estándar utilizado en el diseño y especificación de sistemas de software. Proporciona una serie de diagramas y herramientas para visualizar, especificar, construir y documentar los componentes de un sistema.
+0177 [style='Heading 3'; style_id='Heading3'; align=None] 2.6.1  Diagramas de UML:
+0178 [style='normal'; style_id=''; align=None] Diagrama de Casos de Uso: Representa las funcionalidades del sistema desde la perspectiva del usuario. Muestra cómo los usuarios (actores) interactúan con el sistema para lograr ciertos objetivos.
+0179 [style='normal'; style_id=''; align=None] Diagrama de Clases: Describe la estructura estática del sistema, mostrando las clases, atributos y relaciones entre ellas. Es útil para entender el diseño y las interacciones entre los componentes del sistema.
+0180 [style='normal'; style_id=''; align=None] Diagrama de Actividades: Modela el flujo de trabajo o los procesos dentro del sistema. Es útil para representar los procedimientos y las decisiones dentro de un proceso.
+0181 [style='normal'; style_id=''; align=None] Diagrama de Componentes: Muestra la organización y las dependencias entre los componentes físicos del sistema, como bibliotecas y módulos.
+0182 [style='normal'; style_id=''; align=None] Diagrama de Despliegue: Representa la distribución física de los componentes del sistema en el hardware y las redes.
+0183 [style='Heading 3'; style_id='Heading3'; align=None] 2.6.2 Características de UML:
+0184 [style='normal'; style_id=''; align=None] Estándar y Amplio: UML es un estándar ampliamente aceptado y cubre una amplia gama de aspectos del diseño de software.
+0185 [style='normal'; style_id=''; align=None] Flexible y Extensible: UML se puede adaptar a las necesidades específicas del proyecto y se puede extender con estereotipos y anotaciones personalizadas.
+0186 [style='normal'; style_id=''; align=None] Documentación Clara: Facilita la documentación y la comunicación entre los miembros del equipo de desarrollo, proporcionando una representación visual del sistema
+0187 [style='Heading 2'; style_id='Heading2'; align=None] 2.12. Comparativa entre Herramientas Similares
+0188 [style='normal'; style_id=''; align=None] Para fundamentar la selección tecnológica del proyecto, se presentan tres tablas comparativas que enfrentan las herramientas elegidas con otras opciones populares en el mercado, analizando ventajas y desventajas en el contexto de un sistema de gestión de trámites y políticas de negocio.
+0189 [style='Heading 3'; style_id='Heading3'; align=None] 2.12.1 Comparativa de Backend
+0191 [style='normal'; style_id=''; align=None] Se eligió Spring Boot por su robustez, seguridad integrada, manejo nativo de WebSockets (esencial para edición colaborativa y monitor en tiempo real) y su excelente integración con MongoDB a través de Spring Data MongoDB. Además, la organización por capas y la inyección de dependencias facilitan la implementación del patrón MVC y la futura evolución del sistema.
+0192 [style='Heading 3'; style_id='Heading3'; align=None] 2.12.2 Comparativa de Frontend
+0194 [style='normal'; style_id=''; align=None] Se eligió Angular porque proporciona un marco de trabajo completo y coherente, con un lenguaje tipado (TypeScript) que reduce errores en tiempo de ejecución. La integración con RxJS facilita la gestión de eventos de WebSocket y la actualización reactiva del monitor de trámites. Además, Angular está respaldado por Google y es ampliamente utilizado en aplicaciones empresariales de mediana y gran escala.
+0195 [style='Heading 3'; style_id='Heading3'; align=None] 2.12.3 Comparativa de Base de Datos
+0197 [style='normal'; style_id=''; align=None] Se optó por MongoDB porque el sistema maneja estructuras de datos que varían significativamente: los formularios dinámicos (cada nodo puede tener un conjunto de campos diferente), las respuestas de los funcionarios (objeto JSON con estructura libre) y las iteraciones por nodo (mapa de contadores). Adaptar esto a un esquema SQL normalizado habría requerido múltiples tablas y uniones complejas, ralentizando el desarrollo y el rendimiento. La flexibilidad de MongoDB permite evolucionar el modelo sin migraciones costosas, y la agregación integrada es suficiente para los análisis de rendimiento requeridos.
+0198 [style='Heading 1'; style_id='Heading1'; align=None] CAPÍTULO 2 FLUJO DE TRABAJO: CAPTURA DE REQUISITOS
+0199 [style='Heading 2'; style_id='Heading2'; align=None] Identificar Actores y Casos de Uso
+0200 [style='Heading 3'; style_id='Heading3'; align=None] Identificar Actores
+0201 [style='Heading 3'; style_id='Heading3'; align=None] Identificar Casos de Uso
+0203 [style='Heading 2'; style_id='Heading2'; align=None] Priorizar Casos de uso
+0206 [style='Heading 3'; style_id='Heading3'; align=None] Ciclo #1
+0207 [style='Heading 3'; style_id='Heading3'; align=None] Ciclo #2
+0209 [style='Heading 2'; style_id='Heading2'; align=None] Especificar Casos de Uso
+0210 [style='Heading 3'; style_id='Heading3'; align=None] Ciclo #1
+0211 [style='Heading 4'; style_id='Heading4'; align=None] CU1. Gestionar Usuario
+0215 [style='Heading 4'; style_id='Heading4'; align=None] CU2. Gestionar Departamentos
+0219 [style='Heading 4'; style_id='Heading4'; align=None] CU3. Gestionar Políticas de Negocio
+0222 [style='Heading 4'; style_id='Heading4'; align=None] CU4. Gestionar Formularios
+0226 [style='Heading 4'; style_id='Heading4'; align=None] CU5. Gestionar diagrama de actividades
+0230 [style='Heading 4'; style_id='Heading4'; align=None] CU6. Gestionar Trámites
+0234 [style='Heading 4'; style_id='Heading4'; align=None] CU7. Ejecutar tarea asignada
+0237 [style='Heading 4'; style_id='Heading4'; align=None] C8. Monitorear políticas en tiempo real
+0240 [style='Heading 4'; style_id='Heading4'; align=None] CU9. Gestionar Notificaciones
+0243 [style='Heading 3'; style_id='Heading3'; align=None] Ciclo #2
+0244 [style='Heading 4'; style_id='Heading4'; align=None] CU10. Analizar políticas con AI
+0248 [style='Heading 4'; style_id='Heading4'; align=None] CU11. Gestionar Documentos
+0250 [style='Heading 4'; style_id='Heading4'; align=None] CU12. Editar Documento Colaborativamente
+0253 [style='Heading 4'; style_id='Heading4'; align=None] CU13. Interactuar con Agente Inteligente
+0256 [style='Heading 4'; style_id='Heading4'; align=None] CU14. Generar Reportes Dinámicos
+0274 [style='Heading 2'; style_id='Heading2'; align=None] Estructurar el Modelo de Casos de Uso
+0275 [style='Heading 3'; style_id='Heading3'; align=None] Ciclo #1
+0277 [style='Heading 3'; style_id='Heading3'; align=None] Ciclo #2
+0279 [style='Heading 1'; style_id='Heading1'; align=None] CAPÍTULO 3 FLUJO DE TRABAJO: ANÁLISIS
+0280 [style='Heading 2'; style_id='Heading2'; align=None] 3.1 Análisis de arquitectura
+0281 [style='Heading 3'; style_id='Heading3'; align=None] 3.1.1 Identificar paquetes
+0283 [style='Heading 3'; style_id='Heading3'; align=None] 3.1.2  Relacionar paquetes y casos de uso
+0292 [style='Heading 2'; style_id='Heading2'; align=None] 3.2  Análisis de casos de uso
+0293 [style='Heading 3'; style_id='Heading3'; align=None] 3.2.1 Diagramas de comunicación
+0294 [style='Heading 4'; style_id='Heading4'; align=None] Ciclo #1
+0306 [style='Heading 4'; style_id='Heading4'; align=None] Ciclo #2
+0312 [style='Heading 2'; style_id='Heading2'; align=None] 3.3  Análisis de clases
+0338 [style='Heading 2'; style_id='Heading2'; align=None] 3.4  Análisis de paquete
+0347 [style='Heading 1'; style_id='Heading1'; align=None] CAPÍTULO 4 FLUJO DE TRABAJO: DISEÑO
+0348 [style='Heading 2'; style_id='Heading2'; align=None] 4.1. Diseño de arquitectura C4
+0349 [style='Heading 3'; style_id='Heading3'; align=None] 4.1.1. Nivel 1 (Diagrama de contexto)
+0351 [style='Heading 3'; style_id='Heading3'; align=None] 4.1.2. Nivel 2 (Diagrama de Contenedores)
+0366 [style='Heading 3'; style_id='Heading3'; align=None] 4.1.3. Nivel 3 (Diagrama de Componentes)
+0389 [style='Heading 2'; style_id='Heading2'; align=None] 4.2. Diseño de Datos
+0390 [style='Heading 3'; style_id='Heading3'; align=None] 4.2.1. Diseño de Datos Lógicos
+0391 [style='Heading 4'; style_id='Heading4'; align=None] 4.2.1.1. Diagrama de clase
+0394 [style='Heading 4'; style_id='Heading4'; align=None] 4.2.1.2. Mapeo
+0395 [style='normal'; style_id=''; align=None] Coleccion: Usuarios
+0400 [style='normal'; style_id=''; align=None] Coleccion Departamentos
+0402 [style='normal'; style_id=''; align=None] Coleccion Politicas
+0404 [style='normal'; style_id=''; align=None] Coleccion nodos
+0409 [style='normal'; style_id=''; align=None] Coleccion Transiciones
+0411 [style='normal'; style_id=''; align=None] Coleccion Formularios
+0413 [style='normal'; style_id=''; align=None] Coleccion Tramites
+0418 [style='normal'; style_id=''; align=LEFT (0)] Coleccion Ejecucion_nodo
+0421 [style='normal'; style_id=''; align=None] Coleccion Notificaciones
+0428 [style='Heading 3'; style_id='Heading3'; align=None] 4.2.2. Diseño de datos físicos
+0429 [style='Heading 3'; style_id='Heading3'; align=None] 4.2.2.1. Tabla de volumen
+0430 [style='normal'; style_id=''; align=None] Coleccion Usuario
+0432 [style='normal'; style_id=''; align=None] Coleccion Departamentos
+0437 [style='normal'; style_id=''; align=None] Coleccion Politicas
+0439 [style='normal'; style_id=''; align=None] Coleccion Nodos
+0441 [style='normal'; style_id=''; align=None] Coleccion Transiciones
+0444 [style='normal'; style_id=''; align=None] Coleccion Formularios
+0446 [style='normal'; style_id=''; align=None] Coleccion Campo (dentro de formularios)
+0450 [style='normal'; style_id=''; align=None] Coleccion Tramites
+0452 [style='normal'; style_id=''; align=None] Coleccion Ejecuciones_Nodo
+0458 [style='normal'; style_id=''; align=None] Coleccion Notificaciones
+0466 [style='Heading 1'; style_id='Heading1'; align=None] CAPÍTULO 5 FLUJO DE TRABAJO: IMPLEMENTACIÓN
+0467 [style='Heading 2'; style_id='Heading2'; align=None] 5.1. Elección de plataforma de desarrollo de software
+0468 [style='Heading 3'; style_id='Heading3'; align=None] 5.1.1. Lenguaje de programación
+0469 [style='normal'; style_id=''; align=None] Para el desarrollo del backend se optó por Java junto con el framework Spring Boot. Esta combinación proporciona un entorno maduro, con un ecosistema extenso y un rendimiento probado en aplicaciones empresariales. Spring Boot facilita la creación de microservicios, la exposición de API REST y el manejo de WebSockets mediante el módulo spring-websocket, funcionalidad esencial para la edición colaborativa de diagramas y el monitor en tiempo real. Además, Spring Data MongoDB simplifica la interacción con la base de datos NoSQL, permitiendo repositorios basados en interfaces que reducen el código repetitivo.
+0470 [style='normal'; style_id=''; align=None] En el frontend web se eligió Angular (TypeScript). Este framework proporciona una estructura clara basada en módulos, componentes y servicios, lo que facilita el mantenimiento y la escalabilidad de la interfaz de administración. La integración con RxJS permite manejar flujos de datos asíncronos provenientes de los WebSockets de manera reactiva, actualizando automáticamente el tablero de monitoreo cuando un trámite cambia de estado.
+0471 [style='normal'; style_id=''; align=None] Para la aplicación móvil se seleccionó Flutter (Dart). Esta tecnología permite desarrollar aplicaciones nativas para iOS y Android desde un solo código base, acelerando el desarrollo y garantizando una experiencia de usuario consistente. Flutter ofrece capacidades nativas para recibir notificaciones push mediante Firebase Cloud Messaging (FCM), lo que resulta fundamental para alertar a los funcionarios sobre nuevas tareas asignadas.
+0472 [style='normal'; style_id=''; align=None] El microservicio de inteligencia artificial se implementó con Python y FastAPI. Python es el lenguaje de facto para tareas de IA gracias a su ecosistema de bibliotecas (procesamiento de lenguaje natural, análisis de datos). FastAPI proporciona un alto rendimiento y documentación automática OpenAPI, facilitando la comunicación síncrona con el backend principal.
+0473 [style='normal'; style_id=''; align=None] Finalmente, Git se utiliza como sistema de control de versiones, y GitHub como plataforma de alojamiento de los repositorios, permitiendo gestionar el código fuente, los informes de incidencias y las integraciones continuas.
+0474 [style='Heading 3'; style_id='Heading3'; align=None] 5.1.2. Base de datos
+0475 [style='normal'; style_id=''; align=None] Se decidió utilizar MongoDB como sistema de gestión de bases de datos, desplegado en MongoDB Atlas. Esta elección se basa en la necesidad de manejar documentos con estructura variable, como los formularios dinámicos (cada nodo puede tener un conjunto diferente de campos), las respuestas de los funcionarios y los contadores de iteraciones por nodo. Un modelo relacional habría requerido tablas adicionales y numerosas uniones, complicando el desarrollo y reduciendo el rendimiento.
+0476 [style='normal'; style_id=''; align=None] Las razones clave para escoger MongoDB incluyen:
+0477 [style='normal'; style_id=''; align=None] Flexibilidad de esquema: Permite evolucionar el modelo de datos sin migraciones costosas. Por ejemplo, agregar un nuevo tipo de campo a un formulario no requiere modificar la estructura completa de una tabla.
+0478 [style='normal'; style_id=''; align=None] Escalabilidad horizontal: MongoDB soporta sharding nativo, lo que facilita distribuir la carga a medida que crecen los trámites y las ejecuciones.
+0479 [style='normal'; style_id=''; align=None] Rendimiento en consultas agregadas: Las operaciones de agregación son suficientes para calcular tiempos promedio por nodo y detectar cuellos de botella, sin necesidad de un motor analítico separado.
+0480 [style='normal'; style_id=''; align=None] Integración con Spring Boot: Spring Data MongoDB proporciona una capa de abstracción familiar para los desarrolladores con experiencia en JPA, reduciendo la curva de aprendizaje.
+0481 [style='Heading 3'; style_id='Heading3'; align=None] 5.1.3. Sistemas operativos
+0482 [style='normal'; style_id=''; align=None] Workflow Manager está diseñado para ser multiplataforma, tanto en el entorno de desarrollo como en producción.
+0483 [style='normal'; style_id=''; align=None] Backend (Spring Boot): Se ejecuta sobre cualquier sistema operativo que soporte Java 17 o superior. En producción se despliega sobre contenedores Linux en AWS EC2.
+0484 [style='normal'; style_id=''; align=None] Frontend web (Angular): Se compila a archivos estáticos que se sirven desde cualquier servidor web o desde Azure Static Web Apps.
+0485 [style='normal'; style_id=''; align=None] Aplicación móvil (Flutter): Las aplicaciones generadas funcionan en dispositivos con Android.
+0486 [style='normal'; style_id=''; align=None] Microservicio IA (Python): Es compatible con cualquier sistema que ejecute Python 3.9+. En producción se ejecuta dentro de un contenedor Linux en AWS EC2.
+0487 [style='normal'; style_id=''; align=None] Los usuarios finales acceden al sistema desde cualquier navegador web moderno en sus computadoras de escritorio o portátiles, sin importar el sistema operativo base. La aplicación móvil está disponible en las tiendas oficiales para su instalación en tablets y teléfonos inteligentes.
+0488 [style='Heading 3'; style_id='Heading3'; align=None] 5.1.4. Otros
+0489 [style='normal'; style_id=''; align=None] Almacenamiento de archivos: Los documentos adjuntos por los funcionarios se almacenan en AWS S3. Se genera una URL única por cada archivo, y esa URL se almacena en el campo archivos_adjuntos de la colección ejecuciones_nodo. Esta separación evita saturar la base de datos con datos binarios y permite un acceso optimizado.
+0490 [style='normal'; style_id=''; align=None] Notificaciones push: Se emplea Firebase Cloud Messaging (FCM) como servicio de mensajería para enviar notificaciones a la aplicación móvil Flutter. El backend Spring Boot, mediante una biblioteca específica, envía la notificación a FCM, que luego la distribuye al dispositivo destino.
+0491 [style='normal'; style_id=''; align=None] WebSockets: Para la comunicación bidireccional en tiempo real (monitor de trámites, edición colaborativa de diagramas y documentos), se utiliza el soporte nativo de Spring Boot. En el frontend Angular, la librería @stomp/stompjs facilita la suscripción y recepción de mensajes.
+0492 [style='normal'; style_id=''; align=None] Despliegue en la nube: Todos los componentes se despliegan en AWS, aprovechando sus servicios administrados (EC2, S3, MongoDB Atlas como servicio externo). Esto garantiza alta disponibilidad, escalabilidad automática y seguridad (cifrado en tránsito y en reposo).
+0494 [style='Heading 3'; style_id='Heading3'; align=None] 5.1.5. Link de repositorio
+0496 [style='normal'; style_id=''; align=None] Repositorio del backend					Repositorio del frontend
+0499 [style='normal'; style_id=''; align=None] Repositorio movil				Repositorio del microservicio de AI
+0502 [style='normal'; style_id=''; align=None] Pagina desplegada					APK de flutter
+0503 [style='Heading 1'; style_id='Heading1'; align=None] CAPÍTULO 6 FLUJO DE TRABAJO: PRUEBAS
+0504 [style='Heading 2'; style_id='Heading2'; align=None] 6.1. Pruebas de Autenticación y Acceso al Sistema
+0505 [style='normal'; style_id=''; align=None] Objetivo: Verificar que el sistema permita el inicio de sesión correctamente, reconozca los roles y rechace credenciales inválidas.
+0506 [style='normal'; style_id=''; align=None] Procedimiento:
+0507 [style='normal'; style_id=''; align=None] Acceder a la página de login.
+0508 [style='normal'; style_id=''; align=None] Ingresar credenciales válidas de Administrador General.
+0509 [style='normal'; style_id=''; align=None] Verificar redirección al dashboard con menú completo.
+0510 [style='normal'; style_id=''; align=None] Cerrar sesión y repetir con credenciales de Funcionario y Cliente.
+0511 [style='normal'; style_id=''; align=None] Intentar login con contraseña incorrecta.
+0512 [style='normal'; style_id=''; align=None] Resultado esperado:
+0513 [style='normal'; style_id=''; align=None] Acceso exitoso para credenciales correctas, redirección según rol.
+0517 [style='Heading 2'; style_id='Heading2'; align=None] 6.2. Pruebas de Gestión de Departamentos
+0518 [style='normal'; style_id=''; align=None] Objetivo: Validar que el Administrador General pueda crear, modificar y deshabilitar departamentos.
+0519 [style='normal'; style_id=''; align=None] Procedimiento:
+0520 [style='normal'; style_id=''; align=None] Ingresar al módulo "Departamentos".
+0521 [style='normal'; style_id=''; align=None] Crear un nuevo departamento "Atención al Cliente" con un administrador asignado.
+0522 [style='normal'; style_id=''; align=None] Modificar la descripción del departamento.
+0523 [style='normal'; style_id=''; align=None] Deshabilitar un departamento y verificar que ya no aparezca en la lista de activos.
+0524 [style='normal'; style_id=''; align=None] Resultado esperado:
+0525 [style='normal'; style_id=''; align=None] El departamento se crea y aparece en la lista.
+0526 [style='normal'; style_id=''; align=None] Los cambios se reflejan correctamente.
+0527 [style='normal'; style_id=''; align=None] El departamento deshabilitado deja de estar disponible para nuevas asignaciones.
+0533 [style='Heading 3'; style_id='Heading3'; align=None] 6.3. Pruebas de Gestión de Políticas
+0534 [style='normal'; style_id=''; align=None] Objetivo: Asegurar que el Administrador General pueda crear, activar, desactivar y listar políticas de negocio.
+0535 [style='normal'; style_id=''; align=None] Procedimiento:
+0536 [style='normal'; style_id=''; align=None] Crear una política "Instalación de Medidor Eléctrico" con descripción con AI.
+0537 [style='normal'; style_id=''; align=None] Activar política.
+0538 [style='normal'; style_id=''; align=None] Listar políticas y comprobar que aparece con estado "ACTIVA".
+0539 [style='normal'; style_id=''; align=None] Desactivarla.
+0540 [style='normal'; style_id=''; align=None] Resultado esperado:
+0541 [style='normal'; style_id=''; align=None] La política se guarda con un ID y versión.
+0542 [style='normal'; style_id=''; align=None] El cambio de estado se refleja correctamente.
+0549 [style='Heading 2'; style_id='Heading2'; align=None] 6.4. Pruebas de Gestión de Formularios Dinámicos
+0550 [style='normal'; style_id=''; align=None] Objetivo: Comprobar que el Administrador de Departamento pueda definir campos de formulario para un nodo Tarea.
+0551 [style='normal'; style_id=''; align=None] Procedimiento:
+0552 [style='normal'; style_id=''; align=None] Seleccionar un nodo Tarea de una política.
+0553 [style='normal'; style_id=''; align=None] Agregar campos: nombre del cliente (texto), fecha de solicitud (fecha), comprobante (archivo).
+0554 [style='normal'; style_id=''; align=None] Marcar el campo "nombre del cliente" como obligatorio y como campo de prioridad.
+0555 [style='normal'; style_id=''; align=None] Guardar el formulario.
+0556 [style='normal'; style_id=''; align=None] Resultado esperado:
+0557 [style='normal'; style_id=''; align=None] El formulario se guarda con los campos definidos.
+0558 [style='normal'; style_id=''; align=None] Al editar, se cargan los campos correctamente.
+0564 [style='Heading 2'; style_id='Heading2'; align=None] 6.5. Pruebas de Diseño de Diagrama de Actividades
+0565 [style='normal'; style_id=''; align=None] Objetivo: Verificar que el editor visual cree, modifique y guarde nodos y transiciones.
+0566 [style='normal'; style_id=''; align=None] Procedimiento:
+0567 [style='normal'; style_id=''; align=None] Abrir una política en el editor de diagramas.
+0568 [style='normal'; style_id=''; align=None] Arrastrar un nodo Inicio y un nodo Tarea "Revisión de Documentos".
+0569 [style='normal'; style_id=''; align=None] Conectar ambos con una transición lineal.
+0570 [style='normal'; style_id=''; align=None] Agregar un nodo Decisión con dos salidas (Aprobado, Rechazado) conectadas a nodos Fin.
+0571 [style='normal'; style_id=''; align=None] Guardar el diagrama.
+0572 [style='normal'; style_id=''; align=None] Resultado esperado:
+0573 [style='normal'; style_id=''; align=None] El diagrama se guarda y al recargar se muestran los nodos en las mismas posiciones.
+0574 [style='normal'; style_id=''; align=None] La validación impide guardar si falta un nodo Inicio o Fin.
+0581 [style='Heading 2'; style_id='Heading2'; align=None] 6.6. Pruebas de Gestión de Trámites
+0582 [style='normal'; style_id=''; align=None] Objetivo: Validar que se pueda iniciar un nuevo trámite a partir de una política activa.
+0583 [style='normal'; style_id=''; align=None] Administrador
+0584 [style='normal'; style_id=''; align=None] Procedimiento:
+0585 [style='normal'; style_id=''; align=None] Seleccionar una política activa.
+0586 [style='normal'; style_id=''; align=None] Asignar un cliente (o iniciar como Administrador).
+0587 [style='normal'; style_id=''; align=None] Ingresar título y prioridad (Alta).
+0588 [style='normal'; style_id=''; align=None] Confirmar inicio.
+0589 [style='normal'; style_id=''; align=None] Resultado esperado:
+0590 [style='normal'; style_id=''; align=None] Se crea el trámite con estado "PENDIENTE".
+0591 [style='normal'; style_id=''; align=None] El primer nodo Tarea se asigna al departamento correspondiente.
+0592 [style='normal'; style_id=''; align=None] El funcionario recibe una notificación.
+0596 [style='normal'; style_id=''; align=None] Cliente
+0597 [style='normal'; style_id=''; align=None] Procedimiento:
+0598 [style='normal'; style_id=''; align=None] Seleccionar una mensaje chatbot.
+0599 [style='normal'; style_id=''; align=None] Escribir o dictar la inquietud.
+0600 [style='normal'; style_id=''; align=None] Confirmar inicio de trámite.
+0601 [style='normal'; style_id=''; align=None] Resultado esperado:
+0602 [style='normal'; style_id=''; align=None] Se crea el trámite con estado "PENDIENTE".
+0603 [style='normal'; style_id=''; align=None] El primer nodo Tarea se asigna al departamento correspondiente.
+0604 [style='normal'; style_id=''; align=None] El funcionario recibe una notificación.
+0606 [style='Heading 2'; style_id='Heading2'; align=None] 6.7. Pruebas de Ejecución de Tarea Asignada (Funcionario)
+0607 [style='normal'; style_id=''; align=None] Objetivo: Asegurar que un funcionario pueda completar una tarea pendiente y que el motor avance automáticamente.
+0608 [style='normal'; style_id=''; align=None] Procedimiento:
+0609 [style='normal'; style_id=''; align=None] El funcionario inicia sesión y accede a su bandeja de tareas.
+0610 [style='normal'; style_id=''; align=None] Selecciona la tarea pendiente.
+0611 [style='normal'; style_id=''; align=None] Completa el formulario con datos válidos.
+0612 [style='normal'; style_id=''; align=None] Envía la respuesta.
+0613 [style='normal'; style_id=''; align=None] Resultado esperado:
+0614 [style='normal'; style_id=''; align=None] La tarea se marca como completada.
+0615 [style='normal'; style_id=''; align=None] El trámite avanza al siguiente nodo (o finaliza).
+0616 [style='normal'; style_id=''; align=None] La tarea desaparece de la bandeja del funcionario.
+0624 [style='Heading 2'; style_id='Heading2'; align=None] 6.8. Pruebas de Monitoreo en Tiempo Real (WebSocket)
+0625 [style='normal'; style_id=''; align=None] Objetivo: Verificar que el tablero de monitoreo se actualice sin recargar cuando cambia el estado de un trámite.
+0626 [style='normal'; style_id=''; align=None] Procedimiento:
+0627 [style='normal'; style_id=''; align=None] Abrir dos navegadores (o uno y la app móvil).
+0628 [style='normal'; style_id=''; align=None] En el primer navegador, iniciar un trámite y luego completar una tarea.
+0629 [style='normal'; style_id=''; align=None] Observar el tablero de monitoreo en el segundo navegador.
+0630 [style='normal'; style_id=''; align=None] Resultado esperado:
+0631 [style='normal'; style_id=''; align=None] El cambio de estado (color del trámite) se refleja en menos de 1 segundo.
+0635 [style='Heading 2'; style_id='Heading2'; align=None] 6.9. Pruebas de Notificaciones Push (FCM)
+0636 [style='normal'; style_id=''; align=None] Objetivo: Comprobar que el funcionario reciba una notificación push en su dispositivo móvil cuando se le asigna una tarea.
+0637 [style='normal'; style_id=''; align=None] Procedimiento:
+0638 [style='normal'; style_id=''; align=None] Registrar el token FCM en el backend.
+0639 [style='normal'; style_id=''; align=None] Iniciar un trámite que asigne una tarea al funcionario.
+0640 [style='normal'; style_id=''; align=None] Verificar que la notificación aparece en el dispositivo móvil.
+0641 [style='normal'; style_id=''; align=None] Resultado esperado:
+0642 [style='normal'; style_id=''; align=None] La notificación push se muestra con el mensaje y el tipo de tarea.
+0643 [style='normal'; style_id=''; align=None] La notificación también se guarda en la base de datos.
+0645 [style='Heading 2'; style_id='Heading2'; align=None] 6.10. Pruebas de Análisis con IA (Cuellos de Botella)
+0646 [style='normal'; style_id=''; align=None] Objetivo: Verificar que el microservicio de IA detecte nodos con alta demora y genere sugerencias.
+0647 [style='normal'; style_id=''; align=None] Procedimiento:
+0648 [style='normal'; style_id=''; align=None] Ejecutar varios trámites de una política con demoras simuladas en un nodo específico.
+0649 [style='normal'; style_id=''; align=None] Solicitar análisis desde el panel de Administrador.
+0650 [style='normal'; style_id=''; align=None] Revisar el informe generado.
+0651 [style='normal'; style_id=''; align=None] Resultado esperado:
+0652 [style='normal'; style_id=''; align=None] El informe identifica el nodo con demora como crítico.
+0653 [style='normal'; style_id=''; align=None] Se sugieren acciones (paralelizar, aumentar capacidad, revisar condiciones).
+0654 [style='normal'; style_id=''; align=None] El diagrama resalta visualmente los nodos problemáticos.
+0658 [style='Heading 2'; style_id='Heading2'; align=None] 6.11. Pruebas de Gestión Documental
+0659 [style='normal'; style_id=''; align=None] Objetivo: Validar que los usuarios puedan subir documentos, ver versiones, auditar accesos y definir permisos.
+0660 [style='normal'; style_id=''; align=None] Procedimiento:
+0661 [style='normal'; style_id=''; align=None] Subir un archivo PDF como cliente en un trámite.
+0662 [style='normal'; style_id=''; align=None] El funcionario sube una nueva versión del mismo documento (actualizado).
+0663 [style='normal'; style_id=''; align=None] Ver el historial de versiones.
+0664 [style='normal'; style_id=''; align=None] Consultar la auditoría (quién subió cada versión, cuándo).
+0665 [style='normal'; style_id=''; align=None] Cambiar permisos para que solo el administrador pueda eliminar.
+0666 [style='normal'; style_id=''; align=None] Resultado esperado:
+0667 [style='normal'; style_id=''; align=None] El documento se almacena en AWS S3 con la estructura adecuada.
+0668 [style='normal'; style_id=''; align=None] El historial muestra ambas versiones con fechas y responsables.
+0669 [style='normal'; style_id=''; align=None] La auditoría registra todas las acciones.
+0670 [style='normal'; style_id=''; align=None] Los permisos se aplican correctamente.
+0672 [style='Heading 2'; style_id='Heading2'; align=None] 6.12. Prueba de Edición Colaborativa con OnlyOffice
+0673 [style='normal'; style_id=''; align=None] Objetivo: Verificar que múltiples usuarios puedan editar un documento Word en tiempo real.
+0674 [style='normal'; style_id=''; align=None] Procedimiento:
+0675 [style='normal'; style_id=''; align=None] Abrir un documento .docx desde la interfaz web.
+0676 [style='normal'; style_id=''; align=None] En otro navegador, abrir el mismo documento.
+0677 [style='normal'; style_id=''; align=None] En el primer navegador, modificar texto y guardar.
+0678 [style='normal'; style_id=''; align=None] Observar que el segundo navegador refleja los cambios al instante.
+0679 [style='normal'; style_id=''; align=None] Resultado esperado:
+0680 [style='normal'; style_id=''; align=None] La edición colaborativa funciona sin conflictos.
+0681 [style='normal'; style_id=''; align=None] Al cerrar, se genera una nueva versión automática.
+0685 [style='Heading 2'; style_id='Heading2'; align=None] 6.13. Interactuar con Agente Inteligente
+0686 [style='normal'; style_id=''; align=None] Objetivo: Comprobar que el chatbot interprete correctamente la solicitud del cliente y asigne la política adecuada.
+0687 [style='normal'; style_id=''; align=None] Procedimiento:
+0688 [style='normal'; style_id=''; align=None] Abrir el chat (web o móvil).
+0689 [style='normal'; style_id=''; align=None] Escribir o dictar: "Necesito solicitar la instalación de un medidor de agua nuevo en mi domicilio".
+0690 [style='normal'; style_id=''; align=None] El sistema muestra una sugerencia de política ("Instalación de Medidor de Agua")
+0691 [style='normal'; style_id=''; align=None] Confirmar la política.
+0692 [style='normal'; style_id=''; align=None] Resultado esperado:
+0693 [style='normal'; style_id=''; align=None] El agente selecciona la política correcta.
+0694 [style='normal'; style_id=''; align=None] Se inicia automáticamente el trámite para el cliente.
+0697 [style='Heading 2'; style_id='Heading2'; align=None] 6.13. Reportes Dinámicos
+0698 [style='normal'; style_id=''; align=None] Objetivo: Validar que el administrador pueda generar reportes mediante una pregunta en español.
+0699 [style='normal'; style_id=''; align=None] Procedimiento:
+0700 [style='normal'; style_id=''; align=None] Acceder al módulo de reportes IA.
+0701 [style='normal'; style_id=''; align=None] Escribir: "Muéstrame los trámites completados en mayo 2026, agrupados por departamento, ordenados de mayor a menor".
+0702 [style='normal'; style_id=''; align=None] El sistema devuelve la especificación (filtros, agrupación) y luego los datos.
+0703 [style='normal'; style_id=''; align=None] Exportar a Excel.
+0704 [style='normal'; style_id=''; align=None] Resultado esperado:
+0705 [style='normal'; style_id=''; align=None] La IA interpreta correctamente la consulta.
+0706 [style='normal'; style_id=''; align=None] Los datos se muestran en tabla/gráfico
+0707 [style='normal'; style_id=''; align=None] Se descarga el archivo Excel con los datos.
+0726 [style='Heading 1'; style_id='Heading1'; align=None] BIBLIOGRAFÍAS
+0727 [style='normal'; style_id=''; align=None] Jacobson, I., Booch, G., & Rumbaugh, J. (1999). El proceso unificado de desarrollo de software. Addison-Wesley.
+0728 [style='normal'; style_id=''; align=None] Larman, C. (2004). UML y patrones: Introducción al análisis y diseño orientado a objetos (2ª ed.). Pearson Educación.
+0729 [style='normal'; style_id=''; align=None] MongoDB, Inc. (2025). MongoDB documentation. https://www.mongodb.com/docs/
+0730 [style='normal'; style_id=''; align=None] Pivotal Software. (2025). Spring Boot reference guide. https://docs.spring.io/spring-boot/docs/current/reference/html/
+0731 [style='normal'; style_id=''; align=None] Google LLC. (2025). Flutter documentation. https://docs.flutter.dev/
+0732 [style='normal'; style_id=''; align=None] Angular Team. (2025). Angular documentation. https://angular.io/docs
+0733 [style='normal'; style_id=''; align=None] Microsoft Azure. (2025). Azure App Service documentation. https://docs.microsoft.com/en-us/azure/app-service/
+0734 [style='normal'; style_id=''; align=None] Firebase. (2025). Firebase Cloud Messaging documentation. https://firebase.google.com/docs/cloud-messaging
+0735 [style='normal'; style_id=''; align=None] Object Management Group (OMG). (2017). Unified Modeling Language (UML) specification version 2.5.1. https://www.omg.org/spec/UML/2.5.1
+0736 [style='normal'; style_id=''; align=None] Pressman, R. S. (2010). Ingeniería del software: Un enfoque práctico (7ª ed.). McGraw-Hill.
+0737 [style='normal'; style_id=''; align=None] Sommerville, I. (2011). Ingeniería de software (9ª ed.). Pearson Educación.
+
+=== TABLAS ===
+
+TABLA 1: filas=8, columnas=4, style=None
+  fila 1: Característica || Spring Boot (Java) || Django (Python) || NestJS (TypeScript/Node.js)
+  fila 2: Rendimiento || Alto (JVM optimizada, multi-hilo) || Medio (GIL limita concurrencia) || Alto (asíncrono, event loop)
+  fila 3: Madurez y ecosistema || Muy maduro, amplia documentación, gran comunidad || Maduro, excelente para CRUD y prototipado || Creciente, fuerte en TypeScript
+  fila 4: Seguridad integrada || Spring Security (JWT, OAuth2, roles) || Autenticación básica, requiere extensiones || Passport.js, flexible pero manual
+  fila 5: Gestión de WebSockets || Soporte nativo (@EnableWebSocket) || Necesita Django Channels (complejo) || Soporte nativo con @WebSocketGateway
+  fila 6: ORM / Acceso a datos || Spring Data JPA (para SQL) + MongoDB Repository || Django ORM (SQL) + MongoEngine (NoSQL) || TypeORM, Mongoose (ambos maduros)
+  fila 7: Curva de aprendizaje || Media-alta (conceptos de IoC, AOP) || Baja (filosofía "baterías incluidas") || Media (requiere entender módulos Nest)
+  fila 8: Escalabilidad en la nube || Excelente (compatible con Azure, AWS, GCP) || Buena, pero requiere configuración adicional || Excelente (Node.js nativo)
+
+TABLA 2: filas=7, columnas=4, style=None
+  fila 1: Característica || Angular (TypeScript) || React (JavaScript/JSX) || Vue.js (JavaScript)
+  fila 2: Estructura || Completa (MVC, módulos, inyección de dependencias) || Librería (solo vista), requiere librerías externas || Progresivo (puede ser librería o framework)
+  fila 3: Curva de aprendizaje || Alta (TypeScript, RxJS, módulos) || Media (JSX es simple, pero el ecosistema es extenso) || Baja (fácil de empezar)
+  fila 4: Rendimiento || Bueno (cambio de detección optimizado) || Muy bueno (Virtual DOM) || Muy bueno (Virtual DOM)
+  fila 5: Herramientas integradas || CLI potente, enrutador, HTTP client, formularios reactivos || Creat React App + librerías separadas (React Router, Axios, Formik) || CLI oficial, Vue Router, Vuex
+  fila 6: Mantenibilidad a gran escala || Excelente (tipado fuerte, estructura obligatoria) || Buena (requiere disciplina de equipo) || Buena (recomendado TypeScript)
+  fila 7: Soporte de WebSockets || A través de RxJS o librería socket.io-client || Mismo (Socket.IO client) || Mismo
+
+TABLA 3: filas=8, columnas=3, style=None
+  fila 1: Característica || MongoDB (NoSQL) – Elegido || PostgreSQL (SQL)
+  fila 2: Modelo de datos || Documental (JSON/BSON), esquema dinámico || Relacional, esquema fijo (tablas, columnas)
+  fila 3: Flexibilidad para formularios dinámicos || Excelente: los campos del formulario se almacenan como array de objetos embebidos || Requiere tablas adicionales o tipo JSONB, menos intuitivo
+  fila 4: Gestión de nodos y transiciones || Los nodos se almacenan en una colección, las transiciones en otra, con referencias simples || Se usarían tablas con claves foráneas, normalización completa
+  fila 5: Consultas para el análisis de cuellos de botella || Agregación con $group, $avg, $match sobre colecciones de ejecuciones || SQL con funciones agregadas muy potente
+  fila 6: Escalabilidad horizontal || Nativa (sharding) || Requiere configuraciones adicionales (replicación, particionamiento)
+  fila 7: Consistencia de datos || Consistencia eventual por defecto (ajustable) || ACID fuerte (transacciones)
+  fila 8: Integración con Spring Boot || Spring Data MongoDB, repositorios similares a JPA || Spring Data JPA (Hibernate)
+
+TABLA 4: filas=5, columnas=3, style=None
+  fila 1: ID || ACTOR || DESCRIPCIÓN
+  fila 2: ASU || SuperUsuario (ASU) || Usuario con control total sobre el sistema, diseña las políticas de negocio
+  fila 3: A || Administrador || Jefe de cada departamento, gestiona los formularios y trámites de su área.
+  fila 4: F || Funcionario || Empleado de la empresa, cumple con tareas asignadas y rellena formularios
+  fila 5: C || Cliente || Persona externa que solicita un trámite, interactúa con el agente inteligente y puede subir documentos
+
+TABLA 5: filas=15, columnas=3, style=None
+  fila 1: ID || NOMBRE || ENTORNO
+  fila 2: CU1 || Gestionar Usuarios y roles || WEB
+  fila 3: CU2 || Gestionar Departamentos || WEB
+  fila 4: CU3 || Gestionar Políticas de negocio || WEB
+  fila 5: CU4 || Gestionar Formularios || WEB, MÓVIL
+  fila 6: CU5 || Gestionar diagrama de actividades || WEB
+  fila 7: CU6 || Gestionar Trámites || WEB, MÓVIL
+  fila 8: CU7 || Ejecutar tarea asignada || WEB, MÓVIL
+  fila 9: CU8 || Monitorear políticas en tiempo real || WEB, MÓVIL
+  fila 10: CU9 || Gestionar notificaciones || WEB, MÓVIL
+  fila 11: CU10 || Analizar políticas con IA || WEB
+  fila 12: CU11 || Gestionar Documentos || WEB
+  fila 13: CU12 || Editar documentos colaborativamente || WEB
+  fila 14: CU13 || Interactuar con Agente Inteligente || WEB, MÓVIL
+  fila 15: CU14 || Generar Reportes Dinámicos || WEB
+
+TABLA 6: filas=15, columnas=4, style=None
+  fila 1: ID || NOMBRE || ACTOR || PRIORIDAD
+  fila 2: CU1 || Gestionar Usuarios y roles || ASU || ALTA
+  fila 3: CU2 || Gestionar Departamentos || ASU || ALTA
+  fila 4: CU3 || Gestionar Políticas de negocio || ASU || ALTA
+  fila 5: CU4 || Gestionar Formularios || ASU, A || ALTA
+  fila 6: CU5 || Gestionar diagrama de actividades || ASU || ALTA
+  fila 7: CU6 || Gestionar Trámites || ASU, C || ALTA
+  fila 8: CU7 || Ejecutar tarea asignada || F, C || MEDIA
+  fila 9: CU8 || Monitorear políticas en tiempo real || ASU, A || MEDIA
+  fila 10: CU9 || Gestionar notificaciones || ASU, A, F, C || MEDIA
+  fila 11: CU10 || Analizar políticas con IA || ASU || MEDIA
+  fila 12: CU11 || Gestionar Documentos || ASU, A, F, C || ALTA
+  fila 13: CU12 || Editar documentos colaborativamente || ASU, A, F || MEDIA
+  fila 14: CU13 || Interactuar con Agente Inteligente || C || ALTA
+  fila 15: CU14 || Generar Reportes Dinámicos || ASU || MEDIA
+
+TABLA 7: filas=10, columnas=4, style=None
+  fila 1: ID || NOMBRE || ACTOR || PRIORIDAD
+  fila 2: CU1 || Gestionar Usuarios y roles || ASU || ALTA
+  fila 3: CU2 || Gestionar Departamentos || ASU || ALTA
+  fila 4: CU3 || Gestionar Políticas de negocio || ASU || ALTA
+  fila 5: CU4 || Gestionar Formularios || ASU, A || ALTA
+  fila 6: CU5 || Gestionar diagrama de actividades || ASU || ALTA
+  fila 7: CU6 || Gestionar Trámites || ASU, C || ALTA
+  fila 8: CU7 || Ejecutar tarea asignada || F, C || MEDIA
+  fila 9: CU8 || Monitorear políticas en tiempo real || ASU, A || MEDIA
+  fila 10: CU9 || Gestionar notificaciones || ASU, A, F, C || MEDIA
+
+TABLA 8: filas=6, columnas=4, style=None
+  fila 1: ID || NOMBRE || ACTOR || PRIORIDAD
+  fila 2: CU10 || Analizar políticas con IA || ASU || MEDIA
+  fila 3: CU11 || Gestionar Documentos || ASU, A, F, C || ALTA
+  fila 4: CU12 || Editar documentos colaborativamente || ASU, A, F || MEDIA
+  fila 5: CU13 || Interactuar con Agente Inteligente || C || ALTA
+  fila 6: CU14 || Generar Reportes Dinámicos || ASU || MEDIA
+
+TABLA 9: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU1. Gestionar Usuario y roles
+  fila 2: Propósito || Permitir al Administrador registrar y administrar todos los usuarios del sistema, así como también los roles (ASU, Administrador, Funcionario)
+  fila 3: Actores || Administrador Super Usuario
+  fila 4: Actor iniciador || Administrador Super Usuario
+  fila 5: Precondición || Ninguna
+  fila 6: Flujo principal || Registrar Usuario: | Ingresar datos personales (nombre, correo, teléfono, contraseña) | Asignar rol | Modificar Usuario: | Buscar un usuario existente. | Modificar datos y guardar los cambios. | Eliminar Usuario: | Buscar un usuario activo en el sistema | Deshabilitar usuario | Listar Usuario | Listar todos los usuarios | Visualizar un usuario
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Usuario ya existente | Email inválido | Rol inválido | Contraseña mínima requerida (8 caracteres)
+
+TABLA 10: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU2. Gestionar Departamentos
+  fila 2: Propósito || Registrar y administrar los departamentos de la empresa, así como asignar un administrador a cada uno.
+  fila 3: Actores || Administrador Super Usuario
+  fila 4: Actor iniciador || Administrador Super Usuario
+  fila 5: Precondición || Ninguna
+  fila 6: Flujo principal || Registrar Departamento: | Ingresar datos del departamento(código, nroMaxEmpleados, descripción) | Asignar funcionarios y Administrador | Modificar Departamento: | Buscar un departamento existente. | Modificar datos y guardar los cambios. | Eliminar Departamento: | Buscar un departamento activo en el sistema | Deshabilitar departamento | Listar Departamento: | Listar todas los departamentos | Visualizar un departamento
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Usuario administrador inexistente | Nombres duplicados
+
+TABLA 11: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU3. Gestionar Políticas de negocio
+  fila 2: Propósito || Gestionar las políticas de negocio (plantillas de workflow) que luego se usarán como guia en trámites.
+  fila 3: Actores || Administrador Super Usuario
+  fila 4: Actor iniciador || Administrador Super Usuario
+  fila 5: Precondición || Ninguna
+  fila 6: Flujo principal || Registrar políticas de negocio: | Ingresar datos de las políticas de negocio (nombre, descripción, versión inicial, etc) | Asignar un identificador único y un hash de versión | Modificar políticas de negocio: | Buscar una política de negocio existente. | Modificar datos y guardar los cambios. | Eliminar políticas de negocio: | Buscar una política de negocio activa en el sistema | Deshabilitar política de negocio | Listar políticas de negocio: | Listar todas las políticas de negocio con su estado | Visualizar una política de negocio
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Nombres duplicados | Campos obligatorios vacíos
+
+TABLA 12: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU4. Gestionar Formularios
+  fila 2: Propósito || Crear y modificar formularios dinámicos asociados a los nodos de tipo Tarea de un departamento específico.
+  fila 3: Actores || Administrador Super Usuario, Administrador
+  fila 4: Actor iniciador || Administrador Super Usuario, Administrador
+  fila 5: Precondición || CU2. Gestionar Departamentos
+  fila 6: Flujo principal || Registrar Formularios: | Ingresar campos del formulario (nombre, etiqueta, tipo: texto, número, fecha, archivo, imagen, selección) | Modificar Formularios: | Buscar un formulario existente. | Modificar datos y guardar los cambios. | Eliminar Formularios: | Buscar un formulario activo en el sistema | Deshabilitar formulario | Listar Formularios: | Listar todas los formularios | Visualizar un formulario
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Campos obligatorios vacíos
+
+TABLA 13: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU5. Gestionar diagrama de actividades
+  fila 2: Propósito || Permitir al ASU modelar visualmente el flujo de trabajo de una política mediante un editor drag & drop
+  fila 3: Actores || Administrador Super Usuario
+  fila 4: Actor iniciador || Administrador Super Usuario
+  fila 5: Precondición || CU3. Gestionar Políticas de negocio
+  fila 6: Flujo principal || Crear diagrama de actividades: | Seleccionar una política, automáticamente se generará un diagrama de actividades con carriles (departamentos existentes) | Acceder al editor de diagramas | Modificar diagrama de actividades: | Buscar un diagrama de actividades existente. | Modificar nodos (inicio, tarea, decisión, fin y paralelo), ubicarlos en los carriles correspondientes, conectarlos mediante transiciones lineales, alternativas o paralelas y guardar los cambios | El sistema genera un hash de versión | Eliminar diagrama de actividades: | Buscar un diagrama de actividades activo en el sistema | Deshabilitar diagrama de actividades | Listar diagrama de actividades: | Visualizar un diagrama de actividades
+  fila 7: Postcondición || La política queda asociada a un diagrama de actividades válido
+  fila 8: Excepción || Diagrama sin nodo Inicio y/o Fin | Nodos no conectados
+
+TABLA 14: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU6. Gestionar Trámites
+  fila 2: Propósito || Iniciar nuevos trámites a partir de una política activa, asignar prioridad y fecha límite, y consultar el estado de trámites existentes.
+  fila 3: Actores || Administrador Super Usuario, Cliente
+  fila 4: Actor iniciador || Administrador Super Usuario, Cliente
+  fila 5: Precondición || CU3. Gestionar Políticas de negocio
+  fila 6: Flujo principal || Registrar Trámites: | Crear un trámite a partir de una política de negocio activa, ingresar título y fecha límite | Asignar prioridad | El sistema notifica al administrador/Funcionario del nodo correspondiente | Eliminar Trámites: | Buscar un trámite activo en el sistema | Deshabilitar trámite | Listar Trámites: | Listar todas los trámites filtrados por estado, prioridad o departamento | Mostrar historial de formularios por cada trámite activo
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Ninguno
+
+TABLA 15: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU7. Ejecutar tarea asignada
+  fila 2: Propósito || Permitir al funcionario completar la tarea pendiente de su departamento, rellenando el formulario asociado.
+  fila 3: Actores || Funcionario, Cliente
+  fila 4: Actor iniciador || Funcionario, Cliente
+  fila 5: Precondición || CU6. Gestionar Trámites
+  fila 6: Flujo principal || El funcionario accede a su bandeja de tareas | Seleccione una una tarea pendiente | El funcionario completa los campos obligatorios y adjuntar archivos si es necesario | Se marca como completado y se notifica al motor de workflow para que determine el siguiente nodo (o finalice el trámite)
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Formulario incompleto o archivos no válidos
+
+TABLA 16: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU8. Monitorear políticas en tiempo real
+  fila 2: Propósito || Visualizar el estado de todos los trámites de una política mediante un tablero codificado por colores con actualización automáticas.
+  fila 3: Actores || Administrador Super Usuario, Administrador
+  fila 4: Actor iniciador || Administrador Super Usuario, Administrador
+  fila 5: Precondición || CU6. Gestionar Trámites
+  fila 6: Flujo principal || El usuario selecciona una política activa | El sistema muestra una tabla o tarjetas con cada trámite, indicando su estado actual (verde, amarillo, rojo) | La vista se actualiza automáticamente cada vez que un trámite cambia de estado | El usuario puede aplicar filtros por departamento, rango de fechas, prioridad
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Sin conexión se muestra datos estáticos y mensaje de reconexión
+
+TABLA 17: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU9. Gestionar Notificaciones
+  fila 2: Propósito || Enviar alertas en tiempo real a los usuarios sobre eventos relevantes: nueva tarea asignada, trámite completado, demora detectada, etc.
+  fila 3: Actores || Administrador Super Usuario, Administrador, Funcionario, Cliente
+  fila 4: Actor iniciador || Administrador Super Usuario, Administrador, Funcionario, Cliente
+  fila 5: Precondición || Ninguna
+  fila 6: Flujo principal || El sistema detecta un evento (asignación de tarea, finalización, demora). | Genera una notificación con mensaje, tipo y enlace al trámite correspondiente. | Envía la notificación al usuario vía WebSocket (web) o push (móvil). | La notificación se guarda en la base de datos. | El usuario puede acceder a su centro de notificaciones para ver el historial y marcar como leídas.
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Ninguno
+
+TABLA 18: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU10. Analizar políticas con AI
+  fila 2: Propósito || Detectar cuellos de botella y sugerir optimizaciones en una política activa, basándose en los tiempos de ejecución de trámites históricos.
+  fila 3: Actores || Administrador Super Usuario
+  fila 4: Actor iniciador || Administrador Super Usuario
+  fila 5: Precondición || Ninguna
+  fila 6: Flujo principal || El ASU accede al análisis de una política específica. | El sistema solicita al microservicio IA que evalúe los tiempos promedio por nodo, desviaciones y posibles cuellos de botella. | La IA devuelve un informe con: nodos críticos (alta demora), sugerencias (reducir pasos, paralelizar, etc.), y un resaltado visual en el diagrama. | El sistema muestra el informe y resalta los nodos problemáticos en el editor.
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Datos insuficientes (menos de 3 trámites)
+
+TABLA 19: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU11. Gestionar Documentos
+  fila 2: Propósito || Permitir a los usuarios subir, listar, visualizar, versionar, auditar y definir permisos sobre documentos asociados a un trámite o política.
+  fila 3: Actores || Administrador Super Usuario, Administrador, Funcionario, Cliente
+  fila 4: Actor iniciador || Administrador Super Usuario, Administrador, Funcionario, Cliente
+  fila 5: Precondición || CU6. Gestionar Trámites
+  fila 6: Flujo principal || Subir Documento: | Seleccionar un archivo | El sistema asigna versión inicial (v1) y registra auditoría | Modificar diagrama de actividades: | Buscar un documento existente. | Modificar documento (según permisos) | El sistema asigna nueva versión (vn) | Eliminar Documento: | Buscar un documento activo en el sistema | Deshabilitar documento | Listar Documento: | Listar todos los documentos filtrados por trámites, políticas, cliente, fecha | Visualizar Documento: | El sistema permite descargar o mostrar el contenido
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Archivo de tipo no soportado o demasiado grande. | Permisos insuficientes para realizar la acción. | Documento no encontrado.
+
+TABLA 20: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU12. Editar Documento Colaborativamente
+  fila 2: Propósito || Permitir que múltiples usuarios editen simultáneamente un documento (Word, Excel, etc) en tiempo real desde el navegador, viendo los cambios de los demás al instante.
+  fila 3: Actores || Administrador Super Usuario, Administrador, Funcionario
+  fila 4: Actor iniciador || Administrador Super Usuario, Administrador, Funcionario
+  fila 5: Precondición || CU11. Gestionar Documentos
+  fila 6: Flujo principal || El sistema carga el editor OnlyOffice embebido en la página. | El usuario edita el contenido (texto, formato, celdas, etc.). | Otros usuarios que hayan abierto el mismo documento ven los cambios, viendo su cursor en tiempo real | Se descarga el archivo editado y se guarda como una nueva versión (incrementa el número de versiones) en el repositorio documental, manteniendo el historial.
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Pérdida de conexión con el servidor de OnlyOffice. | Usuario sin permisos de edición.
+
+TABLA 21: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU13. Interactuar con Agente Inteligente
+  fila 2: Propósito || Proveer un asistente conversacional (chatbot) que interprete la solicitud del cliente mediante texto o voz, determine automáticamente la política de negocio más adecuada e inicie el trámite correspondiente sin intervención humana.
+  fila 3: Actores || Cliente
+  fila 4: Actor iniciador || Cliente
+  fila 5: Precondición || CU3. Gestionar Políticas de negocio
+  fila 6: Flujo principal || El cliente describe su necesidad por escrito o mediante comandos de voz. | El agente selecciona la política de negocio más adecuada. | El cliente confirma la selección o puede solicitar otra opción. | Se genera un nuevo trámite asociado al cliente, con la política elegida, y se asigna el primer nodo de tarea al departamento correspondiente. | El agente interactúa con el cliente pidiendo los documentos solicitados en cada nodo
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || No se encontró una política similar | Cliente no autenticado
+
+TABLA 22: filas=8, columnas=2, style=None
+  fila 1: Nombre de CU || CU14. Generar Reportes Dinámicos
+  fila 2: Propósito || Permitir que el administrador obtenga reportes personalizados describiendo lo que quiere en lenguaje natural (texto o voz), sin necesidad de conocer consultas estructuradas.
+  fila 3: Actores || Administrador Super Usuario
+  fila 4: Actor iniciador || Administrador Super Usuario
+  fila 5: Precondición || Ninguna
+  fila 6: Flujo principal || El usuario escribe o dicta una pregunta | Si falta información (ej. no se especifica el período), el sistema devuelve preguntas aclaratorias y espera respuesta del usuario (diálogo iterativo). | El resultado se muestra en la pantalla, permitiendo exportar como pdf o excel.
+  fila 7: Postcondición || Ninguna
+  fila 8: Excepción || Datos insuficientes (menos de 3 registros) | Formatos de exportación no soportados
+
+TABLA 23: filas=6, columnas=2, style=None
+  fila 1:  || 
+  fila 2:  || Gestiona las cuentas de usuario, roles y autenticación. Incluye la creación, modificación, desactivación de usuarios y la asignación de roles (ASU, Administrador, Funcionario).
+  fila 3:  || Define las políticas de negocio, sus diagramas de actividades, y permite crear y ejecutar trámites (incluyendo la tarea del funcionario y el avance automático del workflow).
+  fila 4:  || Administra la estructura organizacional y los formularios dinámicos asociados a los nodos de tipo Tarea de cada departamento.
+  fila 5:  || Provee supervisión en tiempo real (tablero verde/amarillo/rojo con WebSockets), alertas push y web, y análisis inteligente para detectar cuellos de botella y sugerir optimizaciones. | Generador de reportes dinámicos.
+  fila 6:  || Administra repositorio de documentos con control de versiones, auditoría y permisos; edición colaborativa en tiempo real con OnlyOffice.
+
+TABLA 24: filas=4, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || empresaId || empresas._id
+  fila 4: FK || departamentoId || departamentos._id
+
+TABLA 25: filas=4, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || admin_departamento_id || usuarios._id
+  fila 4: FK || empresa_id || empresas._id
+
+TABLA 26: filas=4, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || empresaId || empresas._id
+  fila 4: FK || creadoPor || usuarios._id
+
+TABLA 27: filas=5, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || politicaId || politicas._id
+  fila 4: FK || departamentoId || departamentos._id
+  fila 5: FK || formularioId || formularios._id
+
+TABLA 28: filas=5, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || politicaId || politicas._id
+  fila 4: FK || nodoOrigenId || nodos._id
+  fila 5: FK || nodoDestinoId || nodos._id
+
+TABLA 29: filas=4, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || politicaId || politicas._id
+  fila 4: FK || nodoId || nodos._id
+
+TABLA 30: filas=6, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || politica_id || politicas._id
+  fila 4: FK || empresa_id || empresas._id
+  fila 5: FK || nodo_actual_id || nodos._id
+  fila 6: FK || iniciado_por || usuarios._id
+
+TABLA 31: filas=6, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || tramite_id || tramites._id
+  fila 4: FK || nodo_id || nodos._id
+  fila 5: FK || departamento_id || departamentos._id
+  fila 6: FK || funcionario_id || usuarios._id
+
+TABLA 32: filas=5, columnas=3, style=None
+  fila 1: Tipo || Campo || Referencia a
+  fila 2: PK || _id || —
+  fila 3: FK || usuario_id || usuarios._id
+  fila 4: FK || tramite_id || tramites._id (opcional)
+  fila 5: FK || nodo_id || nodos._id (opcional)
+
+TABLA 33: filas=12, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único del usuario || Sí || Primario
+  fila 3: nombre || String || Nombre completo || Sí || -
+  fila 4: email || String || Correo electrónico único || Sí || Único
+  fila 5: passwordHash || String || Hash de la contraseña || Sí || -
+  fila 6: rol || String || Rol (ASU, Administrador, Funcionario) || Sí || -
+  fila 7: activo || Boolean || Estado de la cuenta || Sí || -
+  fila 8: empresaId || ObjectId || Referencia a Empresa || Sí || Sí
+  fila 9: departamentoId || ObjectId || Referencia a Departamento (opcional) || No || Sí
+  fila 10: fcmToken || String || Token de Firebase Cloud Messaging || No || -
+  fila 11: creadoEn || Date || Fecha de creación || Sí || -
+  fila 12: actualizadoEn || Date || Fecha de última modificación || Sí || -
+
+TABLA 34: filas=8, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único del departamento || Sí || Primario
+  fila 3: nombre || String || Nombre del departamento || Sí || -
+  fila 4: descripcion || String || Descripción del departamento || Sí || -
+  fila 5: admin_departamento_id || ObjectId || Referencia al usuario administrador || Sí || Sí
+  fila 6: empresa_id || ObjectId || Referencia a Empresa || Sí || Sí
+  fila 7: activo || Boolean || Estado del departamento || Sí || -
+  fila 8: creadoEn || Date || Fecha de creación || Sí || -
+
+TABLA 35: filas=13, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único de la política || Sí || Primario
+  fila 3: nombre || String || Nombre de la política || Sí || -
+  fila 4: descripcion || String || Descripción detallada || Sí || -
+  fila 5: version || Int || Número de versión || Sí || -
+  fila 6: estado || String || BORRADOR, ACTIVA, INACTIVA || Sí || -
+  fila 7: empresaId || ObjectId || Referencia a Empresa || Sí || Sí
+  fila 8: creadoPor || ObjectId || Referencia al usuario creador || Sí || -
+  fila 9: generadaPorIa || Boolean || Si fue generada por IA || Sí || -
+  fila 10: datosDiagramaJson || String || JSON con nodos y transiciones (opcional) || No || -
+  fila 11: activo || Boolean || Estado lógico || Sí || -
+  fila 12: creadoEn || Date || Fecha de creación || Sí || -
+  fila 13: actualizadoEn || Date || Fecha de modificación || Sí || -
+
+TABLA 36: filas=12, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único del nodo || Sí || Primario
+  fila 3: politicaId || ObjectId || Referencia a Política || Sí || Sí
+  fila 4: nombre || String || Nombre del nodo || Sí || -
+  fila 5: tipo || String || INICIO, TAREA, DECISION, FIN, PARALELO || Sí || -
+  fila 6: departamentoId || ObjectId || Referencia a Departamento (solo TAREA) || No || Sí
+  fila 7: formularioId || ObjectId || Referencia a Formulario (solo TAREA) || No || Sí
+  fila 8: posicionX || Double || Coordenada X en el editor || Sí || -
+  fila 9: posicionY || Double || Coordenada Y en el editor || Sí || -
+  fila 10: activo || Boolean || Estado lógico || Sí || -
+  fila 11: creadoEn || Date || Fecha de creación || Sí || -
+  fila 12: actualizadoEn || Date || Fecha de modificación || Sí || -
+
+TABLA 37: filas=10, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único de la transición || Sí || Primario
+  fila 3: politicaId || ObjectId || Referencia a Política || Sí || Sí
+  fila 4: nodoOrigenId || ObjectId || Referencia al nodo origen || Sí || Sí
+  fila 5: nodoDestinoId || ObjectId || Referencia al nodo destino || Sí || Sí
+  fila 6: tipo || String || LINEAL, ALTERNATIVA, PARALELA || Sí || -
+  fila 7: condicion || String || Expresión condicional (para ALTERNATIVA) || No || -
+  fila 8: etiqueta || String || Texto sobre la flecha || No || -
+  fila 9: activo || Boolean || Estado lógico || Sí || -
+  fila 10: creadoEn || Date || Fecha de creación || Sí || -
+
+TABLA 38: filas=9, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único del formulario || Sí || Primario
+  fila 3: nombre || String || Nombre del formulario || Sí || -
+  fila 4: politicaId || ObjectId || Referencia a Política || Sí || Sí
+  fila 5: nodoId || ObjectId || Referencia a Nodo (relación 1 a 1) || Sí || Único
+  fila 6: campos || Array<Campo> || Lista de objetos Campo embebidos || Sí || -
+  fila 7: activo || Boolean || Estado lógico || Sí || -
+  fila 8: creadoEn || Date || Fecha de creación || Sí || -
+  fila 9: actualizadoEn || Date || Fecha de modificación || Sí || -
+
+TABLA 39: filas=7, columnas=4, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido
+  fila 2: nombre || String || Identificador interno del campo || Sí
+  fila 3: etiqueta || String || Texto que ve el usuario || Sí
+  fila 4: tipo || String || TEXTO, NUMERO, FECHA, ARCHIVO, IMAGEN, SELECCION || Sí
+  fila 5: requerido || Boolean || Si es obligatorio || Sí
+  fila 6: esCampoPrioridad || Boolean || Si este campo determina la prioridad del trámite || Sí
+  fila 7: opciones || Array<String> || Lista de opciones (solo para tipo SELECCION) || No
+
+TABLA 40: filas=14, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único del trámite || Sí || Primario
+  fila 3: politica_id || ObjectId || Referencia a Política || Sí || Sí
+  fila 4: empresa_id || ObjectId || Referencia a Empresa || Sí || Sí
+  fila 5: titulo || String || Título del trámite || Sí || -
+  fila 6: estado_general || String || PENDIENTE, EN_PROCESO, COMPLETADO, RECHAZADO || Sí || Sí
+  fila 7: nodo_actual_id || ObjectId || Referencia al nodo actual || Sí || -
+  fila 8: prioridad || String || ALTA, MEDIA, BAJA || Sí || Sí
+  fila 9: fecha_limite || Date || Fecha límite (opcional) || No || -
+  fila 10: iniciado_por || ObjectId || Referencia al usuario iniciador || Sí || -
+  fila 11: iniciado_en || Date || Fecha de inicio || Sí || -
+  fila 12: finalizado_en || Date || Fecha de finalización (opcional) || No || -
+  fila 13: iteraciones_por_nodo || Map<String, Int> || Contador de veces por nodo (clave=id de nodo) || Sí || -
+  fila 14: nodos_paralelos_pendientes || Array<ObjectId> || Lista de nodos paralelos aún no completados || Sí || -
+
+TABLA 41: filas=12, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único de la ejecución || Sí || Primario
+  fila 3: tramite_id || ObjectId || Referencia a Trámite || Sí || Sí
+  fila 4: nodo_id || ObjectId || Referencia al Nodo ejecutado || Sí || Sí
+  fila 5: departamento_id || ObjectId || Referencia a Departamento || Sí || Sí
+  fila 6: funcionario_id || ObjectId || Referencia al Usuario que ejecutó || Sí || Sí
+  fila 7: estado || String || PENDIENTE, EN_PROCESO, COMPLETADO, RECHAZADO || Sí || -
+  fila 8: respuesta_formulario || Object || Documento con las respuestas (estructura variable) || No || -
+  fila 9: archivos_adjuntos || Array<String> || URLs de archivos en Azure Blob || No || -
+  fila 10: iniciado_en || Date || Fecha de inicio || Sí || -
+  fila 11: completado_en || Date || Fecha de finalización (opcional) || No || -
+  fila 12: observaciones || String || Notas adicionales || No || -
+
+TABLA 42: filas=9, columnas=5, style=None
+  fila 1: Campo || Tipo || Descripción || Requerido || Índice
+  fila 2: _id || ObjectId || Identificador único de la notificación || Sí || Primario
+  fila 3: usuario_id || ObjectId || Referencia al Usuario destinatario || Sí || Sí
+  fila 4: tramite_id || ObjectId || Referencia al Trámite (opcional) || No || Sí
+  fila 5: nodo_id || ObjectId || Referencia al Nodo (opcional) || No || -
+  fila 6: tipo || String || ASIGNACION, COMPLETADO, RECHAZADO, PRIORIDAD, ALERTA_IA || Sí || -
+  fila 7: mensaje || String || Texto de la notificación || Sí || -
+  fila 8: leida || Boolean || Estado de lectura || Sí || -
+  fila 9: creado_en || Date || Fecha de creación || Sí || -

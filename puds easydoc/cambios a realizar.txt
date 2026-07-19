@@ -1,0 +1,31 @@
+CAMBIOS A REALIZAR MANUALMENTE / OBSERVACIONES
+
+1. CARÁTULA
+   Se preservó deliberadamente la primera página del modelo, sin modificar texto,
+   integrantes, fecha ni enlaces. Completar allí el título final de EASYDOC, la
+   materia, el docente, los integrantes, códigos y la fecha de presentación.
+
+2. ENLACES EXTERNOS
+   No se encontró una URL pública confirmada para el repositorio, la aplicación
+   desplegada ni la APK. Si la entrega exige esos enlaces, agregarlos en la
+   carátula o en la sección 5.1.5 del documento.
+
+3. ENTORNO DE PRODUCCIÓN
+   El documento describe el despliegue final a partir de la arquitectura Docker
+   del proyecto. Si existe una instancia de producción institucional, reemplazar
+   la URL y los datos del entorno de ejemplo por la dirección oficial.
+
+4. ÍNDICE
+   El índice se actualizó y verificó dentro del archivo. Si se modifica la
+   carátula o el contenido en Word, hacer clic derecho sobre el índice y elegir
+   "Actualizar toda la tabla". No se debe escribir números de página manualmente.
+
+5. CAPTURAS Y DATOS DE DEMOSTRACIÓN
+   Las capturas incorporadas provienen de la ejecución local de EASYDOC y usan
+   información académica de demostración. Si se presentará a terceros, sustituir
+   o anonimizar cualquier dato que corresponda a personas reales.
+
+6. FUENTES APA
+   Las referencias se entregan en formato APA 7 con las fuentes técnicas y
+   académicas empleadas. Verificar con la cátedra si se requiere agregar una
+   bibliografía institucional adicional o una fecha de recuperación específica.

@@ -1,0 +1,168 @@
+{
+  "input": "C:\\Users\\Usuario\\Documents\\SW1 1-2026\\modelos\\para el segundo parcial\\documento 1--2026\\Sistema de gestion de tramites y politicas de negocio (1).docx",
+  "fonts_by_char_count": {},
+  "direct_run_formatting_runs": 342,
+  "direct_paragraph_formatting_paragraphs": 1844,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 1,
+      "text": "UNIVERSIDAD AUTONOMA GABRIEL RENE MORENO",
+      "style": "normal"
+    },
+    {
+      "para_index": 2,
+      "text": "FACULTAD DE INGENIER\u00cdA EN CIENCIAS DE LA COMPUTACI\u00d3N Y TELECOMUNICACIONES",
+      "style": "normal"
+    },
+    {
+      "para_index": 12,
+      "text": "Materia: Software I\t\t\tDocente: Rolando Antonio Martinez Canedo ",
+      "style": "normal"
+    },
+    {
+      "para_index": 16,
+      "text": "12 de Mayo del 2026",
+      "style": "normal"
+    },
+    {
+      "para_index": 17,
+      "text": "\u00cdNDICE",
+      "style": "normal"
+    },
+    {
+      "para_index": 127,
+      "text": "2.4.1 Ventajas",
+      "style": "normal"
+    },
+    {
+      "para_index": 131,
+      "text": "2.4.2 Beneficios para el proyecto",
+      "style": "normal"
+    },
+    {
+      "para_index": 136,
+      "text": "2.4.3 Desventajas y riesgos",
+      "style": "normal"
+    },
+    {
+      "para_index": 739,
+      "text": "Caracter\u00edstica",
+      "style": "normal"
+    },
+    {
+      "para_index": 743,
+      "text": "Rendimiento",
+      "style": "normal"
+    },
+    {
+      "para_index": 747,
+      "text": "Madurez y ecosistema",
+      "style": "normal"
+    },
+    {
+      "para_index": 751,
+      "text": "Seguridad integrada",
+      "style": "normal"
+    },
+    {
+      "para_index": 755,
+      "text": "Gesti\u00f3n de WebSockets",
+      "style": "normal"
+    },
+    {
+      "para_index": 759,
+      "text": "ORM / Acceso a datos",
+      "style": "normal"
+    },
+    {
+      "para_index": 763,
+      "text": "Curva de aprendizaje",
+      "style": "normal"
+    },
+    {
+      "para_index": 767,
+      "text": "Escalabilidad en la nube",
+      "style": "normal"
+    },
+    {
+      "para_index": 771,
+      "text": "Caracter\u00edstica",
+      "style": "normal"
+    },
+    {
+      "para_index": 775,
+      "text": "Estructura",
+      "style": "normal"
+    },
+    {
+      "para_index": 779,
+      "text": "Curva de aprendizaje",
+      "style": "normal"
+    },
+    {
+      "para_index": 783,
+      "text": "Rendimiento",
+      "style": "normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 1,
+        "text": "UNIVERSIDAD AUTONOMA GABRIEL RENE MORENO",
+        "style": "normal"
+      },
+      {
+        "para_index": 2,
+        "text": "FACULTAD DE INGENIER\u00cdA EN CIENCIAS DE LA COMPUTACI\u00d3N Y TELECOMUNICACIONES",
+        "style": "normal"
+      },
+      {
+        "para_index": 3,
+        "text": "\n",
+        "style": "normal"
+      },
+      {
+        "para_index": 4,
+        "text": "",
+        "style": "normal"
+      },
+      {
+        "para_index": 5,
+        "text": "",
+        "style": "normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "UNIVERSIDAD AUTONOMA GABRIEL RENE MORENO",
+        "style": "normal"
+      },
+      {
+        "para_index": 2,
+        "run_text": "FACULTAD DE INGENIER\u00cdA EN CIENCIAS DE LA COMPUTACI\u00d3N Y TELECOMUNICACIONES",
+        "style": "normal"
+      },
+      {
+        "para_index": 3,
+        "run_text": "\n",
+        "style": "normal"
+      },
+      {
+        "para_index": 10,
+        "run_text": " \t",
+        "style": "normal"
+      },
+      {
+        "para_index": 11,
+        "run_text": "2do Parcial Workflow Manager: Sistema de Gesti\u00f3n de Tr\u00e1mites y Pol\u00edticas de nego",
+        "style": "normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

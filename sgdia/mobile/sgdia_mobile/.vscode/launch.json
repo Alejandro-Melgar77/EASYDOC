@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "sgdia_mobile (dev)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define=API_URL=http://10.0.2.2:8000/api/v1",
+        "--dart-define=WS_URL=ws://10.0.2.2:8000"
+      ]
+    },
+    {
+      "name": "sgdia_mobile (staging)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define=API_URL=https://staging-api.sgdia.com/api/v1",
+        "--dart-define=WS_URL=wss://staging-api.sgdia.com"
+      ]
+    },
+    {
+      "name": "sgdia_mobile (prod)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define=API_URL=https://api.sgdia.com/api/v1",
+        "--dart-define=WS_URL=wss://api.sgdia.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,536 @@
+{
+  "product": "EASYDOC",
+  "model_name": "easydoc_local_route_risk_v1",
+  "model_type": "offline_statistical_baseline",
+  "trained_at": "2026-07-19T14:00:07.008605+00:00",
+  "period": {
+    "from": "2026-03-01T00:00:00+00:00",
+    "to": "2026-07-31T23:59:00+00:00"
+  },
+  "sample_count": 1409,
+  "policies": {
+    "CE": {
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 0.95,
+          "bottleneck_risk": 0.379,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Revision de requisitos",
+          "avg_days": 1.34,
+          "bottleneck_risk": 0.534,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Sofia Vargas"
+        },
+        {
+          "name": "Validacion academica",
+          "avg_days": 0.94,
+          "bottleneck_risk": 0.377,
+          "common_department": "Coordinacion Academica",
+          "common_worker": "Esteban Quiroga"
+        },
+        {
+          "name": "Direccion de Carrera",
+          "avg_days": 0.98,
+          "bottleneck_risk": 0.391,
+          "common_department": "Direccion de Carrera",
+          "common_worker": "Jorge Velasco"
+        },
+        {
+          "name": "Respuesta al estudiante",
+          "avg_days": 0.99,
+          "bottleneck_risk": 0.396,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Elena Flores"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 1.01,
+          "bottleneck_risk": 0.404,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 6.2,
+      "overdue_rate": 0.928,
+      "anomaly_rate": 0.206,
+      "recommended_priority": "alta"
+    },
+    "HN": {
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.307,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Revision documental",
+          "avg_days": 0.76,
+          "bottleneck_risk": 0.304,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Rodrigo Lima"
+        },
+        {
+          "name": "Analisis de contenidos",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.31,
+          "common_department": "Unidad Docente",
+          "common_worker": "Lucia Soria"
+        },
+        {
+          "name": "Comite Academico",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.307,
+          "common_department": "Direccion de Carrera",
+          "common_worker": "Jorge Velasco"
+        },
+        {
+          "name": "Resolucion",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.31,
+          "common_department": "Direccion de Carrera",
+          "common_worker": "Jorge Velasco"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 0.73,
+          "bottleneck_risk": 0.29,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 4.57,
+      "overdue_rate": 0.053,
+      "anomaly_rate": 0.0,
+      "recommended_priority": "normal"
+    },
+    "CN": {
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 0.78,
+          "bottleneck_risk": 0.311,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Validacion de pagos",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.306,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Rodrigo Lima"
+        },
+        {
+          "name": "Emision de certificado",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.309,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        },
+        {
+          "name": "Entrega",
+          "avg_days": 0.8,
+          "bottleneck_risk": 0.32,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        }
+      ],
+      "avg_total_days": 3.11,
+      "overdue_rate": 0.976,
+      "anomaly_rate": 0.0,
+      "recommended_priority": "alta"
+    },
+    "RT": {
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 0.73,
+          "bottleneck_risk": 0.293,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Revision de calendario",
+          "avg_days": 0.81,
+          "bottleneck_risk": 0.322,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Sofia Vargas"
+        },
+        {
+          "name": "Validacion docente",
+          "avg_days": 0.72,
+          "bottleneck_risk": 0.29,
+          "common_department": "Unidad Docente",
+          "common_worker": "Martin Cespedes"
+        },
+        {
+          "name": "Registro",
+          "avg_days": 0.78,
+          "bottleneck_risk": 0.311,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Rodrigo Lima"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 0.75,
+          "bottleneck_risk": 0.302,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 3.8,
+      "overdue_rate": 0.848,
+      "anomaly_rate": 0.0,
+      "recommended_priority": "alta"
+    },
+    "RB": {
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 1.03,
+          "bottleneck_risk": 0.412,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Revision socioeconomica",
+          "avg_days": 1.29,
+          "bottleneck_risk": 0.515,
+          "common_department": "Bienestar Estudiantil",
+          "common_worker": "Paola Andrade"
+        },
+        {
+          "name": "Validacion academica",
+          "avg_days": 1.04,
+          "bottleneck_risk": 0.416,
+          "common_department": "Coordinacion Academica",
+          "common_worker": "Esteban Quiroga"
+        },
+        {
+          "name": "Comision de becas",
+          "avg_days": 0.95,
+          "bottleneck_risk": 0.382,
+          "common_department": "Bienestar Estudiantil",
+          "common_worker": "Paola Andrade"
+        },
+        {
+          "name": "Publicacion de resultado",
+          "avg_days": 1.01,
+          "bottleneck_risk": 0.405,
+          "common_department": "Bienestar Estudiantil",
+          "common_worker": "Marta Colque"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 0.93,
+          "bottleneck_risk": 0.374,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 6.26,
+      "overdue_rate": 0.381,
+      "anomaly_rate": 0.168,
+      "recommended_priority": "media"
+    },
+    "RE": {
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 0.79,
+          "bottleneck_risk": 0.315,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Revision de requisitos",
+          "avg_days": 1.12,
+          "bottleneck_risk": 0.45,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Sofia Vargas"
+        },
+        {
+          "name": "Validacion docente",
+          "avg_days": 0.71,
+          "bottleneck_risk": 0.285,
+          "common_department": "Unidad Docente",
+          "common_worker": "Martin Cespedes"
+        },
+        {
+          "name": "Reprogramacion",
+          "avg_days": 0.78,
+          "bottleneck_risk": 0.313,
+          "common_department": "Coordinacion Academica",
+          "common_worker": "Andrea Pardo"
+        },
+        {
+          "name": "Respuesta al estudiante",
+          "avg_days": 0.75,
+          "bottleneck_risk": 0.3,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Elena Flores"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.306,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 4.92,
+      "overdue_rate": 0.993,
+      "anomaly_rate": 0.187,
+      "recommended_priority": "alta"
+    },
+    "CG": {
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 0.79,
+          "bottleneck_risk": 0.317,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Revision de requisitos",
+          "avg_days": 1.01,
+          "bottleneck_risk": 0.404,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Sofia Vargas"
+        },
+        {
+          "name": "Consulta de cupos",
+          "avg_days": 0.73,
+          "bottleneck_risk": 0.294,
+          "common_department": "Coordinacion Academica",
+          "common_worker": "Esteban Quiroga"
+        },
+        {
+          "name": "Registro academico",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.308,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Rodrigo Lima"
+        },
+        {
+          "name": "Respuesta al estudiante",
+          "avg_days": 0.76,
+          "bottleneck_risk": 0.305,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Elena Flores"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.309,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 4.84,
+      "overdue_rate": 1.0,
+      "anomaly_rate": 0.162,
+      "recommended_priority": "alta"
+    },
+    "TI": {
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 0.76,
+          "bottleneck_risk": 0.305,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Revision de expediente",
+          "avg_days": 0.78,
+          "bottleneck_risk": 0.311,
+          "common_department": "Titulacion",
+          "common_worker": "Gabriela Lema"
+        },
+        {
+          "name": "Validacion academica",
+          "avg_days": 0.84,
+          "bottleneck_risk": 0.334,
+          "common_department": "Coordinacion Academica",
+          "common_worker": "Esteban Quiroga"
+        },
+        {
+          "name": "Solicitud de tribunal",
+          "avg_days": 0.81,
+          "bottleneck_risk": 0.324,
+          "common_department": "Titulacion",
+          "common_worker": "Ramon Alarcon"
+        },
+        {
+          "name": "Defensa o modalidad",
+          "avg_days": 0.69,
+          "bottleneck_risk": 0.278,
+          "common_department": "Titulacion",
+          "common_worker": "Ramon Alarcon"
+        },
+        {
+          "name": "Emision de titulo",
+          "avg_days": 0.84,
+          "bottleneck_risk": 0.336,
+          "common_department": "Titulacion",
+          "common_worker": "Ramon Alarcon"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 0.72,
+          "bottleneck_risk": 0.288,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 5.44,
+      "overdue_rate": 0.0,
+      "anomaly_rate": 0.0,
+      "recommended_priority": "normal"
+    },
+    "HI": {
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "route": [
+        {
+          "name": "Recepcion",
+          "avg_days": 0.79,
+          "bottleneck_risk": 0.317,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Consulta historico",
+          "avg_days": 0.75,
+          "bottleneck_risk": 0.298,
+          "common_department": "Archivo Academico",
+          "common_worker": "Nora Quispe"
+        },
+        {
+          "name": "Emision de certificado",
+          "avg_days": 0.79,
+          "bottleneck_risk": 0.315,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        },
+        {
+          "name": "Entrega",
+          "avg_days": 0.75,
+          "bottleneck_risk": 0.301,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.307,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 3.84,
+      "overdue_rate": 1.0,
+      "anomaly_rate": 0.0,
+      "recommended_priority": "alta"
+    },
+    "RD": {
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "route": [
+        {
+          "name": "Recepcion de reclamo",
+          "avg_days": 0.79,
+          "bottleneck_risk": 0.315,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Diego Molina"
+        },
+        {
+          "name": "Revision de requisitos",
+          "avg_days": 1.08,
+          "bottleneck_risk": 0.433,
+          "common_department": "Secretaria Academica",
+          "common_worker": "Sofia Vargas"
+        },
+        {
+          "name": "Descargo docente",
+          "avg_days": 0.86,
+          "bottleneck_risk": 0.342,
+          "common_department": "Unidad Docente",
+          "common_worker": "Martin Cespedes"
+        },
+        {
+          "name": "Mediacion academica",
+          "avg_days": 0.81,
+          "bottleneck_risk": 0.323,
+          "common_department": "Coordinacion Academica",
+          "common_worker": "Andrea Pardo"
+        },
+        {
+          "name": "Direccion de Carrera",
+          "avg_days": 0.81,
+          "bottleneck_risk": 0.322,
+          "common_department": "Direccion de Carrera",
+          "common_worker": "Jorge Velasco"
+        },
+        {
+          "name": "Respuesta al estudiante",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.306,
+          "common_department": "Recepcion y Ventanilla",
+          "common_worker": "Elena Flores"
+        },
+        {
+          "name": "Archivo",
+          "avg_days": 0.77,
+          "bottleneck_risk": 0.309,
+          "common_department": "Archivo Academico",
+          "common_worker": "Mariana Roca"
+        }
+      ],
+      "avg_total_days": 5.88,
+      "overdue_rate": 0.07,
+      "anomaly_rate": 0.186,
+      "recommended_priority": "media"
+    }
+  },
+  "resource_load": {
+    "Andrea Pardo": 9.21,
+    "Diego Molina": 100.0,
+    "Elena Flores": 32.66,
+    "Esteban Quiroga": 33.35,
+    "Gabriela Lema": 2.61,
+    "Jorge Velasco": 28.27,
+    "Lucia Soria": 5.82,
+    "Mariana Roca": 86.5,
+    "Marta Colque": 7.54,
+    "Martin Cespedes": 13.12,
+    "Nora Quispe": 10.28,
+    "Paola Andrade": 16.71,
+    "Ramon Alarcon": 7.88,
+    "Rodrigo Lima": 32.19,
+    "Sofia Vargas": 49.86
+  }
+}

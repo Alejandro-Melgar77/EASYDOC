@@ -1,0 +1,198 @@
+# ============================================================
+# EASYDOC — Infraestructura de Base de Datos (Local Dev)
+# Servicios: MongoDB (replica set) + Redis
+# ============================================================
+
+services:
+  # ----------------------------------------------------------
+  # MongoDB Primary (replica set para soporte de transacciones)
+  # ----------------------------------------------------------
+  mongo1:
+    image: mongo:7.0
+    container_name: sgdia_mongo1
+    hostname: mongo1
+    restart: unless-stopped
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-sgdia_admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-sgdia_secret}
+      MONGO_INITDB_DATABASE: sgdia_dev
+      MONGO_DEV_PASSWORD: ${MONGO_DEV_PASSWORD:-dev_password}
+    ports:
+      - "${MONGO1_HOST_PORT:-27020}:27017"
+    volumes:
+      - mongo1_data:/data/db
+      - mongo1_config:/data/configdb
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - sgdia_db_net
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+
+  mongo2:
+    image: mongo:7.0
+    container_name: sgdia_mongo2
+    hostname: mongo2
+    restart: unless-stopped
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-sgdia_admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-sgdia_secret}
+    ports:
+      - "${MONGO2_HOST_PORT:-27021}:27017"
+    volumes:
+      - mongo2_data:/data/db
+      - mongo2_config:/data/configdb
+    networks:
+      - sgdia_db_net
+    depends_on:
+      mongo1:
+        condition: service_healthy
+
+  mongo3:
+    image: mongo:7.0
+    container_name: sgdia_mongo3
+    hostname: mongo3
+    restart: unless-stopped
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-sgdia_admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-sgdia_secret}
+    ports:
+      - "${MONGO3_HOST_PORT:-27022}:27017"
+    volumes:
+      - mongo3_data:/data/db
+      - mongo3_config:/data/configdb
+    networks:
+      - sgdia_db_net
+    depends_on:
+      mongo1:
+        condition: service_healthy
+
+  # Inicializa el replica set una vez que los tres nodos están listos
+  mongo-init:
+    image: mongo:7.0
+    container_name: sgdia_mongo_init
+    restart: "no"
+    depends_on:
+      mongo1:
+        condition: service_healthy
+      mongo2:
+        condition: service_started
+      mongo3:
+        condition: service_started
+    networks:
+      - sgdia_db_net
+    entrypoint: >
+      bash -c "
+        sleep 5 &&
+        mongosh --host mongo1 -u ${MONGO_ROOT_USER:-sgdia_admin} -p ${MONGO_ROOT_PASSWORD:-sgdia_secret} --authenticationDatabase admin --eval '
+          rs.initiate({
+            _id: \"rs0\",
+            members: [
+              { _id: 0, host: \"mongo1:27017\", priority: 2 },
+              { _id: 1, host: \"mongo2:27017\", priority: 1 },
+              { _id: 2, host: \"mongo3:27017\", priority: 1 }
+            ]
+          })
+        '
+      "
+
+  # ----------------------------------------------------------
+  # Redis — Cache, JWT blacklist, Pub/Sub, Notificaciones
+  # ----------------------------------------------------------
+  redis:
+    image: redis:7.2-alpine
+    container_name: sgdia_redis
+    restart: unless-stopped
+    command: >
+      redis-server
+      --requirepass ${REDIS_PASSWORD:-redis_secret}
+      --appendonly yes
+      --appendfsync everysec
+      --maxmemory 512mb
+      --maxmemory-policy allkeys-lru
+      --save 900 1
+      --save 300 10
+      --save 60 10000
+    ports:
+      - "${REDIS_HOST_PORT:-6381}:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - sgdia_db_net
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-redis_secret}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ----------------------------------------------------------
+  # MinIO — S3 compatible local storage
+  # ----------------------------------------------------------
+  minio:
+    image: minio/minio:latest
+    container_name: sgdia_minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-sgdia_minio}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minio_secret}
+    ports:
+      - "${MINIO_API_HOST_PORT:-9010}:9000"   # S3 API
+      - "${MINIO_CONSOLE_HOST_PORT:-9011}:9001"   # MinIO Console
+    volumes:
+      - minio_data:/data
+    networks:
+      - sgdia_db_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  # MinIO client: crea los buckets automáticamente al iniciar
+  minio-init:
+    image: minio/mc:latest
+    container_name: sgdia_minio_init
+    restart: "no"
+    depends_on:
+      minio:
+        condition: service_healthy
+    networks:
+      - sgdia_db_net
+    entrypoint: >
+      /bin/sh -c "
+        mc alias set sgdia http://minio:9000 ${MINIO_ROOT_USER:-sgdia_minio} ${MINIO_ROOT_PASSWORD:-minio_secret};
+        mc mb --ignore-existing sgdia/sgdia-documents;
+        mc mb --ignore-existing sgdia/sgdia-exports;
+        mc mb --ignore-existing sgdia/sgdia-avatars;
+        mc mb --ignore-existing sgdia/sgdia-temp;
+        mc ilm rule add --expiry-days 7 sgdia/sgdia-temp;
+        echo 'Buckets created successfully';
+      "
+
+# ----------------------------------------------------------
+# Volumes
+# ----------------------------------------------------------
+volumes:
+  mongo1_data:
+  mongo1_config:
+  mongo2_data:
+  mongo2_config:
+  mongo3_data:
+  mongo3_config:
+  redis_data:
+  minio_data:
+
+# ----------------------------------------------------------
+# Networks
+# ----------------------------------------------------------
+networks:
+  sgdia_db_net:
+    driver: bridge
+    name: sgdia_db_net

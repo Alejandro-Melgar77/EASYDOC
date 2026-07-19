@@ -1,0 +1,53 @@
+# Secretos y configuración local
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.crt
+
+# Dependencias y cachés
+**/node_modules/
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+**/.mypy_cache/
+**/.angular/cache/
+**/.dart_tool/
+**/build/
+**/.gradle/
+
+# Artefactos generados
+**/dist/
+**/coverage/
+**/.coverage
+**/htmlcov/
+*.pyc
+*.pyo
+*.log
+*.tmp
+*.bak
+
+# Datos locales y volúmenes de Docker
+**/data/
+**/mongodb_data/
+**/redis_data/
+**/minio_data/
+**/local_models/
+**/qa/final_render/
+**/qa/final_render_v2/
+**/qa/final_render_v3/
+**/qa/modelo_render_word/
+~$*
+
+# Archivos del sistema y del editor
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+
+# Archivos de trabajo temporales del informe
+convert_doc.ps1
+read_doc.ps1
+split_doc.ps1
+informe_preeliminar.txt

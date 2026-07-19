@@ -1,0 +1,6 @@
+# Local-only PDF rendering for scanned-document OCR.
+# Kept in a separate layer so Docker can reuse the stable backend dependency cache.
+PyMuPDF>=1.24.0
+# Local ASR. The Spanish model is supplied by the institution and configured
+# with LOCAL_ASR_MODEL_PATH; it is never downloaded at runtime.
+vosk>=0.3.45

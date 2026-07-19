@@ -1,0 +1,26 @@
+DOCKER:
+cd "c:\Users\Usuario\Documents\SW1 1-2026\segundo parcial\sgdia"
+docker compose up -d mongodb redis minio onlyoffice minio_init
+
+BACKEND:
+cd "c:\Users\Usuario\Documents\SW1 1-2026\segundo parcial\sgdia\backend"
+python -m venv venv
+.\venv\Scripts\actívate
+pip install -r requirements.txt
+
+SEED (SE EJECUTA EN EL BACKEND):
+python scripts/seed_db.py --reset
+python scripts/create_vector_indexes.py
+
+uvicorn app.main:app --reload
+
+FRONTEND:
+cd "c:\Users\Usuario\Documents\SW1 1-2026\segundo parcial\sgdia\frontend"
+npm install
+npm run start
+
+
+FLUTTER:
+cd "c:\Users\Usuario\Documents\SW1 1-2026\segundo parcial\sgdia\mobile\sgdia_mobile"
+flutter pub get
+flutter run

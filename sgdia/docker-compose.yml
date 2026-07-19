@@ -1,0 +1,273 @@
+# ============================================================
+# SGDIA — Docker Compose (Full-Stack Development)
+# Servicios: Backend, MongoDB, Redis, Celery, OnlyOffice, MinIO
+# ============================================================
+# Uso:
+#   docker compose up -d            # levantar todos los servicios
+#   docker compose up -d backend    # solo el backend + dependencias
+#   docker compose logs -f backend  # ver logs del backend
+#   docker compose down -v          # detener y eliminar volúmenes
+# ============================================================
+
+services:
+  # ----------------------------------------------------------
+  # Backend FastAPI
+  # ----------------------------------------------------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sgdia_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      MONGODB_URL: mongodb://mongodb:27017
+      MONGODB_DB_NAME: sgdia
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/2
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER:-minioadmin}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      S3_ENDPOINT: http://minio:9000
+      S3_BUCKET_NAME: sgdia-documents
+      ONLYOFFICE_URL: http://onlyoffice
+      LOCAL_ASR_MODEL_PATH: /models/vosk-es
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app  # hot-reload en desarrollo
+      - ./backend/local_models:/models:ro
+    command: >
+      uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+      --reload
+      --reload-dir /app/app
+    networks:
+      - sgdia-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+
+  # ----------------------------------------------------------
+  # MongoDB 7.0
+  # ----------------------------------------------------------
+  mongodb:
+    image: mongo:7.0
+    container_name: sgdia_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: sgdia
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - sgdia-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ----------------------------------------------------------
+  # Redis 7 (Alpine)
+  # ----------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: sgdia_redis
+    restart: unless-stopped
+    ports:
+      # Host port configurable to coexist with other local Redis projects.
+      - "${REDIS_HOST_PORT:-6380}:6379"
+    volumes:
+      - redis_data:/data
+    command: >
+      redis-server
+      --appendonly yes
+      --appendfsync everysec
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+    networks:
+      - sgdia-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  # ----------------------------------------------------------
+  # Celery Worker — procesamiento asíncrono de tareas
+  # ----------------------------------------------------------
+  celery_worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sgdia_celery_worker
+    restart: unless-stopped
+    command: >
+      celery -A app.workers.celery_app worker
+      --loglevel=info
+      --concurrency=4
+      --max-tasks-per-child=100
+      -Q default,documents,notifications
+    env_file:
+      - ./backend/.env
+    environment:
+      MONGODB_URL: mongodb://mongodb:27017
+      MONGODB_DB_NAME: sgdia
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/2
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER:-minioadmin}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      S3_ENDPOINT: http://minio:9000
+      S3_BUCKET_NAME: sgdia-documents
+    depends_on:
+      backend:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+    networks:
+      - sgdia-network
+
+  # ----------------------------------------------------------
+  # Celery Beat — tareas programadas
+  # ----------------------------------------------------------
+  celery_beat:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sgdia_celery_beat
+    restart: unless-stopped
+    command: >
+      celery -A app.workers.celery_app beat
+      --loglevel=info
+      --pidfile=/tmp/celerybeat.pid
+      --schedule=/tmp/celerybeat-schedule
+    env_file:
+      - ./backend/.env
+    environment:
+      MONGODB_URL: mongodb://mongodb:27017
+      MONGODB_DB_NAME: sgdia
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/2
+      AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER:-minioadmin}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      S3_ENDPOINT: http://minio:9000
+      S3_BUCKET_NAME: sgdia-documents
+    depends_on:
+      backend:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+    networks:
+      - sgdia-network
+
+  # ----------------------------------------------------------
+  # OnlyOffice Document Server — edición colaborativa
+  # ----------------------------------------------------------
+  onlyoffice:
+    image: onlyoffice/documentserver:latest
+    container_name: sgdia_onlyoffice
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      JWT_ENABLED: "true"
+      JWT_SECRET: ${ONLYOFFICE_JWT_SECRET:-sgdia-onlyoffice-secret}
+      JWT_HEADER: Authorization
+    networks:
+      - sgdia-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # ----------------------------------------------------------
+  # MinIO — almacenamiento S3-compatible para desarrollo
+  # ----------------------------------------------------------
+  minio:
+    image: minio/minio:latest
+    container_name: sgdia_minio
+    restart: unless-stopped
+    ports:
+      - "9000:9000"   # S3 API
+      - "9001:9001"   # MinIO Console
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    networks:
+      - sgdia-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ----------------------------------------------------------
+  # MinIO Init — creación automática de buckets
+  # ----------------------------------------------------------
+  minio_init:
+    image: minio/mc:latest
+    container_name: sgdia_minio_init
+    restart: "no"
+    depends_on:
+      minio:
+        condition: service_healthy
+    networks:
+      - sgdia-network
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    entrypoint: >
+      /bin/sh -c "
+        mc alias set sgdia http://minio:9000 $${MINIO_ROOT_USER:-minioadmin} $${MINIO_ROOT_PASSWORD:-minioadmin};
+        mc mb --ignore-existing sgdia/sgdia-documents;
+        mc mb --ignore-existing sgdia/sgdia-exports;
+        mc mb --ignore-existing sgdia/sgdia-avatars;
+        mc mb --ignore-existing sgdia/sgdia-temp;
+        mc ilm rule add --expiry-days 7 sgdia/sgdia-temp || true;
+        echo 'Buckets SGDIA creados correctamente';
+      "
+
+# ----------------------------------------------------------
+# Volúmenes persistentes
+# ----------------------------------------------------------
+volumes:
+  mongodb_data:
+    driver: local
+  redis_data:
+    driver: local
+  minio_data:
+    driver: local
+
+# ----------------------------------------------------------
+# Red de comunicación entre servicios
+# ----------------------------------------------------------
+networks:
+  sgdia-network:
+    driver: bridge
+    name: sgdia-network

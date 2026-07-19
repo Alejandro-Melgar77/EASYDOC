@@ -1,0 +1,128 @@
+===============================================================================
+RESUMEN DE ESTADO DE IMPLEMENTACIÓN Y PENDIENTES - SGDIA
+Fecha: 2026-07-16
+===============================================================================
+
+Este documento detalla el estado actual del desarrollo del Sistema de Gestión 
+Documental con Inteligencia Artificial (SGDIA), especificando qué componentes 
+han sido implementados, qué tareas quedan pendientes y qué aspectos técnicos 
+deben ser corregidos, integrados o redefinidos para el éxito del proyecto.
+
+-------------------------------------------------------------------------------
+1. LO QUE SE HA APLICADO E IMPLEMENTADO (ESTADO ACTUAL)
+-------------------------------------------------------------------------------
+
+A. BACKEND (FastAPI + Celery + Python) - 100% Completado (38/38 Tareas)
+   - Arquitectura base: Configurada con dependencias de FastAPI, motor asíncrono 
+     Motor (para MongoDB), Beanie (ODM) y Redis.
+   - Seguridad y Auth (CU-01 a CU-04): Endpoints REST para autenticación (JWT), 
+     creación y edición de usuarios, roles con permisos RBAC y middleware de 
+     auditoría para registrar logs en base de datos.
+   - Repositorio Documental (CU-11 a CU-16): Endpoints para subir archivos, 
+     búsqueda, control de versiones, permisos específicos por documento y vista 
+     previa. Integración con AWS S3 y MinIO local (fallback). Extracción de texto
+     usando Tesseract OCR (imágenes) y PyPDF2 (documentos).
+   - Edición Colaborativa (CU-17 a CU-20): Integración con ONLYOFFICE Document 
+     Server mediante sockets en tiempo real para coautoría y comentarios anidados.
+   - Diagramador UML y Workflow (CU-05 a CU-10): Motor de flujos de trabajo que 
+     resuelve grafos en formato JSON y WebSockets para diagramación en grupo.
+   - Inteligencia Artificial (CU-21 a CU-26): Conector con APIs de LLM externas 
+     (OpenAI/Anthropic), motor RAG simulado para búsqueda vectorial y endpoints 
+     de dictado por voz (Whisper/ASR simulado).
+   - Predicciones y Machine Learning (CU-27 a CU-31): Rutinas estadísticas 
+     (Z-score, promedios móviles) para detectar cuellos de botella e identificar 
+     anomalías en los flujos de documentos. Tareas de Celery programadas.
+   - Reportes Dinámicos (CU-32 a CU-36): Generador de reportes en PDF (fpdf2), 
+     Excel (openpyxl) y CSV. Soporte para solicitudes por comandos de voz.
+   - Notificaciones y Configuración (CU-37 a CU-40): Canales de notificación 
+     WebSocket in-app y configuración del sistema con hot-reload.
+
+B. FRONTEND (Angular 17+) - 100% Completado (36/36 Tareas)
+   - Sistema de Diseño y UI: Interfaz premium responsive en modo oscuro/claro 
+     con tipografías (Inter/Roboto), variables HSL y transiciones suaves.
+   - Login y Dashboard: Pantalla de login reactiva y panel principal con 
+     gráficos analíticos e históricos.
+   - Gestión de Usuarios y Roles: Vistas para el administrador que permiten 
+     crear usuarios, resetear contraseñas y configurar la matriz de permisos RBAC.
+   - Explorador Documental: Soporte nativo de Angular CDK Drag & Drop para mover 
+     documentos, timeline de versiones, matriz de accesos y visor modal.
+   - Editor Colaborativo: Interfaz del editor con avatares de co-editores en 
+     tiempo real y panel lateral para comentarios anidados.
+   - Lienzo UML: Editor gráfico interactivo infinito con herramientas para 
+     dibujar diagramas de flujo/UML y exportarlos.
+   - Chat de IA y Reportes: Interfaz de chat RAG con renderizado Markdown, 
+     grabador de audio simulado y asistente interactivo de reportes con voz.
+   - Analíticas Visuales: Gráficos dinámicos con Chart.js para dispersión de 
+     anomalías y predicción de rutas óptimas vs. rutas reales.
+
+C. MÓVIL (Flutter) - 33% Completado (8/24 Tareas)
+   - Arquitectura Base: Configuración de GoRouter, Riverpod para el estado, 
+     Secure Storage local y cliente HTTP con autorefresco de tokens JWT.
+   - Fase 1 (Autenticación): SplashScreen animada, LoginScreen con validaciones, 
+     integración con biometría local (local_auth) y bloqueo temporal tras 5 
+     intentos fallidos. Dashboard básico con Drawer y logout.
+
+D. BASE DE DATOS - 0% Completado (0/35 Tareas)
+   - El agente específico de BD no inició su flujo. Sin embargo, el backend de 
+     Python ya tiene definidos los esquemas Pydantic y las clases de Beanie 
+     necesarias para interactuar con MongoDB y Redis.
+
+-------------------------------------------------------------------------------
+2. LO QUE FALTA POR HACER (PENDIENTES)
+-------------------------------------------------------------------------------
+
+- BASE DE DATOS (CRÍTICO):
+  1. Instalar y configurar el clúster de base de datos en MongoDB Atlas o local.
+  2. Implementar los scripts de inicialización de datos (seeds) para usuarios, 
+     roles y documentos de prueba.
+  3. Crear y configurar los índices de búsqueda vectorial (índices vectoriales 
+     HNSW en colecciones MongoDB para búsqueda semántica RAG).
+  4. Configurar las tareas y políticas de copias de seguridad automáticas (Backups).
+
+- MÓVIL (FLUTTER):
+  1. FASE 2: Implementar el explorador de documentos para dispositivos móviles 
+     (listado, detalle de archivos, buscador con filtros y subida de archivos).
+  2. FASE 3: Desarrollar la interfaz móvil del Chat con el Agente de IA, 
+     integrando grabación de voz en tiempo real y visualización de adjuntos.
+  3. FASE 4: Desarrollar el sistema de recepción de notificaciones Push (Firebase 
+     Cloud Messaging o WebSocket persistente móvil) y la visualización de 
+     predicciones críticas (alertas de anomalías en el celular).
+
+- INTEGRACIÓN Y PRUEBAS E2E (END-TO-END):
+  1. Conexión real Front-Back: Enlazar todas las vistas y servicios simulados 
+     (mocks) del Frontend de Angular con los endpoints reales del API en FastAPI.
+  2. Integración real con ONLYOFFICE: Configurar un servidor real de ONLYOFFICE 
+     dentro del entorno de Docker Compose para reemplazar los WebSockets de 
+     coautoría simulados.
+  3. Despliegue en producción: Configurar los manifiestos de Kubernetes o los 
+     archivos CloudFormation/Terraform para AWS (según lo descrito en la vista 
+     de despliegue física del diseño PUDS).
+
+-------------------------------------------------------------------------------
+3. LO QUE SE DEBE CORREGIR, REDEFINIR O VALIDAR
+-------------------------------------------------------------------------------
+
+- REDEFINIR MOTOR DE IA/ML:
+  * El código actual de predicciones y detección de anomalías utiliza 
+    métodos basados en heurísticas estadísticas tradicionales (Z-Score y 
+    promedios ponderados). Si el cliente final exige Machine Learning real, se 
+    debe redefinir para entrenar modelos específicos (ej. Isolation Forest 
+    usando scikit-learn o redes recurrentes en PyTorch) alimentados por los 
+    logs de auditoría de MongoDB.
+
+- REDEFINIR BÚSQUEDA VECTORIAL:
+  * Validar si la base de datos local (MongoDB) tiene suficiente potencia para 
+    búsquedas semánticas o si se requiere un motor de base de datos vectorial 
+    dedicado (como Pinecone o Qdrant) en caso de manejar millones de documentos.
+
+- CORREGIR CONFIGURACIÓN DE MINIO/S3 EN LOCAL:
+  * El servicio de MinIO en Docker Compose se inicializa automáticamente, pero 
+    se deben validar los permisos y claves de acceso de red en los archivos `.env` 
+    para asegurar que el backend local no experimente fallas de conexión al subir 
+    archivos PDF/Word.
+
+- VALIDAR LA SEGURIDAD GRANULAR (RBAC) EN MONGO:
+  * Validar que todas las operaciones de CRUD en el backend incluyan la cláusula 
+    de filtrado de permisos de usuario de forma consistente para evitar la 
+    fuga de información confidencial.
+===============================================================================
