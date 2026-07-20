@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:8000/api',
-  wsUrl: 'http://localhost:8000',
+  production: true,
+  apiUrl: 'https://easydoc-5vgn.onrender.com/api',
+  wsUrl: 'wss://easydoc-5vgn.onrender.com',
 };
