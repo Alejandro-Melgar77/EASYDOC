@@ -38,6 +38,7 @@ class PolicyOperation(str, Enum):
     LANE_UPDATE = "lane.update"
     LANE_DELETE = "lane.delete"
     FORM_UPDATE = "form.update"
+    DOC_UPDATE = "doc.update"
 
 
 class PolicyOperationMessage(BaseModel):
@@ -88,6 +89,18 @@ async def policy_collaboration_websocket(
                         "code": "invalid_operation",
                         "detail": "El mensaje no cumple el contrato de colaboracion.",
                     }
+                )
+                continue
+
+            if message.operation == PolicyOperation.DOC_UPDATE:
+                await policy_collaboration_manager.broadcast_operation(
+                    policy_id=policy_id,
+                    operation=message.operation.value,
+                    payload=message.payload,
+                    actor_id=user_id,
+                    sender=websocket,
+                    client_operation_id=message.client_operation_id,
+                    revision=0,
                 )
                 continue
 
