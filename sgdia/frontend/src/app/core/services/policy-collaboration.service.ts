@@ -57,7 +57,7 @@ export class PolicyCollaborationService {
       return;
     this.disconnect();
 
-    const token = localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token');
     if (!token || token.startsWith('mock_')) {
       this.statusSignal.set('unavailable');
       return;
@@ -104,7 +104,7 @@ export class PolicyCollaborationService {
 
   private openSocket(): void {
     const policyId = this.policyId;
-    const token = localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token');
     if (!policyId || !token || token.startsWith('mock_')) {
       this.statusSignal.set('unavailable');
       return;

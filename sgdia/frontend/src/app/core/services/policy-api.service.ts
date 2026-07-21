@@ -62,7 +62,7 @@ export class PolicyApiService {
   }
 
   canUseRemotePersistence(): boolean {
-    const token = localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token');
     return Boolean(token && !token.startsWith('mock_'));
   }
 

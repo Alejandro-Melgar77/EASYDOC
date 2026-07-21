@@ -49,7 +49,7 @@ export class AuthService {
   }
 
   refreshToken(): Observable<{ access_token: string; refresh_token: string }> {
-    const refreshToken = localStorage.getItem('refresh_token');
+    const refreshToken = sessionStorage.getItem('refresh_token');
     return this.apiService
       .post<{
         access_token: string;
@@ -57,8 +57,8 @@ export class AuthService {
       }>('/auth/refresh', { refresh_token: refreshToken })
       .pipe(
         tap((response) => {
-          localStorage.setItem('access_token', response.access_token);
-          localStorage.setItem('refresh_token', response.refresh_token);
+          sessionStorage.setItem('access_token', response.access_token);
+          sessionStorage.setItem('refresh_token', response.refresh_token);
         }),
         catchError((err) => {
           this.clearSessionAndRedirect();
@@ -68,7 +68,7 @@ export class AuthService {
   }
 
   getAccessToken(): string | null {
-    return localStorage.getItem('access_token');
+    return sessionStorage.getItem('access_token');
   }
 
   hasRole(allowedRoles: string[]): boolean {
@@ -78,9 +78,9 @@ export class AuthService {
 
   private setSession(authResult: AuthResponse): void {
     const user = this.userFromAccessToken(authResult.access_token);
-    localStorage.setItem('access_token', authResult.access_token);
-    localStorage.setItem('refresh_token', authResult.refresh_token);
-    localStorage.setItem('user', JSON.stringify(user));
+    sessionStorage.setItem('access_token', authResult.access_token);
+    sessionStorage.setItem('refresh_token', authResult.refresh_token);
+    sessionStorage.setItem('user', JSON.stringify(user));
     this._currentUser.set(user);
   }
 
@@ -116,15 +116,15 @@ export class AuthService {
   }
 
   private clearSessionAndRedirect(): void {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
-    localStorage.removeItem('user');
+    sessionStorage.removeItem('access_token');
+    sessionStorage.removeItem('refresh_token');
+    sessionStorage.removeItem('user');
     this._currentUser.set(null);
     this.router.navigate(['/auth/login']);
   }
 
   private loadUserFromStorage(): void {
-    const userStr = localStorage.getItem('user');
+    const userStr = sessionStorage.getItem('user');
     const token = this.getAccessToken();
     if (userStr && token) {
       try {
