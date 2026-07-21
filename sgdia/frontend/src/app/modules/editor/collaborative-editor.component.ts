@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, inject, effect, ElementRef, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, signal, inject, effect, ElementRef, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommentsPanelComponent } from './comments-panel.component';
@@ -101,7 +101,6 @@ interface CoEditorUser {
                 class="page-body content-editable-body" 
                 contenteditable="true" 
                 (input)="onContentChange($event)"
-                [innerHTML]="documentContent()"
               ></div>
 
               <div class="page-footer">Documento Colaborativo - Sincronizado en tiempo real</div>
@@ -314,8 +313,8 @@ interface CoEditorUser {
         width: 100%;
         max-width: 800px;
         min-height: 1000px;
-        background: #ffffff;
-        color: #1e293b;
+        background: var(--bg-card);
+        color: var(--text-primary);
         padding: 4rem;
         box-shadow: var(--glass-shadow);
         border-radius: 4px;
@@ -348,14 +347,14 @@ interface CoEditorUser {
         .doc-h1 {
           font-size: 1.4rem;
           font-weight: 800;
-          color: #0f172a;
-          border-bottom: 2px solid #e2e8f0;
+          color: var(--text-primary);
+          border-bottom: 2px solid var(--border-color);
           padding-bottom: 0.5rem;
         }
         .doc-h2 {
           font-size: 1.1rem;
           font-weight: 700;
-          color: #1e293b;
+          color: var(--text-secondary);
           margin-top: 1rem;
         }
       }
@@ -450,7 +449,7 @@ interface CoEditorUser {
     `,
   ],
 })
-export class CollaborativeEditorComponent implements OnInit, OnDestroy {
+export class CollaborativeEditorComponent implements OnInit, OnDestroy, AfterViewInit {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   collaboration = inject(PolicyCollaborationService);
@@ -497,6 +496,12 @@ export class CollaborativeEditorComponent implements OnInit, OnDestroy {
         this.collaboration.connect(docId);
       }
     });
+  }
+
+  ngAfterViewInit(): void {
+    if (this.editorBody) {
+      this.editorBody.nativeElement.innerHTML = this.documentContent();
+    }
   }
 
   ngOnDestroy(): void {

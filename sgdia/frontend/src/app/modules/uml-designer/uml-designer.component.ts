@@ -72,7 +72,6 @@ import { PolicyCollaborationService } from '../../core/services/policy-collabora
             <button
               class="btn btn-secondary"
               type="button"
-              [disabled]="!store.canRegisterPolicy()"
               (click)="saveDiagram()"
             >
               <span class="material-symbols-outlined">save</span>

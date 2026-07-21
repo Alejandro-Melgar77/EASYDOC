@@ -554,14 +554,6 @@ export class UmlStoreService {
   }
 
   savePolicy(): Observable<PolicyRecord | null> {
-    if (!this.canRegisterPolicy()) {
-      this.saveStateSignal.set({
-        status: 'error',
-        message:
-          'No se pudo guardar: el diagrama debe tener una ruta valida desde Inicio hasta Fin.',
-      });
-      return of(null);
-    }
     const policies = this.readPolicies();
     const existing = this.policyIdSignal()
       ? policies.find((policy) => policy.id === this.policyIdSignal())
@@ -569,8 +561,8 @@ export class UmlStoreService {
     const now = new Date().toISOString();
     const policy: PolicyRecord = {
       id: existing?.id ?? crypto.randomUUID(),
-      name: this.processNameSignal().trim(),
-      status: 'published',
+      name: this.processNameSignal().trim() || 'Diagrama sin titulo',
+      status: this.canRegisterPolicy() ? 'published' : 'draft',
       version: (existing?.version ?? 0) + 1,
       createdAt: existing?.createdAt ?? now,
       updatedAt: now,
