@@ -1,7 +1,8 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, OnInit, signal, inject, effect, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommentsPanelComponent } from './comments-panel.component';
+import { PolicyCollaborationService } from '../../core/services/policy-collaboration.service';
 
 interface CoEditorUser {
   id: string;
@@ -40,20 +41,17 @@ interface CoEditorUser {
             }}</span>
           </div>
 
-          <!-- Usuarios Conectados Avatares (Tarea 3.1) -->
-          <div class="connected-users">
-            <div
-              class="user-avatar-wrapper"
-              *ngFor="let user of coEditors()"
-              [style.border-color]="user.color"
-              [title]="
-                user.name + ' (' + (user.status === 'editing' ? 'Editando' : 'Conectado') + ')'
-              "
-            >
-              <img [src]="user.avatar" alt="Avatar" class="user-avatar" />
-              <span class="status-dot" [class.editing]="user.status === 'editing'"></span>
+          <!-- Usuarios Conectados Avatares -->
+          <div class="connected-users" *ngIf="collaboration.isConnected()">
+            <div class="user-avatar-wrapper" [title]="'Conectados: ' + collaboration.remoteCollaboratorCount()">
+              <span class="status-dot editing"></span>
+              <span class="material-symbols-outlined" style="font-size: 24px; color: var(--primary); padding-top: 2px;">group</span>
             </div>
+            <span style="font-size: 0.8rem; margin-left: 0.5rem; color: var(--text-secondary);">
+              {{ collaboration.remoteCollaboratorCount() }} colaborador(es)
+            </span>
           </div>
+
 
           <!-- Gestión de Sesión (Tarea 3.3) -->
           <div class="session-actions">
@@ -98,44 +96,15 @@ interface CoEditorUser {
             <div class="sheet-page">
               <div class="page-header">EASYDOC - DIRECCION DE CARRERA</div>
 
-              <div class="page-body">
-                <h1 class="doc-h1">PROTOCOLO DE CASOS ESPECIALES ACADEMICOS</h1>
+              <div 
+                #editorBody
+                class="page-body content-editable-body" 
+                contenteditable="true" 
+                (input)="onContentChange($event)"
+                [innerHTML]="documentContent()"
+              ></div>
 
-                <p>
-                  El presente documento describe el conjunto de procedimientos de mitigación y
-                  monitoreo ambiental a ser aplicados en toda la infraestructura tecnológica y
-                  oficinas físicas de la institución. Estas directrices buscan estandarizar las
-                  auditorías ecológicas trimestrales.
-                </p>
-
-                <h2 class="doc-h2">Sección 1. Control de Emisiones Cloud</h2>
-
-                <p>
-                  Toda la infraestructura de servidores y procesamiento de modelos de Deep Learning
-                  debe configurarse utilizando regiones cloud con energía 100% renovable certificada
-                  (ej. AWS Dublin o Oregon).
-                </p>
-
-                <!-- Simulador de texto y cursor de co-editor (Tarea 3.1) -->
-                <div class="remote-editing-block">
-                  <p class="paragraph-under-edit">
-                    Se prohibe el uso de recursos GPU redundantes fuera del horario operativo de
-                    08:00 a 19:00 horas
-                    <!-- Cursor remoto de co-editor -->
-                    <span class="remote-cursor" style="background-color: #f59e0b">
-                      <span class="cursor-tooltip">Ana Gómez escribiendo...</span>
-                    </span>
-                    para evitar el consumo fantasma.
-                  </p>
-                </div>
-
-                <p>
-                  Las auditorías ambientales serán administradas mensualmente por el comité
-                  directivo y almacenadas en el bitácora inmutable del sistema.
-                </p>
-              </div>
-
-              <div class="page-footer">Página 1 de 12</div>
+              <div class="page-footer">Documento Colaborativo - Sincronizado en tiempo real</div>
             </div>
           </div>
         </main>
@@ -391,6 +360,15 @@ interface CoEditorUser {
         }
       }
 
+      .content-editable-body {
+        outline: none;
+        min-height: 500px;
+        white-space: pre-wrap;
+      }
+      .content-editable-body:focus {
+        background: rgba(0,0,0,0.01);
+      }
+
       .page-footer {
         font-size: 0.75rem;
         color: #94a3b8;
@@ -472,60 +450,106 @@ interface CoEditorUser {
     `,
   ],
 })
-export class CollaborativeEditorComponent implements OnInit {
+export class CollaborativeEditorComponent implements OnInit, OnDestroy {
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  collaboration = inject(PolicyCollaborationService);
+
+  @ViewChild('editorBody') editorBody!: ElementRef<HTMLElement>;
 
   isSaving = signal(false);
+  documentId = signal<string | null>(null);
+  documentContent = signal<string>('<h1 class="doc-h1">Documento Nuevo</h1><p>Empieza a escribir aquí...</p>');
+  private skipNextSync = false;
+  private saveTimeout: any;
 
-  coEditors = signal<CoEditorUser[]>([
-    {
-      id: 'usr_2',
-      name: 'Ana Gómez',
-      avatar: 'https://ui-avatars.com/api/?name=Ana+Gomez&background=F59E0B&color=fff&bold=true',
-      status: 'editing',
-      color: '#f59e0b',
-    },
-    {
-      id: 'usr_3',
-      name: 'Carlos Pérez',
-      avatar: 'https://ui-avatars.com/api/?name=Carlos+Perez&background=6366F1&color=fff&bold=true',
-      status: 'connected',
-      color: '#6366f1',
-    },
-  ]);
-
-  ngOnInit(): void {
-    this.simulateAutoSaving();
+  constructor() {
+    effect(() => {
+      const op = this.collaboration.lastOperation();
+      if (op && op.operation === 'doc.update') {
+        const html = op.payload['html'] as string;
+        if (html !== undefined && html !== this.documentContent()) {
+          this.documentContent.set(html);
+          if (this.editorBody) {
+            // Guardar posición del cursor si es posible (simplificado)
+            const active = document.activeElement === this.editorBody.nativeElement;
+            this.editorBody.nativeElement.innerHTML = html;
+            if (active) {
+              // Restaurar foco rudimentariamente para mantener usabilidad básica
+              this.setEndOfContenteditable(this.editorBody.nativeElement);
+            }
+          }
+        }
+      }
+    });
   }
 
-  simulateAutoSaving(): void {
-    // Simulate auto-save pulses every 8 seconds
-    setInterval(() => {
-      this.isSaving.set(true);
-      setTimeout(() => {
-        this.isSaving.set(false);
-      }, 1500);
-    }, 8000);
+  ngOnInit(): void {
+    this.route.queryParamMap.subscribe(params => {
+      const docId = params.get('documentId');
+      if (docId) {
+        this.documentId.set(docId);
+        // Intentar recuperar el borrador local si existe
+        const saved = localStorage.getItem(`doc_draft_${docId}`);
+        if (saved) {
+          this.documentContent.set(saved);
+        }
+        this.collaboration.connect(docId);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.collaboration.disconnect();
+  }
+
+  onContentChange(event: Event): void {
+    const html = (event.target as HTMLElement).innerHTML;
+    this.documentContent.set(html);
+    
+    // Broadcast a otros co-editores
+    this.collaboration.send('doc.update', { html });
+
+    // Auto-guardado simulado/local
+    this.isSaving.set(true);
+    clearTimeout(this.saveTimeout);
+    this.saveTimeout = setTimeout(() => {
+      if (this.documentId()) {
+        localStorage.setItem(`doc_draft_${this.documentId()}`, html);
+      }
+      this.isSaving.set(false);
+    }, 1000);
   }
 
   saveVersion(): void {
-    const changelog = prompt('Resumen de cambios para la nueva versión (v1.2):');
-    if (changelog && changelog.trim()) {
-      alert(`Guardando nueva versión v1.2...\nDetalle: ${changelog}`);
+    if (this.documentId()) {
+      localStorage.setItem(`doc_draft_${this.documentId()}`, this.documentContent());
+      alert('Documento guardado correctamente.');
     }
   }
 
   closeSession(): void {
-    if (
-      confirm(
-        '¿Estás seguro de que deseas cerrar la sesión colaborativa? Se guardarán todos los cambios pendientes.',
-      )
-    ) {
-      this.router.navigate(['/repository']);
+    if (confirm('¿Estás seguro de que deseas cerrar la sesión colaborativa?')) {
+      this.saveVersion();
+      this.router.navigate(['/policies']);
     }
   }
 
   goBack(): void {
-    this.router.navigate(['/repository']);
+    this.router.navigate(['/policies']);
+  }
+
+  private setEndOfContenteditable(contentEditableElement: HTMLElement) {
+    let range, selection;
+    if (document.createRange) {
+        range = document.createRange();
+        range.selectNodeContents(contentEditableElement);
+        range.collapse(false);
+        selection = window.getSelection();
+        if (selection) {
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+    }
   }
 }

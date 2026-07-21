@@ -52,24 +52,30 @@ type StatusFilter = BusinessPolicyStatus | 'all';
           </select>
         </label>
 
-        <div class="view-switch" aria-label="Vista de biblioteca">
+        <div class="library-tabs" aria-label="Apartados de biblioteca">
           <button
             type="button"
-            [class.active]="viewMode() === 'cards'"
-            (click)="viewMode.set('cards')"
-            title="Vista de tarjetas"
-            aria-label="Vista de tarjetas"
+            [class.active]="activeTab() === 'diagrams'"
+            (click)="activeTab.set('diagrams')"
           >
-            <span class="material-symbols-outlined">grid_view</span>
+            <span class="material-symbols-outlined">account_tree</span>
+            Diagramas
           </button>
           <button
             type="button"
-            [class.active]="viewMode() === 'rows'"
-            (click)="viewMode.set('rows')"
-            title="Vista de filas"
-            aria-label="Vista de filas"
+            [class.active]="activeTab() === 'documents'"
+            (click)="activeTab.set('documents')"
           >
-            <span class="material-symbols-outlined">format_list_bulleted</span>
+            <span class="material-symbols-outlined">description</span>
+            Documentos
+          </button>
+          <button
+            type="button"
+            [class.active]="activeTab() === 'forms'"
+            (click)="activeTab.set('forms')"
+          >
+            <span class="material-symbols-outlined">dynamic_form</span>
+            Formularios
           </button>
         </div>
       </section>
@@ -122,93 +128,97 @@ type StatusFilter = BusinessPolicyStatus | 'all';
       </section>
 
       <section *ngIf="filteredPolicies().length; else emptyLibrary">
-        <div class="policy-grid" *ngIf="viewMode() === 'cards'; else rowsView">
-          <article class="policy-card glass-card" *ngFor="let policy of filteredPolicies()">
-            <div class="card-topline">
-              <span class="policy-status" [class]="'status-' + policy.status">
-                {{ statusLabel(policy.status) }}
-              </span>
-              <span class="updated-at">Actualizada {{ policy.updatedAt | date: 'dd MMM, y' }}</span>
-            </div>
+        <div class="policy-table glass-panel">
+          <div class="table-header" aria-hidden="true">
+            <span *ngIf="activeTab() === 'diagrams'">Diagrama (Proceso)</span>
+            <span *ngIf="activeTab() === 'documents'">Documento Master</span>
+            <span *ngIf="activeTab() === 'forms'">Formulario</span>
+            
+            <span>Politica Asignada</span>
+            <span>Estado</span>
+            <span>Fecha de Creacion</span>
+            <span>Acciones</span>
+          </div>
 
-            <div class="policy-title-block">
-              <span class="material-symbols-outlined policy-icon">schema</span>
-              <div>
-                <h2>{{ policy.name }}</h2>
-                <p>{{ policy.description || 'Politica sin descripcion registrada.' }}</p>
-              </div>
-            </div>
-
-            <div class="artifact-counts">
-              <span>
-                <span class="material-symbols-outlined">account_tree</span>
-                {{ policy.nodes.length }} pasos, {{ policy.edges.length }} uniones
-              </span>
-              <span>
-                <span class="material-symbols-outlined">dynamic_form</span>
-                {{ formLabel(policy) }}
-              </span>
-            </div>
-
-            <div class="policy-actions">
-              <button type="button" class="btn btn-secondary" (click)="openPolicy(policy.id)">
-                <span class="material-symbols-outlined">visibility</span>
-                Abrir
-              </button>
-              <a class="btn btn-primary" [routerLink]="['/uml-designer', policy.id]">
-                <span class="material-symbols-outlined">edit</span>
-                Editar
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <ng-template #rowsView>
-          <div class="policy-table glass-panel">
-            <div class="table-header" aria-hidden="true">
-              <span>Politica</span>
-              <span>Estado</span>
-              <span>Diagrama</span>
-              <span>Formulario</span>
-              <span>Actualizacion</span>
-              <span>Acciones</span>
-            </div>
+          <ng-container *ngIf="activeTab() === 'diagrams'">
             <article class="policy-row" *ngFor="let policy of filteredPolicies()">
               <div class="row-name">
-                <span class="material-symbols-outlined policy-icon">schema</span>
+                <span class="material-symbols-outlined policy-icon">account_tree</span>
                 <div>
-                  <strong>{{ policy.name }}</strong>
-                  <span>{{ policy.description || 'Sin descripcion' }}</span>
+                  <strong>Diagrama: {{ policy.name }}</strong>
+                  <span>{{ policy.nodes.length }} pasos y {{ policy.edges.length }} uniones</span>
                 </div>
               </div>
+              <span>{{ policy.name }}</span>
               <span class="policy-status" [class]="'status-' + policy.status">
                 {{ statusLabel(policy.status) }}
               </span>
-              <span>{{ policy.nodes.length }} pasos</span>
-              <span>{{ formLabel(policy) }}</span>
-              <span>{{ policy.updatedAt | date: 'dd MMM, y' }}</span>
+              <span>{{ policy.createdAt | date: 'dd MMM, y' }}</span>
               <div class="row-actions">
-                <button
-                  type="button"
-                  class="icon-button"
-                  (click)="openPolicy(policy.id)"
-                  title="Abrir politica"
-                  aria-label="Abrir politica"
-                >
-                  <span class="material-symbols-outlined">visibility</span>
+                <button type="button" class="btn btn-secondary" (click)="openPolicy(policy.id)">
+                  <span class="material-symbols-outlined">visibility</span> Abrir
                 </button>
-                <a
-                  class="icon-button"
-                  [routerLink]="['/uml-designer', policy.id]"
-                  title="Editar politica"
-                  aria-label="Editar politica"
-                >
-                  <span class="material-symbols-outlined">edit</span>
+                <a class="btn btn-primary" [routerLink]="['/uml-designer', policy.id]">
+                  <span class="material-symbols-outlined">edit</span> Editar
                 </a>
               </div>
             </article>
-          </div>
-        </ng-template>
+          </ng-container>
+
+          <ng-container *ngIf="activeTab() === 'documents'">
+            <ng-container *ngFor="let policy of filteredPolicies()">
+              <article class="policy-row" *ngIf="masterArtifact(policy) as artifact">
+                <div class="row-name">
+                  <span class="material-symbols-outlined policy-icon">description</span>
+                  <div>
+                    <strong>{{ artifact.title || 'Documento sin titulo' }}</strong>
+                    <span>{{ artifact.filename || 'Archivo adjunto' }}</span>
+                  </div>
+                </div>
+                <span>{{ policy.name }}</span>
+                <span class="policy-status" [class]="'status-' + policy.status">
+                  {{ statusLabel(policy.status) }}
+                </span>
+                <span>{{ (artifact.created_at || policy.createdAt) | date: 'dd MMM, y' }}</span>
+                <div class="row-actions">
+                  <button type="button" class="btn btn-secondary" (click)="openPolicy(policy.id)">
+                    <span class="material-symbols-outlined">visibility</span> Abrir
+                  </button>
+                  <a class="btn btn-primary" [routerLink]="['/editor']" [queryParams]="{ documentId: artifact.document_id }">
+                    <span class="material-symbols-outlined">edit</span> Editar
+                  </a>
+                </div>
+              </article>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="activeTab() === 'forms'">
+            <ng-container *ngFor="let policy of filteredPolicies()">
+              <article class="policy-row" *ngIf="policy.form && (policy.form.questions.length > 0 || policy.form.attachments.length > 0)">
+                <div class="row-name">
+                  <span class="material-symbols-outlined policy-icon">dynamic_form</span>
+                  <div>
+                    <strong>Formulario de: {{ policy.name }}</strong>
+                    <span>{{ formLabel(policy) }}</span>
+                  </div>
+                </div>
+                <span>{{ policy.name }}</span>
+                <span class="policy-status" [class]="'status-' + policy.status">
+                  {{ statusLabel(policy.status) }}
+                </span>
+                <span>{{ policy.createdAt | date: 'dd MMM, y' }}</span>
+                <div class="row-actions">
+                  <button type="button" class="btn btn-secondary" (click)="openPolicy(policy.id)">
+                    <span class="material-symbols-outlined">visibility</span> Abrir
+                  </button>
+                  <a class="btn btn-primary" [routerLink]="['/uml-designer', policy.id]" [queryParams]="{ stage: 'form' }">
+                    <span class="material-symbols-outlined">edit</span> Editar
+                  </a>
+                </div>
+              </article>
+            </ng-container>
+          </ng-container>
+        </div>
       </section>
 
       <ng-template #emptyLibrary>
@@ -387,15 +397,30 @@ type StatusFilter = BusinessPolicyStatus | 'all';
         background: var(--bg-tertiary);
       }
 
-      .view-switch {
+      .library-tabs {
         display: inline-flex;
         padding: 0.2rem;
         border: 1px solid var(--border-color);
         border-radius: var(--border-radius-md);
         background: rgba(246, 241, 232, 0.035);
+        gap: 0.25rem;
       }
 
-      .view-switch button,
+      .library-tabs button {
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 1rem;
+        border: 1px solid transparent;
+        border-radius: var(--border-radius-sm);
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.82rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
       .icon-button {
         width: 36px;
         height: 36px;
@@ -410,8 +435,8 @@ type StatusFilter = BusinessPolicyStatus | 'all';
         cursor: pointer;
       }
 
-      .view-switch button.active,
-      .view-switch button:hover,
+      .library-tabs button.active,
+      .library-tabs button:hover,
       .icon-button:hover {
         color: var(--text-primary);
         background: rgba(var(--accent-rgb), 0.13);
@@ -617,7 +642,7 @@ type StatusFilter = BusinessPolicyStatus | 'all';
       .policy-row {
         min-width: 860px;
         display: grid;
-        grid-template-columns: minmax(220px, 1.8fr) 112px 110px 150px 138px 92px;
+        grid-template-columns: minmax(280px, 1.8fr) minmax(180px, 1fr) 112px 140px 220px;
         align-items: center;
         gap: 0.85rem;
         padding: 0.85rem 1rem;
@@ -856,7 +881,7 @@ export class PolicyLibraryComponent implements OnInit {
 
   readonly searchQuery = signal('');
   readonly statusFilter = signal<StatusFilter>('all');
-  readonly viewMode = signal<LibraryView>('cards');
+  readonly activeTab = signal<'diagrams' | 'documents' | 'forms'>('diagrams');
   readonly selectedPolicyId = signal<string | null>(null);
 
   readonly filteredPolicies = computed(() => {

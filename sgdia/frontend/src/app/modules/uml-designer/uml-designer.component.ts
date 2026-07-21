@@ -70,6 +70,15 @@ import { PolicyCollaborationService } from '../../core/services/policy-collabora
               Exportar
             </button>
             <button
+              class="btn btn-secondary"
+              type="button"
+              [disabled]="!store.canRegisterPolicy()"
+              (click)="saveDiagram()"
+            >
+              <span class="material-symbols-outlined">save</span>
+              Guardar diagrama
+            </button>
+            <button
               class="btn btn-primary"
               type="button"
               [disabled]="!store.canRegisterPolicy()"
@@ -352,5 +361,9 @@ export class UmlDesignerComponent implements OnInit {
         );
       }
     });
+  }
+
+  saveDiagram(): void {
+    this.store.savePolicy().subscribe();
   }
 }
