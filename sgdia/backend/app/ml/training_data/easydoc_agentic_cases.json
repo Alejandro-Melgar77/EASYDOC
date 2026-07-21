@@ -2221,6 +2221,87 @@
         "respaldo_reclamo.pdf"
       ],
       "is_synthetic": true
+    },
+    {
+      "id": "agent-rn-01-1",
+      "policy_code": "RN",
+      "policy_name": "Rectificacion de Notas",
+      "student_message": "estan mal mis notas, que tramite puedo hacer",
+      "keywords": [
+        "mal",
+        "notas",
+        "tramite",
+        "rectificacion",
+        "correccion",
+        "cambiar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rn-01-2",
+      "policy_code": "RN",
+      "policy_name": "Rectificacion de Notas",
+      "student_message": "Mi docente se equivoco al subir mi calificacion.",
+      "keywords": [
+        "docente",
+        "equivoco",
+        "subir",
+        "calificacion",
+        "rectificacion",
+        "error"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rn-01-3",
+      "policy_code": "RN",
+      "policy_name": "Rectificacion de Notas",
+      "student_message": "Necesito corregir una nota incorrecta en mi kardex.",
+      "keywords": [
+        "corregir",
+        "nota",
+        "incorrecta",
+        "kardex",
+        "error",
+        "cambiar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
     }
   ]
 }

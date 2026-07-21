@@ -717,6 +717,54 @@ async def seed_demo(database: AsyncIOMotorDatabase, dataset: dict[str, Any]) -> 
             upsert=True,
         )
 
+    await database["policies"].insert_one(
+        {
+            "_id": ObjectId("60a3b2b2b2b2b2b2b2b2b2b2"),
+            "demo_code": "RN",
+            "title": "Rectificacion de Notas",
+            "description": "Procedimiento para corregir errores en las calificaciones finales registradas.",
+            "owner_department": "Registros y Admisiones",
+            "status": "published",
+            "created_by": list(staff_ids.values())[0] if staff_ids else "easydoc-demo-seed",
+            "route": ["Recepcion de Solicitud", "Verificacion Kardex", "Aprobacion Director", "Actualizacion Sistema", "Notificacion Estudiante"],
+            "diagram_data": {},
+            "form_definition": {
+                "questions": [
+                    {
+                        "id": "materia",
+                        "type": "text",
+                        "label": "Nombre de la Materia",
+                        "required": True,
+                        "options": []
+                    },
+                    {
+                        "id": "motivo",
+                        "type": "textarea",
+                        "label": "Cual es el error en la calificacion?",
+                        "required": True,
+                        "options": []
+                    }
+                ],
+                "attachments": [
+                    {
+                        "id": "req_carta_solicitud",
+                        "label": "Carta de Solicitud de Rectificacion",
+                        "required": True
+                    },
+                    {
+                        "id": "req_ci",
+                        "label": "Documento de Identidad",
+                        "required": True
+                    }
+                ]
+            },
+            "created_at": now,
+            "updated_at": now,
+            "is_deleted": False,
+            "is_synthetic": True
+        }
+    )
+
     for workflow in dataset["workflow_instances"]:
         code = workflow["policy_code"]
         document = {
