@@ -57,5 +57,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:8000/api/health || exit 1
 
 # Run the application
-CMD python scripts/seed_db.py && python scripts/seed_easydoc_demo.py && python scripts/create_vector_indexes.py && uvicorn app.main:app --host 0.0.0.0 --port 8000
+CMD sh -c "python scripts/seed_db.py && (python scripts/seed_easydoc_demo.py &) && (python scripts/create_vector_indexes.py &) && exec uvicorn app.main:app --host 0.0.0.0 --port 8000"
 
