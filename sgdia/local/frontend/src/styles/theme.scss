@@ -1,0 +1,87 @@
+@use 'variables' as *;
+
+:root {
+  // Dark diplomatic theme (default)
+  --bg-primary: #07111f;
+  --bg-secondary: #0b1728;
+  --bg-tertiary: #142235;
+  --bg-card: #0f1b2d;
+  --bg-glass: rgba(11, 23, 40, 0.88);
+  --bg-paper: #f6f1e8;
+  --border-color: rgba(231, 219, 196, 0.11);
+  --border-hover: rgba(196, 154, 75, 0.36);
+
+  --text-primary: #f7f3ea;
+  --text-secondary: #b9c3cf;
+  --text-muted: #7f8b99;
+
+  --primary: #17446b;
+  --primary-rgb: 23, 68, 107;
+  --primary-hover: #215a89;
+  --primary-glow: rgba(196, 154, 75, 0.14);
+
+  --secondary: #2f7f83;
+  --secondary-rgb: 47, 127, 131;
+  --secondary-hover: #39979c;
+
+  --accent: #c49a4b;
+  --accent-rgb: 196, 154, 75;
+  --accent-hover: #d9b064;
+
+  --success: #4fa36b;
+  --warning: #d6a23d;
+  --danger: #c45757;
+  --ruby: #8b3f55;
+  --paper: #f6f1e8;
+  --ink: #101722;
+
+  --border-radius-sm: #{$border-radius-sm};
+  --border-radius-md: #{$border-radius-md};
+  --border-radius-lg: #{$border-radius-lg};
+  --border-radius-xl: #{$border-radius-xl};
+  --transition-fast: #{$transition-fast};
+  --transition-normal: #{$transition-normal};
+
+  --glass-blur: blur(14px);
+  --glass-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+  --glass-border: 1px solid rgba(231, 219, 196, 0.1);
+}
+
+[data-theme='light'] {
+  --bg-primary: #f3f5f6;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8edf0;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  --bg-paper: #fbf6ec;
+  --border-color: rgba(16, 23, 34, 0.1);
+  --border-hover: rgba(23, 68, 107, 0.32);
+
+  --text-primary: #101722;
+  --text-secondary: #465566;
+  --text-muted: #778494;
+
+  --primary: #17446b;
+  --primary-rgb: 23, 68, 107;
+  --primary-hover: #0f3354;
+  --primary-glow: rgba(23, 68, 107, 0.08);
+
+  --secondary: #2f7f83;
+  --secondary-rgb: 47, 127, 131;
+  --secondary-hover: #276b70;
+
+  --accent: #a77b2f;
+  --accent-rgb: 167, 123, 47;
+  --accent-hover: #8b6728;
+
+  --success: #2f8151;
+  --warning: #a66f1e;
+  --danger: #a84c4c;
+  --ruby: #8b3f55;
+  --paper: #fbf6ec;
+  --ink: #101722;
+
+  --glass-blur: blur(10px);
+  --glass-shadow: 0 14px 34px rgba(16, 23, 34, 0.07);
+  --glass-border: 1px solid rgba(16, 23, 34, 0.08);
+}

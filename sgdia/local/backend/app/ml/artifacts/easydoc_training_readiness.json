@@ -1,0 +1,28 @@
+{
+  "engine": "easydoc_training_governance_v1",
+  "decision": "blocked",
+  "automation_enabled": false,
+  "real_completed_workflows": 0,
+  "synthetic_workflows": 1409,
+  "minimum_real_completed_workflows": 200,
+  "policies_observed": [
+    "CE",
+    "CG",
+    "CN",
+    "HI",
+    "HN",
+    "RB",
+    "RD",
+    "RE",
+    "RT",
+    "TI"
+  ],
+  "missing_event_fields": [],
+  "requirements": [
+    "Anonimizar y aprobar los eventos reales antes del entrenamiento.",
+    "Revisar sesgo por politica, departamento y periodo academico.",
+    "Comparar la nueva version contra la linea base y aprobarla manualmente.",
+    "Mantener las recomendaciones sin ejecucion automatica hasta la aprobacion operativa."
+  ],
+  "data_is_synthetic_only": true
+}

@@ -1,6 +1,6 @@
 # Registro de incidencias EASYDOC
 
-Actualizado: 19 de julio de 2026
+Actualizado: 20 de julio de 2026
 
 ## Corregidas en Fase 4.5
 
@@ -18,6 +18,7 @@ Actualizado: 19 de julio de 2026
 | INC-13 | P1 | No habia soporte multiformato verificable | Corregida en codigo y en la imagen Docker reconstruida |
 | INC-16 | P1 | Motor PDF no estaba horneado en la imagen | Corregido: `PyMuPDF` se instala desde `requirements-local-ai.txt` en una capa Docker reproducible |
 | INC-17 | P0 | Las operaciones UML se veian en otro navegador pero dependian del guardado manual para persistir | Corregido: validacion, revision colaborativa, auditoria y acuse WebSocket antes de difundir la operacion |
+| INC-18 | P1 | Los workers Celery locales heredaban un healthcheck HTTP que solo corresponde a la API | Corregido: healthcheck desactivado en worker y beat; los procesos se supervisan por su propio estado de ejecucion |
 
 ## Abiertas y priorizadas
 

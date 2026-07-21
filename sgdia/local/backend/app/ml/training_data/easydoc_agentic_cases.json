@@ -1,0 +1,2226 @@
+{
+  "product": "EASYDOC",
+  "corpus_type": "local_agentic_policy_guidance",
+  "generated_at": "2026-07-19T14:00:05.660110+00:00",
+  "period": {
+    "from": "2026-03-01",
+    "to": "2026-07-31"
+  },
+  "is_synthetic": true,
+  "cases": [
+    {
+      "id": "agent-ce-01-1",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Estoy retrasado en materias y necesito levantar un prerrequisito que aun no aprobe.",
+      "keywords": [
+        "retrasado",
+        "materias",
+        "prerrequisito",
+        "levantar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ce-01-2",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Soy estudiante y necesito orientacion: Estoy retrasado en materias y necesito levantar un prerrequisito que aun no aprobe.",
+      "keywords": [
+        "retrasado",
+        "materias",
+        "prerrequisito",
+        "levantar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ce-01-3",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Estoy retrasado en materias y necesito levantar un prerrequisito que aun no aprobe.",
+      "keywords": [
+        "retrasado",
+        "materias",
+        "prerrequisito",
+        "levantar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ce-02-1",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Quiero cursar una materia aunque me falta aprobar una materia previa.",
+      "keywords": [
+        "cursar",
+        "materia",
+        "previa",
+        "requisito"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ce-02-2",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero cursar una materia aunque me falta aprobar una materia previa.",
+      "keywords": [
+        "cursar",
+        "materia",
+        "previa",
+        "requisito"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ce-02-3",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero cursar una materia aunque me falta aprobar una materia previa.",
+      "keywords": [
+        "cursar",
+        "materia",
+        "previa",
+        "requisito"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ce-03-1",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Tengo materias pendientes y necesito un caso especial para continuar.",
+      "keywords": [
+        "materias",
+        "pendientes",
+        "caso",
+        "especial"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ce-03-2",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Soy estudiante y necesito orientacion: Tengo materias pendientes y necesito un caso especial para continuar.",
+      "keywords": [
+        "materias",
+        "pendientes",
+        "caso",
+        "especial"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ce-03-3",
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Tengo materias pendientes y necesito un caso especial para continuar.",
+      "keywords": [
+        "materias",
+        "pendientes",
+        "caso",
+        "especial"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "carta_solicitud.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-01-1",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Vengo de otra universidad y quiero que reconozcan mis materias aprobadas.",
+      "keywords": [
+        "otra",
+        "universidad",
+        "reconozcan",
+        "materias"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-01-2",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Soy estudiante y necesito orientacion: Vengo de otra universidad y quiero que reconozcan mis materias aprobadas.",
+      "keywords": [
+        "otra",
+        "universidad",
+        "reconozcan",
+        "materias"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-01-3",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Vengo de otra universidad y quiero que reconozcan mis materias aprobadas.",
+      "keywords": [
+        "otra",
+        "universidad",
+        "reconozcan",
+        "materias"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-02-1",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Necesito homologar asignaturas cursadas en mi anterior carrera.",
+      "keywords": [
+        "homologar",
+        "asignaturas",
+        "anterior",
+        "carrera"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-02-2",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Soy estudiante y necesito orientacion: Necesito homologar asignaturas cursadas en mi anterior carrera.",
+      "keywords": [
+        "homologar",
+        "asignaturas",
+        "anterior",
+        "carrera"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-02-3",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Necesito homologar asignaturas cursadas en mi anterior carrera.",
+      "keywords": [
+        "homologar",
+        "asignaturas",
+        "anterior",
+        "carrera"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-03-1",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Quiero validar contenidos y notas de estudios externos.",
+      "keywords": [
+        "validar",
+        "contenidos",
+        "notas",
+        "externos"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-03-2",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero validar contenidos y notas de estudios externos.",
+      "keywords": [
+        "validar",
+        "contenidos",
+        "notas",
+        "externos"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hn-03-3",
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero validar contenidos y notas de estudios externos.",
+      "keywords": [
+        "validar",
+        "contenidos",
+        "notas",
+        "externos"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "programas_analiticos.pdf",
+        "carta_solicitud.docx"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-01-1",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Necesito un certificado oficial de mis notas para una beca.",
+      "keywords": [
+        "certificado",
+        "notas",
+        "oficial",
+        "beca"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-01-2",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Soy estudiante y necesito orientacion: Necesito un certificado oficial de mis notas para una beca.",
+      "keywords": [
+        "certificado",
+        "notas",
+        "oficial",
+        "beca"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-01-3",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Necesito un certificado oficial de mis notas para una beca.",
+      "keywords": [
+        "certificado",
+        "notas",
+        "oficial",
+        "beca"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-02-1",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Donde solicito mi historial academico y las calificaciones?",
+      "keywords": [
+        "historial",
+        "academico",
+        "calificaciones"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-02-2",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Soy estudiante y necesito orientacion: Donde solicito mi historial academico y las calificaciones?",
+      "keywords": [
+        "historial",
+        "academico",
+        "calificaciones"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-02-3",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Donde solicito mi historial academico y las calificaciones?",
+      "keywords": [
+        "historial",
+        "academico",
+        "calificaciones"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-03-1",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Quiero pedir copias de mi certificado de notas.",
+      "keywords": [
+        "copias",
+        "certificado",
+        "notas"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-03-2",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero pedir copias de mi certificado de notas.",
+      "keywords": [
+        "copias",
+        "certificado",
+        "notas"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cn-03-3",
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero pedir copias de mi certificado de notas.",
+      "keywords": [
+        "copias",
+        "certificado",
+        "notas"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "comprobante_pago.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-01-1",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Quiero retirar una materia este semestre.",
+      "keywords": [
+        "retirar",
+        "materia",
+        "semestre"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-01-2",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero retirar una materia este semestre.",
+      "keywords": [
+        "retirar",
+        "materia",
+        "semestre"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-01-3",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero retirar una materia este semestre.",
+      "keywords": [
+        "retirar",
+        "materia",
+        "semestre"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-02-1",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Necesito dar de baja una asignatura por un motivo personal.",
+      "keywords": [
+        "baja",
+        "asignatura",
+        "motivo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-02-2",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Soy estudiante y necesito orientacion: Necesito dar de baja una asignatura por un motivo personal.",
+      "keywords": [
+        "baja",
+        "asignatura",
+        "motivo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-02-3",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Necesito dar de baja una asignatura por un motivo personal.",
+      "keywords": [
+        "baja",
+        "asignatura",
+        "motivo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-03-1",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Todavia puedo cancelar una materia inscrita?",
+      "keywords": [
+        "cancelar",
+        "materia",
+        "inscrita"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-03-2",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Soy estudiante y necesito orientacion: Todavia puedo cancelar una materia inscrita?",
+      "keywords": [
+        "cancelar",
+        "materia",
+        "inscrita"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rt-03-3",
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Todavia puedo cancelar una materia inscrita?",
+      "keywords": [
+        "cancelar",
+        "materia",
+        "inscrita"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "formulario_retiro.docx",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-01-1",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Quiero postular a una beca auxiliar de la carrera.",
+      "keywords": [
+        "postular",
+        "beca",
+        "auxiliar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-01-2",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero postular a una beca auxiliar de la carrera.",
+      "keywords": [
+        "postular",
+        "beca",
+        "auxiliar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-01-3",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero postular a una beca auxiliar de la carrera.",
+      "keywords": [
+        "postular",
+        "beca",
+        "auxiliar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-02-1",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Necesito apoyo economico y quiero ser auxiliar universitario.",
+      "keywords": [
+        "apoyo",
+        "economico",
+        "auxiliar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-02-2",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Soy estudiante y necesito orientacion: Necesito apoyo economico y quiero ser auxiliar universitario.",
+      "keywords": [
+        "apoyo",
+        "economico",
+        "auxiliar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-02-3",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Necesito apoyo economico y quiero ser auxiliar universitario.",
+      "keywords": [
+        "apoyo",
+        "economico",
+        "auxiliar"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-03-1",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Como presento mi declaracion para una beca academica?",
+      "keywords": [
+        "declaracion",
+        "beca",
+        "academica"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-03-2",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Soy estudiante y necesito orientacion: Como presento mi declaracion para una beca academica?",
+      "keywords": [
+        "declaracion",
+        "beca",
+        "academica"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rb-03-3",
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Como presento mi declaracion para una beca academica?",
+      "keywords": [
+        "declaracion",
+        "beca",
+        "academica"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "registro_universitario.pdf",
+        "declaracion_jurada.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-01-1",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "No pude rendir mi examen por una emergencia y necesito otra fecha.",
+      "keywords": [
+        "examen",
+        "emergencia",
+        "otra",
+        "fecha"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-01-2",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "Soy estudiante y necesito orientacion: No pude rendir mi examen por una emergencia y necesito otra fecha.",
+      "keywords": [
+        "examen",
+        "emergencia",
+        "otra",
+        "fecha"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-01-3",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: No pude rendir mi examen por una emergencia y necesito otra fecha.",
+      "keywords": [
+        "examen",
+        "emergencia",
+        "otra",
+        "fecha"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-02-1",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "Quiero reprogramar una evaluacion porque presente un certificado medico.",
+      "keywords": [
+        "reprogramar",
+        "evaluacion",
+        "certificado",
+        "medico"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-02-2",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero reprogramar una evaluacion porque presente un certificado medico.",
+      "keywords": [
+        "reprogramar",
+        "evaluacion",
+        "certificado",
+        "medico"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-02-3",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero reprogramar una evaluacion porque presente un certificado medico.",
+      "keywords": [
+        "reprogramar",
+        "evaluacion",
+        "certificado",
+        "medico"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-03-1",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "Como solicito una nueva fecha para mi parcial?",
+      "keywords": [
+        "nueva",
+        "fecha",
+        "parcial"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-03-2",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "Soy estudiante y necesito orientacion: Como solicito una nueva fecha para mi parcial?",
+      "keywords": [
+        "nueva",
+        "fecha",
+        "parcial"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-re-03-3",
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Como solicito una nueva fecha para mi parcial?",
+      "keywords": [
+        "nueva",
+        "fecha",
+        "parcial"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_medico.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-01-1",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Necesito cambiarme de grupo en una materia por cruce de horarios.",
+      "keywords": [
+        "cambiar",
+        "grupo",
+        "materia",
+        "horarios"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-01-2",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Soy estudiante y necesito orientacion: Necesito cambiarme de grupo en una materia por cruce de horarios.",
+      "keywords": [
+        "cambiar",
+        "grupo",
+        "materia",
+        "horarios"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-01-3",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Necesito cambiarme de grupo en una materia por cruce de horarios.",
+      "keywords": [
+        "cambiar",
+        "grupo",
+        "materia",
+        "horarios"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-02-1",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Hay cupo en otro paralelo de mi asignatura?",
+      "keywords": [
+        "cupo",
+        "paralelo",
+        "asignatura"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-02-2",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Soy estudiante y necesito orientacion: Hay cupo en otro paralelo de mi asignatura?",
+      "keywords": [
+        "cupo",
+        "paralelo",
+        "asignatura"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-02-3",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Hay cupo en otro paralelo de mi asignatura?",
+      "keywords": [
+        "cupo",
+        "paralelo",
+        "asignatura"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-03-1",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Quiero pasar del grupo A al grupo B de una materia inscrita.",
+      "keywords": [
+        "grupo",
+        "materia",
+        "inscrita"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-03-2",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero pasar del grupo A al grupo B de una materia inscrita.",
+      "keywords": [
+        "grupo",
+        "materia",
+        "inscrita"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-cg-03-3",
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero pasar del grupo A al grupo B de una materia inscrita.",
+      "keywords": [
+        "grupo",
+        "materia",
+        "inscrita"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "horario_actual.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-01-1",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Estoy por egresar y quiero iniciar mi proceso de titulacion.",
+      "keywords": [
+        "egresar",
+        "proceso",
+        "titulacion"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-01-2",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Soy estudiante y necesito orientacion: Estoy por egresar y quiero iniciar mi proceso de titulacion.",
+      "keywords": [
+        "egresar",
+        "proceso",
+        "titulacion"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-01-3",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Estoy por egresar y quiero iniciar mi proceso de titulacion.",
+      "keywords": [
+        "egresar",
+        "proceso",
+        "titulacion"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-02-1",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Necesito presentar mis documentos para defensa de grado.",
+      "keywords": [
+        "documentos",
+        "defensa",
+        "grado"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-02-2",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Soy estudiante y necesito orientacion: Necesito presentar mis documentos para defensa de grado.",
+      "keywords": [
+        "documentos",
+        "defensa",
+        "grado"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-02-3",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Necesito presentar mis documentos para defensa de grado.",
+      "keywords": [
+        "documentos",
+        "defensa",
+        "grado"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-03-1",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Quiero solicitar tribunal o modalidad para obtener mi titulo.",
+      "keywords": [
+        "tribunal",
+        "modalidad",
+        "titulo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-03-2",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero solicitar tribunal o modalidad para obtener mi titulo.",
+      "keywords": [
+        "tribunal",
+        "modalidad",
+        "titulo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-ti-03-3",
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero solicitar tribunal o modalidad para obtener mi titulo.",
+      "keywords": [
+        "tribunal",
+        "modalidad",
+        "titulo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "certificado_notas.pdf",
+        "solvencia_academica.pdf",
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-01-1",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Quiero consultar mi historico completo de notas.",
+      "keywords": [
+        "historico",
+        "notas",
+        "completo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-01-2",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero consultar mi historico completo de notas.",
+      "keywords": [
+        "historico",
+        "notas",
+        "completo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-01-3",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero consultar mi historico completo de notas.",
+      "keywords": [
+        "historico",
+        "notas",
+        "completo"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-02-1",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Necesito mis calificaciones de gestiones anteriores.",
+      "keywords": [
+        "calificaciones",
+        "gestiones",
+        "anteriores"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-02-2",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Soy estudiante y necesito orientacion: Necesito mis calificaciones de gestiones anteriores.",
+      "keywords": [
+        "calificaciones",
+        "gestiones",
+        "anteriores"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-02-3",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Necesito mis calificaciones de gestiones anteriores.",
+      "keywords": [
+        "calificaciones",
+        "gestiones",
+        "anteriores"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-03-1",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Donde pido el registro de todas mis notas?",
+      "keywords": [
+        "registro",
+        "notas"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-03-2",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Soy estudiante y necesito orientacion: Donde pido el registro de todas mis notas?",
+      "keywords": [
+        "registro",
+        "notas"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-hi-03-3",
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Donde pido el registro de todas mis notas?",
+      "keywords": [
+        "registro",
+        "notas"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-01-1",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Quiero presentar un reclamo formal sobre un docente.",
+      "keywords": [
+        "reclamo",
+        "formal",
+        "docente"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-01-2",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Soy estudiante y necesito orientacion: Quiero presentar un reclamo formal sobre un docente.",
+      "keywords": [
+        "reclamo",
+        "formal",
+        "docente"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-01-3",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Quiero presentar un reclamo formal sobre un docente.",
+      "keywords": [
+        "reclamo",
+        "formal",
+        "docente"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-02-1",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Necesito informar un problema con la evaluacion de mi profesor.",
+      "keywords": [
+        "problema",
+        "evaluacion",
+        "profesor"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-02-2",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Soy estudiante y necesito orientacion: Necesito informar un problema con la evaluacion de mi profesor.",
+      "keywords": [
+        "problema",
+        "evaluacion",
+        "profesor"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-02-3",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Necesito informar un problema con la evaluacion de mi profesor.",
+      "keywords": [
+        "problema",
+        "evaluacion",
+        "profesor"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-03-1",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Como presento evidencia por un conflicto con un docente?",
+      "keywords": [
+        "evidencia",
+        "conflicto",
+        "docente"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-03-2",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Soy estudiante y necesito orientacion: Como presento evidencia por un conflicto con un docente?",
+      "keywords": [
+        "evidencia",
+        "conflicto",
+        "docente"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    },
+    {
+      "id": "agent-rd-03-3",
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "student_message": "Antes de presentar mi solicitud, necesito saber esto: Como presento evidencia por un conflicto con un docente?",
+      "keywords": [
+        "evidencia",
+        "conflicto",
+        "docente"
+      ],
+      "expected_action": "recommend_policy",
+      "next_step": "open_dynamic_form",
+      "agent_plan": [
+        "classify_intent",
+        "recommend_published_policy",
+        "present_requirements",
+        "open_dynamic_form"
+      ],
+      "requirements": [
+        "documento_identidad.jpg",
+        "respaldo_reclamo.pdf"
+      ],
+      "is_synthetic": true
+    }
+  ]
+}

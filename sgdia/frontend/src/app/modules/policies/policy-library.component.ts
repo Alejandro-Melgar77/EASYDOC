@@ -179,7 +179,7 @@ type StatusFilter = BusinessPolicyStatus | 'all';
                 <span class="policy-status" [class]="'status-' + policy.status">
                   {{ statusLabel(policy.status) }}
                 </span>
-                <span>{{ (artifact.created_at || policy.createdAt) | date: 'dd MMM, y' }}</span>
+                <span>{{ policy.createdAt | date: 'dd MMM, y' }}</span>
                 <div class="row-actions">
                   <button type="button" class="btn btn-secondary" (click)="openPolicy(policy.id)">
                     <span class="material-symbols-outlined">visibility</span> Abrir

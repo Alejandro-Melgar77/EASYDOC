@@ -1,6 +1,6 @@
 # Plan de implementacion EASYDOC
 
-Actualizado: 19 de julio de 2026
+Actualizado: 20 de julio de 2026
 
 ## Mapa de fases
 
@@ -52,6 +52,9 @@ Actualizado: 19 de julio de 2026
    0 de 200 flujos reales anonimizados aprobados.
 6. Panel web de riesgos muestra la frontera de control humano y el contrato
    `GET /api/predictions/training-readiness`.
+7. Distribucion reproducible `local/`: replica sincronizable de backend y frontend, Compose con
+   MongoDB, Redis, MinIO, OnlyOffice y Celery en puertos independientes, mas semilla idempotente.
+   `local/update.ps1` mantiene la distribucion al dia despues de cada cambio aprobado.
 
 ### Pendiente para cerrar la fase
 

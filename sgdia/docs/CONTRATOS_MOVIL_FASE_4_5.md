@@ -3,6 +3,13 @@
 Base API local: `http://localhost:8000/api`. En el emulador Android se usa por defecto
 `http://10.0.2.2:8000/api`; el manifest de debug permite HTTP solo para desarrollo local.
 
+## Distribucion local aislada
+
+Cuando se ejecuta `local/start.ps1`, la web usa `http://localhost:4300` y la API usa
+`http://localhost:8100/api`. Para un emulador Android conectado a esa distribucion se debe usar
+`http://10.0.2.2:8100/api`. El canal de notificaciones equivalente es
+`ws://localhost:8100/ws/notifications?token=<JWT>`.
+
 ## Invitado
 
 | Metodo y ruta | Uso |

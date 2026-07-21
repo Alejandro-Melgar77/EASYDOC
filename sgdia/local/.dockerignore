@@ -1,0 +1,12 @@
+.git
+backend/.env
+backend/.pytest_cache
+backend/.ruff_cache
+backend/**/__pycache__
+backend/local_models
+frontend/.angular
+frontend/dist
+frontend/node_modules
+mobile
+docs
+*.log

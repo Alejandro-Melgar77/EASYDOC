@@ -1,0 +1,8 @@
+/* Global EASYDOC styles */
+@use './styles/global';
+
+// Material Icons & Typography are loaded in index.html.
+// We can also import custom Angular Material overlay styles here if needed.
+.cdk-overlay-container {
+  z-index: 9999;
+}

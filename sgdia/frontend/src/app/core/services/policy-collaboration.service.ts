@@ -11,7 +11,8 @@ export type PolicyOperationName =
   | 'lane.create'
   | 'lane.update'
   | 'lane.delete'
-  | 'form.update';
+  | 'form.update'
+  | 'doc.update';
 
 export interface PolicyCollaborationOperation {
   operation: PolicyOperationName;

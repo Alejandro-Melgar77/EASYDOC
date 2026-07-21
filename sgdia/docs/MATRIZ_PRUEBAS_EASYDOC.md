@@ -1,6 +1,6 @@
 # Matriz de pruebas EASYDOC
 
-Actualizado: 19 de julio de 2026
+Actualizado: 20 de julio de 2026
 
 | ID | Escenario | Resultado | Evidencia |
 | --- | --- | --- | --- |
@@ -24,6 +24,7 @@ Actualizado: 19 de julio de 2026
 | INT-18 | OCR local multiformato | Correcto | DOCX/XLSX/imagen cubiertos por pruebas; PDF escaneado devuelve `local_pdf_ocr` desde la imagen Docker reconstruida |
 | INT-19 | Persistencia UML por WebSocket | Correcto | Dos cuentas reales, presencia 2, crear/eliminar nodo, acuse de revision y recarga API sin guardado manual |
 | INT-20 | Renderizado responsive del diagramador | Correcto | Navegador local, contador 0 sin pares, paleta desplazable, carriles y lienzo sin errores de consola |
+| INT-21 | Distribucion local aislada | Correcto | `local/verify.ps1`: API saludable, MongoDB y Redis conectados y web en 4300; seed con 10 politicas y 1,409 solicitudes |
 | Q-01 | Ruff y pruebas FastAPI | Correcto | `ruff` y 64 pruebas correctas |
 | Q-02 | Calidad Angular | Correcto | `npm run lint`, `format:check`, `build` |
 | Q-03 | Calidad Flutter | Correcto | Analizador, prueba de widgets y formato correctos |

@@ -1,6 +1,6 @@
 # Estado del proyecto EASYDOC
 
-Actualizado: 19 de julio de 2026
+Actualizado: 20 de julio de 2026
 
 ## Estado actual
 
@@ -70,6 +70,9 @@ institucionales y las integraciones que dependen de terceros estan registradas c
   desde timestamps reales y las sugerencias de carga nunca se ejecutan automaticamente.
 - Gobierno de entrenamiento visible: `easydoc_training_governance_v1` bloquea automatizacion con
   0 de 200 flujos reales anonimizados; el panel IA lo comunica de forma explicita.
+- Distribucion `local/` incorporada: sincroniza backend y frontend canonicos, levanta sus
+  dependencias funcionales en puertos aislados (`4300` y `8100`) y ejecuta la semilla idempotente.
+  `local/update.ps1` es el procedimiento obligatorio para reflejar los proximos cambios aprobados.
 
 ## Validacion integrada registrada
 
@@ -95,6 +98,7 @@ institucionales y las integraciones que dependen de terceros estan registradas c
 | Angular | ESLint, Prettier y build correctos |
 | Flutter | `flutter analyze`, pruebas y `dart format` correctos |
 | Docker | Backend, MongoDB, Redis, MinIO y OnlyOffice saludables |
+| Distribucion local | Correcta: API, web, MongoDB y Redis verificados en puertos aislados |
 
 El detalle reproducible esta en `docs/MATRIZ_PRUEBAS_EASYDOC.md`.
 

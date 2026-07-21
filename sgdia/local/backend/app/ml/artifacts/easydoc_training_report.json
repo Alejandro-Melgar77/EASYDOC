@@ -1,0 +1,292 @@
+{
+  "product": "EASYDOC",
+  "report_type": "offline_baseline_evaluation",
+  "model_name": "easydoc_local_route_risk_v1",
+  "model_type": "offline_statistical_baseline",
+  "generated_at": "2026-07-19T14:00:07.527744+00:00",
+  "training_period": {
+    "from": "2026-03-01",
+    "to": "2026-06-30"
+  },
+  "validation_period": {
+    "from": "2026-07-01",
+    "to": "2026-07-31"
+  },
+  "data_provenance": {
+    "is_synthetic": true,
+    "training_samples": 996,
+    "validation_samples": 413,
+    "note": "Synthetic baseline only. It must not be presented as institutional performance."
+  },
+  "metrics": {
+    "route_match_rate": 1.0,
+    "duration_mae_days": 0.398,
+    "policies_evaluated": 10,
+    "guidance_match_rate": 1.0
+  },
+  "per_policy": [
+    {
+      "policy_code": "CE",
+      "policy_name": "Casos Especiales",
+      "validation_samples": 67,
+      "route_match": true,
+      "duration_mae_days": 1.539,
+      "predicted_priority": "alta",
+      "observed_overdue_rate": 0.985
+    },
+    {
+      "policy_code": "HN",
+      "policy_name": "Homologacion de Materias",
+      "validation_samples": 33,
+      "route_match": true,
+      "duration_mae_days": 0.106,
+      "predicted_priority": "normal",
+      "observed_overdue_rate": 0.091
+    },
+    {
+      "policy_code": "CN",
+      "policy_name": "Certificado de Notas",
+      "validation_samples": 74,
+      "route_match": true,
+      "duration_mae_days": 0.058,
+      "predicted_priority": "alta",
+      "observed_overdue_rate": 0.986
+    },
+    {
+      "policy_code": "RT",
+      "policy_name": "Retiro de Materia",
+      "validation_samples": 12,
+      "route_match": true,
+      "duration_mae_days": 0.18,
+      "predicted_priority": "alta",
+      "observed_overdue_rate": 0.917
+    },
+    {
+      "policy_code": "RB",
+      "policy_name": "Solicitud de Beca Auxiliar",
+      "validation_samples": 45,
+      "route_match": true,
+      "duration_mae_days": 1.051,
+      "predicted_priority": "media",
+      "observed_overdue_rate": 0.511
+    },
+    {
+      "policy_code": "RE",
+      "policy_name": "Reprogramacion de Examenes",
+      "validation_samples": 39,
+      "route_match": true,
+      "duration_mae_days": 0.037,
+      "predicted_priority": "alta",
+      "observed_overdue_rate": 0.974
+    },
+    {
+      "policy_code": "CG",
+      "policy_name": "Solicitud de Cambio de Grupo de Materia",
+      "validation_samples": 50,
+      "route_match": true,
+      "duration_mae_days": 0.012,
+      "predicted_priority": "alta",
+      "observed_overdue_rate": 1.0
+    },
+    {
+      "policy_code": "TI",
+      "policy_name": "Titulacion",
+      "validation_samples": 18,
+      "route_match": true,
+      "duration_mae_days": 0.623,
+      "predicted_priority": "normal",
+      "observed_overdue_rate": 0.0
+    },
+    {
+      "policy_code": "HI",
+      "policy_name": "Consulta de Historico de Notas",
+      "validation_samples": 61,
+      "route_match": true,
+      "duration_mae_days": 0.11,
+      "predicted_priority": "alta",
+      "observed_overdue_rate": 1.0
+    },
+    {
+      "policy_code": "RD",
+      "policy_name": "Reclamo de Docente",
+      "validation_samples": 14,
+      "route_match": true,
+      "duration_mae_days": 0.269,
+      "predicted_priority": "media",
+      "observed_overdue_rate": 0.071
+    }
+  ],
+  "operational_snapshot": {
+    "departments": [
+      {
+        "department": "Archivo Academico",
+        "events": 1827,
+        "avg_duration_days": 0.803,
+        "observed_events": 0
+      },
+      {
+        "department": "Bienestar Estudiantil",
+        "events": 339,
+        "avg_duration_days": 1.085,
+        "observed_events": 7
+      },
+      {
+        "department": "Coordinacion Academica",
+        "events": 749,
+        "avg_duration_days": 0.862,
+        "observed_events": 14
+      },
+      {
+        "department": "Direccion de Carrera",
+        "events": 494,
+        "avg_duration_days": 0.868,
+        "observed_events": 9
+      },
+      {
+        "department": "Recepcion y Ventanilla",
+        "events": 2448,
+        "avg_duration_days": 0.822,
+        "observed_events": 8
+      },
+      {
+        "department": "Secretaria Academica",
+        "events": 1313,
+        "avg_duration_days": 0.948,
+        "observed_events": 20
+      },
+      {
+        "department": "Titulacion",
+        "events": 204,
+        "avg_duration_days": 0.78,
+        "observed_events": 0
+      },
+      {
+        "department": "Unidad Docente",
+        "events": 383,
+        "avg_duration_days": 0.75,
+        "observed_events": 5
+      }
+    ],
+    "workers": [
+      {
+        "worker_key": "worker-002",
+        "department": "Archivo Academico",
+        "events": 209,
+        "load_days": 155.87
+      },
+      {
+        "worker_key": "worker-001",
+        "department": "Bienestar Estudiantil",
+        "events": 226,
+        "load_days": 253.35
+      },
+      {
+        "worker_key": "worker-002",
+        "department": "Bienestar Estudiantil",
+        "events": 113,
+        "load_days": 114.36
+      },
+      {
+        "worker_key": "worker-002",
+        "department": "Coordinacion Academica",
+        "events": 177,
+        "load_days": 139.63
+      },
+      {
+        "worker_key": "worker-002",
+        "department": "Direccion de Carrera",
+        "events": 494,
+        "load_days": 428.74
+      },
+      {
+        "worker_key": "worker-001",
+        "department": "Unidad Docente",
+        "events": 269,
+        "load_days": 198.9
+      },
+      {
+        "worker_key": "worker-002",
+        "department": "Unidad Docente",
+        "events": 114,
+        "load_days": 88.29
+      },
+      {
+        "worker_key": "worker-001",
+        "department": "Archivo Academico",
+        "events": 1618,
+        "load_days": 1311.82
+      },
+      {
+        "worker_key": "worker-002",
+        "department": "Coordinacion Academica",
+        "events": 572,
+        "load_days": 505.72
+      },
+      {
+        "worker_key": "worker-001",
+        "department": "Recepcion y Ventanilla",
+        "events": 1863,
+        "load_days": 1516.58
+      },
+      {
+        "worker_key": "worker-002",
+        "department": "Recepcion y Ventanilla",
+        "events": 585,
+        "load_days": 495.32
+      },
+      {
+        "worker_key": "worker-001",
+        "department": "Secretaria Academica",
+        "events": 677,
+        "load_days": 756.17
+      },
+      {
+        "worker_key": "worker-002",
+        "department": "Secretaria Academica",
+        "events": 636,
+        "load_days": 488.21
+      },
+      {
+        "worker_key": "worker-001",
+        "department": "Titulacion",
+        "events": 153,
+        "load_days": 119.53
+      },
+      {
+        "worker_key": "worker-002",
+        "department": "Titulacion",
+        "events": 51,
+        "load_days": 39.59
+      }
+    ],
+    "is_synthetic": true
+  },
+  "training_readiness": {
+    "engine": "easydoc_training_governance_v1",
+    "decision": "blocked",
+    "automation_enabled": false,
+    "real_completed_workflows": 0,
+    "synthetic_workflows": 1409,
+    "minimum_real_completed_workflows": 200,
+    "policies_observed": [
+      "CE",
+      "CG",
+      "CN",
+      "HI",
+      "HN",
+      "RB",
+      "RD",
+      "RE",
+      "RT",
+      "TI"
+    ],
+    "missing_event_fields": [],
+    "requirements": [
+      "Anonimizar y aprobar los eventos reales antes del entrenamiento.",
+      "Revisar sesgo por politica, departamento y periodo academico.",
+      "Comparar la nueva version contra la linea base y aprobarla manualmente.",
+      "Mantener las recomendaciones sin ejecucion automatica hasta la aprobacion operativa."
+    ],
+    "data_is_synthetic_only": true
+  }
+}
