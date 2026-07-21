@@ -39,7 +39,7 @@ class RequestService:
 
     @property
     def _db(self) -> AsyncIOMotorDatabase:
-        return self._database or get_database()
+        return self._database if self._database is not None else get_database()
 
     async def list_public_services(self) -> list[dict[str, Any]]:
         cursor = (

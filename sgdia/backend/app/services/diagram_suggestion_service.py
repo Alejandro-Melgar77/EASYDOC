@@ -25,7 +25,7 @@ class DiagramSuggestionService:
 
     @property
     def _db(self) -> AsyncIOMotorDatabase:
-        return self._database or get_database()
+        return self._database if self._database is not None else get_database()
 
     async def suggest(
         self,
